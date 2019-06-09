@@ -3,6 +3,6 @@ export class HttpResultModel{
     //a informação que virá do resultado
     data: any;
     //para ver se já veio com sucesso, ou não (error)
-    succes: boolean;
+    success: boolean;
     err: any;
 }

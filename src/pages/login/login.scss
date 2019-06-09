@@ -1,0 +1,24 @@
+page-login {
+ion-title{
+text-align: left !important;
+}
+.toolbar-title{
+    text-align: left !important;
+}
+
+ion-footer{
+    background: map-get($colors,primary) !important;
+    color: white;
+    height: 50px;
+    text-align: center;
+}
+.login{
+    padding-top: 200px;
+}
+.button {
+    margin-top: 8px;
+}
+ion-label {
+    color: #cccccc;
+}
+}

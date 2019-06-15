@@ -85,7 +85,7 @@ public post(url: string, model: any): Promise<HttpResultModel> {
           console.log(err);
 
           //
-          /*
+          
           if (err.status == 400) {
             let msg = "";
             err.error.validation.forEach(_err =>{
@@ -101,7 +101,7 @@ public post(url: string, model: any): Promise<HttpResultModel> {
             this.alertSrvc.toast(
               "Não foi possível realizar o processamento da informação, verifique sua conexão e tente novamente",
               "bottom"
-            );*/
+            );
           resolve({ success: false, data: undefined, err: err });
         }
       );

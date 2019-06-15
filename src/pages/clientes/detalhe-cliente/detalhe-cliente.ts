@@ -29,6 +29,13 @@ cliente: clienteModel =  new clienteModel();
 
   }
 
+addOrEdit(): void {
+    this.navCtrl.push('AdmClientePage', { _cliente: this.cliente });
+
+}
+
+
+
  detalheCliente: any = []; 
   ngOnInit(): void {
   

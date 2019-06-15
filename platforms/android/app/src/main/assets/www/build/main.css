@@ -25704,11 +25704,17 @@ page-login .toolbar-title {
   text-align: left !important;
 }
 
-page-login ion-footer {
-  background: #4f413b !important;
-  color: white;
-  height: 50px;
-  text-align: center;
+page-login ion-content {
+  background: url(../../assets//imgs//moveis-planejados.jpg);
+  background-size: cover;
+}
+
+page-login .item {
+  background: transparent;
+}
+
+page-login .scroll-content {
+  background-color: rgba(79, 65, 59, 0.6);
 }
 
 page-login .login {
@@ -25720,7 +25726,7 @@ page-login .button {
 }
 
 page-login ion-label {
-  color: #cccccc;
+  color: white !important;
 }
 
 page-projetos .ion-ios-close-circle:before {

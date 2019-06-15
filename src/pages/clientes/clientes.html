@@ -11,74 +11,30 @@
 </ion-header>
 
 <ion-content padding>
+<ion-grid>
+<ion-row>
+<ion-col col-10>
+<ion-searchbar></ion-searchbar>
+</ion-col>
 
-<ion-item>
-  <ion-label >Procurar</ion-label>
-  <ion-input type="text" > 
- 
-      <ion-icon name="search"></ion-icon>
+<ion-col col-2>
+    <ion-fab>
+        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>
+        </button>
+      </ion-fab>
+    
+    </ion-col>
 
-  </ion-input>
-</ion-item>
-
-
-<a (click)="abrirDetalheClientePage()">
-<ion-card>
-  <ion-card-content>
-    Nome: Pedro Amaral
-    Email: cliente@hotmail.com<br/>
-    Telefone: (DDD) 99858-9858
+</ion-row>
+</ion-grid>
+<ion-card *ngFor="let cliente of listaClientes" (click)="abrirDetalheClientePage(cliente)" tappable>
+  <ion-card-content >
+    Nome: {{cliente.nome}} <br/>
+    Email: {{cliente.email}}
+    Telefone: {{cliente.tel}}
   </ion-card-content>
 </ion-card>
-</a>
 
-<ion-card>
- <ion-card-content>
-      Nome: Pedro Amaral
-      Email: cliente@hotmail.com <br/>
-      Telefone: (DDD) 99858-9858
-    </ion-card-content>
-  </ion-card>
 
-  <ion-card>
- 
-      <ion-card-content>
-        Nome: Pedro Amaral
-        Email: cliente@hotmail.com<br/>
-        Telefone: (DDD) 99858-9858
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
- 
-        <ion-card-content>
-          Nome: Pedro Amaral
-          Email: cliente@hotmail.com<br/>
-          Telefone: (DDD) 99858-9858
-        </ion-card-content>
-      </ion-card>
-      <ion-card>
- 
-          <ion-card-content>
-            Nome: Pedro Amaral
-            Email: cliente@hotmail.com<br/>
-            Telefone: (DDD) 99858-9858
-          </ion-card-content>
-        </ion-card>
-        <ion-card>
- 
-            <ion-card-content>
-              Nome: Pedro Amaral
-              Email: cliente@hotmail.com<br/>
-              Telefone: (DDD) 99858-9858
-            </ion-card-content>
-          </ion-card>
-          <ion-card>
- 
-              <ion-card-content>
-                Nome: Pedro Amaral
-                Email: cliente@hotmail.com<br/>
-                Telefone: (DDD) 99858-9858
-              </ion-card-content>
-            </ion-card>
 
 </ion-content>

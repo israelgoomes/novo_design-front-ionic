@@ -6,6 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
+     <a (click)="back()"> <ion-icon style="color: white;" ios="ios-arrow-back" md="md-arrow-back"></ion-icon> </a>
     <ion-title>Detalhe Cliente</ion-title>
   </ion-navbar>
 </ion-header>
@@ -13,23 +14,14 @@
 <ion-content padding>
 
   <ion-card>
-    <ion-card-content>
-      <p> Nome: Pedro Amaral</p>
-      <br/>
-      <p>Email: cliente@hotmail.com</p>
-      <br/>
-      <p>Telefone: (DDD) 99858-9858</p>
-      <br/>
-      <p>Cep: 11724-120</p>
-      <br/>
-      <p>Endereço: Rua lUís Gonzaga da Silva</p>
-      <br/>
-      <p>Bairro: Tude Bastos</p>
-      <br/>
-      <p>Cidade: Praia Grande</p>  
-      <br/>
-      <p>Estado: São Paulo</p>
-    
+    <ion-card-content >
+   <p>   Nome: {{cliente.nome}}</p> <br/>
+   <p> Email: {{cliente.email}}</p> <br/>
+   <p> Telefone: {{cliente.tel}}</p> <br/>
+   <p> Rua: {{cliente.endereco}}</p> <br/>
+   <p> Bairro: {{cliente.bairro}}</p> <br/>
+   <p> Cidade: {{cliente.cidade}}</p> <br/>
+   <p> Estado: {{cliente.estado}}</p> <br/>
     </ion-card-content>
   </ion-card>
 

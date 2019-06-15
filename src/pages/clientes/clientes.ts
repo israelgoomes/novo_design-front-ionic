@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { ModalController } from 'ionic-angular';
+import { ClientesProvider } from '../../providers/clientes/clientes';
+import { clienteModel } from '../../app/models/clienteModel';
 
 /**
  * Generated class for the ClientesPage page.
@@ -13,16 +16,52 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-clientes',
   templateUrl: 'clientes.html',
 })
-export class ClientesPage {
+export class ClientesPage implements OnInit{
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  listaClientes: Array<clienteModel> = new Array<clienteModel>();
+
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    public modalCtrl: ModalController,
+    public clienteSrvc: ClientesProvider
+
+    ) {
+      this._loadCliente();
   }
 
+clientes: any = []
+
+ abrirDetalheClientePage(cliente: clienteModel) {
+  const modal =  this.modalCtrl.create('DetalheClientePage', {
+    cliente: cliente
+  });
+  modal.present();
+}
+
+private async _loadCliente(): Promise<void>{
+  let clientResult = await this.clienteSrvc.get();
+  if(clientResult.success){
+    this.listaClientes = <Array<clienteModel>>clientResult.data;
+  }
+}
+
+
+async ngOnInit(): Promise<void> {
+  /*
+  let result = await this.clienteSrvc.get();
+  console.log('NgOnit',result.data);
+  this.clientes = result.data;
+  */
+}
+
+abrirCadastro(){
+  const modal =  this.modalCtrl.create('CadastroClientePage')
+  modal.present();
+}
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ClientesPage');
-  }
 
-  abrirDetalheClientePage(){
-    this.navCtrl.setRoot('DetalheClientePage');
   }
+  
+
 }

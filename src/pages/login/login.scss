@@ -5,13 +5,19 @@ text-align: left !important;
 .toolbar-title{
     text-align: left !important;
 }
+ion-content{
+    background: url(../../assets//imgs//moveis-planejados.jpg);
+    background-size: cover;
 
-ion-footer{
-    background: map-get($colors,primary) !important;
-    color: white;
-    height: 50px;
-    text-align: center;
 }
+.item{
+    background: transparent;
+}
+.scroll-content{
+    background-color: rgba(79,65,59, 0.6);
+ 
+}
+
 .login{
     padding-top: 200px;
 }
@@ -19,6 +25,8 @@ ion-footer{
     margin-top: 8px;
 }
 ion-label {
-    color: #cccccc;
+    color: white !important;
 }
+
+
 }

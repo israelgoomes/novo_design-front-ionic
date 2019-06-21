@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 288:
+/***/ 290:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsPageModule", function() { return TabsPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheClientePageModule", function() { return DetalheClientePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__tabs__ = __webpack_require__(299);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__ = __webpack_require__(306);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,33 +18,49 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var TabsPageModule = /** @class */ (function () {
-    function TabsPageModule() {
+var DetalheClientePageModule = /** @class */ (function () {
+    function DetalheClientePageModule() {
     }
-    TabsPageModule = __decorate([
+    DetalheClientePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */],
+                __WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__["a" /* DetalheClientePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__tabs__["a" /* TabsPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__["a" /* DetalheClientePage */]),
             ],
         })
-    ], TabsPageModule);
-    return TabsPageModule;
+    ], DetalheClientePageModule);
+    return DetalheClientePageModule;
 }());
 
-//# sourceMappingURL=tabs.module.js.map
+//# sourceMappingURL=detalhe-cliente.module.js.map
 
 /***/ }),
 
-/***/ 299:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clienteModel; });
+var clienteModel = /** @class */ (function () {
+    function clienteModel() {
+    }
+    return clienteModel;
+}());
+
+//# sourceMappingURL=clienteModel.js.map
+
+/***/ }),
+
+/***/ 306:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheClientePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_clienteModel__ = __webpack_require__(300);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -56,30 +72,57 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 /**
- * Generated class for the TabsPage page.
+ * Generated class for the DetalheClientePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var TabsPage = /** @class */ (function () {
-    function TabsPage(navCtrl, navParams) {
+var DetalheClientePage = /** @class */ (function () {
+    function DetalheClientePage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.detalheCliente = [];
+        var client = this.navParams.get('cliente');
+        if (client) {
+            this.cliente = client;
+        }
+        else {
+            this.cliente = new __WEBPACK_IMPORTED_MODULE_2__app_models_clienteModel__["a" /* clienteModel */]();
+        }
     }
-    TabsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad TabsPage');
+    DetalheClientePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad DetalheClientePage');
+        this.cliente = this.navParams.get('cliente');
+        console.log('Testando cliente', this.cliente);
     };
-    TabsPage = __decorate([
+    DetalheClientePage.prototype.addOrEdit = function () {
+        this.navCtrl.push('AdmClientePage', { _cliente: this.cliente });
+        console.log('Enviando o cliente', this.cliente);
+    };
+    DetalheClientePage.prototype.gerarContrato = function () {
+        this.navCtrl.push('ContratoPage', { _cliente: this.cliente });
+    };
+    DetalheClientePage.prototype.ngOnInit = function () {
+        //let clientes = this.navParams.get('clientes');
+        //console.log('Teste de clientes para Detalhe Clientes',clientes)
+        //this.detalheCliente = clientes;
+    };
+    DetalheClientePage.prototype.back = function () {
+        this.navCtrl.pop();
+        //ou this.viewCtrl.dismiss();  para isso é necessário inportar o viewcontroller
+    };
+    DetalheClientePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\tabs\tabs.html"*/'\n<ion-tabs>\n\n<ion-tab tabIcon="people" tabTitle="Clientes" [root]="\'ClientesPage\'" ></ion-tab>\n<ion-tab tabIcon="bookmarks" tabTitle="Projetos" [root]="\'ProjetosPage\'" ></ion-tab>\n<ion-tab tabIcon="images" tabTitle="Fotos" [root]="\'FotosPage\'" ></ion-tab>\n\n</ion-tabs> \n\n<ion-footer>\n  \n</ion-footer>'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\tabs\tabs.html"*/,
+            selector: 'page-detalhe-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\detalhe-cliente\detalhe-cliente.html"*/'<!--\n  Generated template for the DetalheClientePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    \n    <ion-title>Detalhe Cliente</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <ion-card-content >\n   <p> Nome: {{cliente.nome}}</p> <br/>\n   <p> Email: {{cliente.email}}</p> <br/>\n   <p> Telefone: {{cliente.tel}}</p> <br/>\n   <p> Rua: {{cliente.endereco}}</p> <br/>\n   <p> Bairro: {{cliente.bairro}}</p> <br/>\n   <p> Cidade: {{cliente.cidade}}</p> <br/>\n   <p> Estado: {{cliente.estado}}</p> <br/>\n\n   <ion-row>\n      <button ion-button block (click)="gerarContrato(cliente)">Gerar Contrato</button>\n      <button ion-button block (click)="addOrEdit(cliente)">Editar</button>\n\n   </ion-row>\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\detalhe-cliente\detalhe-cliente.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], TabsPage);
-    return TabsPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
+    ], DetalheClientePage);
+    return DetalheClientePage;
 }());
 
-//# sourceMappingURL=tabs.js.map
+//# sourceMappingURL=detalhe-cliente.js.map
 
 /***/ })
 

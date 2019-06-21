@@ -72,21 +72,25 @@ public get(url: string): Promise<HttpResultModel> {
 }
 
 public post(url: string, model: any): Promise<HttpResultModel> {
-  console.log('Front Http Provider');
+    
   this.spinnerSrvc.show("Salvando informações...");
+  let header = this.createHeader();
   return new Promise(resolve => {
     if (this.networkSrvc.IsOnline) {
-      console.log('Entrou para salvar')
-      this.http.post(url, model).subscribe(_res => {
+      this.http.post(url, model, {headers: header}).subscribe(
+        _res => {
           this.spinnerSrvc.hide();
           resolve({ success: true, data: _res, err: undefined });
-        }, err => {
+          console.log('Salvando')
+
+        },
+        err => {
           this.spinnerSrvc.hide();
           console.log(err);
 
-          //
           
           if (err.status == 400) {
+
             let msg = "";
             err.error.validation.forEach(_err =>{
               msg += `<li>${_err.message}</li>`;
@@ -117,10 +121,11 @@ public post(url: string, model: any): Promise<HttpResultModel> {
 
 public put(url: string, model: any): Promise<HttpResultModel>{
   this.spinnerSrvc.show("Atualizando informações");
+  let header = this.createHeader();
   return new Promise(resolve =>{
     //caso de tudo certo com a conexão
     if(this.networkSrvc.IsOnline){
-      this.http.put(url, model).subscribe(_res =>{
+      this.http.put(url, model, {headers: header}).subscribe(_res =>{
         this.spinnerSrvc.hide();
         resolve({success: true, data: _res, err: undefined});
         //caso de algum problema de carregamento ou salvamento
@@ -149,9 +154,10 @@ public put(url: string, model: any): Promise<HttpResultModel>{
 
 public delete(url: string): Promise<HttpResultModel>{
   this.spinnerSrvc.show('Deletando informações');
+  let header = this.createHeader();
   return new Promise(resolve =>{
     if(this.networkSrvc.IsOnline){
-    this.http.delete(url).subscribe(_res=>{
+    this.http.delete(url, {headers: header}).subscribe(_res=>{
       this.spinnerSrvc.hide();
         resolve({success: true, data: _res, err: undefined});
     }, err =>{

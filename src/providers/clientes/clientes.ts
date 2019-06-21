@@ -20,11 +20,6 @@ url: string = `${configHelper.url}clientes`
     super(`${configHelper.url}clientes`, http);
   }
 
-/*
- async get(): Promise<HttpResultModel>{
-   return await this.http.get(`${this.url}`)
- } */
-
 
 
 }

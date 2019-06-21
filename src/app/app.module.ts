@@ -12,10 +12,19 @@ import { NetworkProvider } from '../providers/network/network';
 import { UsuarioProvider } from '../providers/usuario/usuario';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientesProvider } from '../providers/clientes/clientes';
+import { ProjetosProvider } from '../providers/projetos/projetos';
+import { CameraProvider } from '../providers/camera/camera';
+import { Camera } from '@ionic-native/camera';
+import { Network} from '@ionic-native/network'
+import { File } from '@ionic-native/file';
+import { FileOpener } from '@ionic-native/file-opener';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +44,14 @@ import { ClientesProvider } from '../providers/clientes/clientes';
     HttpProvider,
     NetworkProvider,
     UsuarioProvider,
-    ClientesProvider
+    ClientesProvider,
+    ProjetosProvider,
+    CameraProvider,
+    Camera,
+    Network,
+    File,
+    FileOpener
+ 
   ]
 })
 export class AppModule {}

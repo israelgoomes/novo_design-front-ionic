@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-     <a (click)="back()"> <ion-icon style="color: white;" ios="ios-arrow-back" md="md-arrow-back"></ion-icon> </a>
+    
     <ion-title>Detalhe Cliente</ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,15 +15,20 @@
 
   <ion-card>
     <ion-card-content >
-   <p>   Nome: {{cliente.nome}}</p> <br/>
+   <p> Nome: {{cliente.nome}}</p> <br/>
    <p> Email: {{cliente.email}}</p> <br/>
    <p> Telefone: {{cliente.tel}}</p> <br/>
    <p> Rua: {{cliente.endereco}}</p> <br/>
    <p> Bairro: {{cliente.bairro}}</p> <br/>
    <p> Cidade: {{cliente.cidade}}</p> <br/>
    <p> Estado: {{cliente.estado}}</p> <br/>
+
+   <ion-row>
+      <button ion-button block (click)="gerarContrato(cliente)">Gerar Contrato</button>
+      <button ion-button block (click)="addOrEdit(cliente)">Editar</button>
+
+   </ion-row>
     </ion-card-content>
   </ion-card>
-<button ion-button outline block (click)="addOrEdit(cliente)">Editar</button>
 
 </ion-content>

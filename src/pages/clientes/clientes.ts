@@ -30,8 +30,6 @@ export class ClientesPage implements OnInit{
       this._loadCliente();
   }
 
-clientes: any = []
-
  abrirDetalheClientePage(cliente: clienteModel) {
   const modal =  this.modalCtrl.create('DetalheClientePage', {
     cliente: cliente
@@ -48,19 +46,22 @@ private async _loadCliente(): Promise<void>{
 
 
 async ngOnInit(): Promise<void> {
-  /*
-  let result = await this.clienteSrvc.get();
-  console.log('NgOnit',result.data);
-  this.clientes = result.data;
-  */
+  
 }
 
-abrirCadastro(){
-  const modal =  this.modalCtrl.create('CadastroClientePage')
-  modal.present();
+abrirCadastro(model?: clienteModel){
+  this.navCtrl.push('CadastroClientePage', {cliente: model})
+
+}
+abrirDetalheCliente(model?: clienteModel){
+  this.navCtrl.push('DetalheClientePage', {cliente: model})
+  
 }
   ionViewDidLoad() {
 
+  }
+  abrirPdf(){
+    this.navCtrl.setRoot('ContratoPage')
   }
   
 

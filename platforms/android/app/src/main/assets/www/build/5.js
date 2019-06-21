@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 281:
+/***/ 288:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroClientePageModule", function() { return CadastroClientePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(287);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__ = __webpack_require__(303);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ClientesPageModule = /** @class */ (function () {
-    function ClientesPageModule() {
+var CadastroClientePageModule = /** @class */ (function () {
+    function CadastroClientePageModule() {
     }
-    ClientesPageModule = __decorate([
+    CadastroClientePageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__["a" /* CadastroClientePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__["a" /* CadastroClientePage */]),
             ],
         })
-    ], ClientesPageModule);
-    return ClientesPageModule;
+    ], CadastroClientePageModule);
+    return CadastroClientePageModule;
 }());
 
-//# sourceMappingURL=clientes.module.js.map
+//# sourceMappingURL=cadastro-cliente.module.js.map
 
 /***/ }),
 
-/***/ 287:
+/***/ 300:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(203);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clienteModel; });
+var clienteModel = /** @class */ (function () {
+    function clienteModel() {
+    }
+    return clienteModel;
+}());
+
+//# sourceMappingURL=clienteModel.js.map
+
+/***/ }),
+
+/***/ 303:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroClientePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__ = __webpack_require__(300);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -94,54 +111,78 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 /**
- * Generated class for the ClientesPage page.
+ * Generated class for the CadastroClientePage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ClientesPage = /** @class */ (function () {
-    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc) {
+var CadastroClientePage = /** @class */ (function () {
+    function CadastroClientePage(navCtrl, navParams, clienteSrvc, alertSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
         this.clienteSrvc = clienteSrvc;
-        this.clientes = [];
+        this.alertSrvc = alertSrvc;
+        var _client = this.navParams.get('_cliente');
+        if (_client) {
+            this.cliente = _client;
+        }
+        else {
+            this.cliente = new __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__["a" /* clienteModel */]();
+        }
     }
-    ClientesPage.prototype.abrirDetalheClientePage = function () {
-        var modal = this.modalCtrl.create('DetalheClientePage');
-        return modal.present();
-    };
-    ClientesPage.prototype.ngOnInit = function () {
+    CadastroClientePage.prototype.salvar = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var sucesso, erro, cadastroResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.clienteSrvc.get()];
+                    case 0:
+                        sucesso = false;
+                        if (!!this.cliente._id) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.clienteSrvc.post(this.cliente)];
                     case 1:
-                        result = _a.sent();
-                        console.log('NgOnit', result.data);
-                        this.clientes = result.data;
+                        cadastroResult = _a.sent();
+                        sucesso = cadastroResult.success;
+                        console.log('Sem id');
+                        _a.label = 2;
+                    case 2:
+                        /*
+                        else {
+                          console.log('com id')
+                            //passando o id e o modelo.
+                            let updateResult= await this.clienteSrvc.put(this.cliente._id, this.cliente)
+                            sucesso = updateResult.success;
+                        }*/
+                        if (sucesso) {
+                            this.alertSrvc.toast('Cliente salva com sucesso', 'bottom');
+                            this.navCtrl.setRoot('ClientesPage');
+                        }
                         return [2 /*return*/];
                 }
             });
         });
     };
-    ClientesPage.prototype.ionViewDidLoad = function () {
+    CadastroClientePage.prototype.back = function () {
+        this.navCtrl.pop();
+        //ou this.viewCtrl.dismiss();  para isso é necessário inportar o viewcontroller
     };
-    ClientesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>clientes</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n<ion-item>\n  <ion-label floating>Procurar</ion-label>\n  <ion-input type="text" class="search"> \n \n      <ion-icon name="search"></ion-icon>\n\n  </ion-input>\n</ion-item>\n\n\n<a (click)="abrirDetalheClientePage()">\n<ion-card *ngFor="let c of clientes">\n  <ion-card-content >\n    Nome: {{c.nome}} <br/>\n    Email: {{c.email}}\n    Telefone: {{c.tel}}\n  </ion-card-content>\n</ion-card>\n</a>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
+    CadastroClientePage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad CadastroClientePage');
+    };
+    CadastroClientePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
+            selector: 'page-cadastro-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/'<!--\n  Generated template for the CadastroClientePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n     \n    <ion-title >&nbsp;&nbsp;&nbsp; Novo Cliente</ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n      <ion-col>\n      \n      <ion-row>\n        <ion-item>\n          <ion-label floating>Nome</ion-label>\n          <ion-input [(ngModel)]="cliente.nome"  type="text"></ion-input>\n        </ion-item>\n      </ion-row>\n      \n      <ion-row>\n          <ion-item>\n            <ion-label floating>Telefone</ion-label>\n            <ion-input type="text" [(ngModel)]="cliente.tel"></ion-input>\n          </ion-item>\n        </ion-row>\n\n        <ion-row>\n            <ion-item>\n              <ion-label floating>Email</ion-label>\n              <ion-input type="text" [(ngModel)]="cliente.email"></ion-input>\n            </ion-item>\n          </ion-row>\n          \n          <ion-row>\n              <ion-item>\n                <ion-label floating>Cep</ion-label>\n                <ion-input type="text" [(ngModel)]="cliente.cep"></ion-input>\n              </ion-item>\n            </ion-row>\n            \n            <ion-row>\n                <ion-item>\n                  <ion-label floating>Rua</ion-label>\n                  <ion-input type="text" [(ngModel)]="cliente.endereco"></ion-input>\n                </ion-item>\n              </ion-row>\n\n              <ion-row>\n                  <ion-item>\n                    <ion-label floating>Bairro</ion-label>\n                    <ion-input type="text" [(ngModel)]="cliente.bairro"></ion-input>\n                  </ion-item>\n                </ion-row>\n              \n                <ion-row>\n                    <ion-item>\n                      <ion-label floating>Cidade</ion-label>\n                      <ion-input type="text" [(ngModel)]="cliente.cidade"></ion-input>\n                    </ion-item>\n                  </ion-row>\n      \n                  <ion-row>\n                      <ion-item>\n                        <ion-label floating>Estado</ion-label>\n                        <ion-input type="text" [(ngModel)]="cliente.estado"></ion-input>\n                      </ion-item>\n                    </ion-row>\n      \n      </ion-col>\n        </ion-row>\n      </ion-grid>\n\n      <ion-grid>\n        <ion-row>\n          <button ion-button outline block (click)="salvar()">Cadastrar</button>\n        </ion-row>\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]])
-    ], ClientesPage);
-    return ClientesPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */],
+            __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__["a" /* AlertProvider */]])
+    ], CadastroClientePage);
+    return CadastroClientePage;
 }());
 
-//# sourceMappingURL=clientes.js.map
+//# sourceMappingURL=cadastro-cliente.js.map
 
 /***/ })
 

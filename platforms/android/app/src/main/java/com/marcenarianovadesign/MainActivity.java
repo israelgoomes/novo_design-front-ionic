@@ -17,7 +17,7 @@
        under the License.
  */
 
-package Site da empresa;
+package com.marcenarianovadesign;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

@@ -16,9 +16,15 @@ import { clienteModel } from '../../../app/models/clienteModel';
 })
 export class DetalheClientePage implements OnInit{
 
-cliente: clienteModel =  new clienteModel();
+cliente: clienteModel;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    let client = this.navParams.get('cliente');
+    if(client){
+        this.cliente = <clienteModel>client
+    }else {
+      this.cliente = new clienteModel();
+    }
 
   }
 
@@ -31,10 +37,13 @@ cliente: clienteModel =  new clienteModel();
 
 addOrEdit(): void {
     this.navCtrl.push('AdmClientePage', { _cliente: this.cliente });
+    console.log('Enviando o cliente', this.cliente)
 
 }
 
-
+gerarContrato(){
+this.navCtrl.push('ContratoPage', { _cliente: this.cliente});
+}
 
  detalheCliente: any = []; 
   ngOnInit(): void {

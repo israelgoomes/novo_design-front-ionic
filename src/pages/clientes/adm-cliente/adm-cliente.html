@@ -5,8 +5,8 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-navbar>
-    <ion-title>adm-cliente</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Editar Cliente</ion-title>
   </ion-navbar>
 </ion-header>
 <ion-grid>
@@ -18,64 +18,70 @@
     <ion-grid>
         <ion-row>
       <ion-col>
-      
-      <ion-row>
+           <ion-row>
         <ion-item>
           <ion-label floating>Nome</ion-label>
-          <ion-input [(ngModel)]="cliente.nome"  type=""></ion-input>
+          <ion-input [(ngModel)]="cliente.nome"  type="text"></ion-input>
         </ion-item>
       </ion-row>
       
       <ion-row>
           <ion-item>
             <ion-label floating>Telefone</ion-label>
-            <ion-input type="" [(ngModel)]="cliente.tel"></ion-input>
+            <ion-input type="text" [(ngModel)]="cliente.tel"></ion-input>
           </ion-item>
         </ion-row>
 
         <ion-row>
             <ion-item>
               <ion-label floating>Email</ion-label>
-              <ion-input type="" [(ngModel)]="cliente.email"></ion-input>
+              <ion-input type="text" [(ngModel)]="cliente.email"></ion-input>
             </ion-item>
           </ion-row>
           
           <ion-row>
               <ion-item>
                 <ion-label floating>Cep</ion-label>
-                <ion-input type="" [(ngModel)]="cliente.cep"></ion-input>
+                <ion-input type="text" [(ngModel)]="cliente.cep"></ion-input>
               </ion-item>
             </ion-row>
             
             <ion-row>
                 <ion-item>
                   <ion-label floating>Rua</ion-label>
-                  <ion-input type="" [(ngModel)]="cliente.rua"></ion-input>
+                  <ion-input type="text" [(ngModel)]="cliente.endereco"></ion-input>
                 </ion-item>
               </ion-row>
 
               <ion-row>
                   <ion-item>
                     <ion-label floating>Bairro</ion-label>
-                    <ion-input type="" [(ngModel)]="cliente.bairro"></ion-input>
+                    <ion-input type="text" [(ngModel)]="cliente.bairro"></ion-input>
                   </ion-item>
                 </ion-row>
               
                 <ion-row>
                     <ion-item>
                       <ion-label floating>Cidade</ion-label>
-                      <ion-input type="" [(ngModel)]="cliente.cidade"></ion-input>
+                      <ion-input type="text" [(ngModel)]="cliente.cidade"></ion-input>
                     </ion-item>
                   </ion-row>
       
                   <ion-row>
                       <ion-item>
                         <ion-label floating>Estado</ion-label>
-                        <ion-input type="" [(ngModel)]="cliente.estado"></ion-input>
+                        <ion-input type="text" [(ngModel)]="cliente.estado"></ion-input>
                       </ion-item>
                     </ion-row>
       
+
       </ion-col>
+        </ion-row>
+      </ion-grid>
+
+      <ion-grid>
+        <ion-row>
+          <button ion-button (click)="alterar()"></button>   
         </ion-row>
       </ion-grid>
 

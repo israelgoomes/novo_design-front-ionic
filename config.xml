@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="Site da empresa" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>NoFood</name>
+<widget id="com.marcenarianovadesign" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>NovaDesign</name>
     <description>Aplicativo para estudo de curso</description>
     <author email="rael_goomes@hotmail.com" href="http://ionicframework.com/">Israel gomes da lapa</author>
     <content src="index.html" />

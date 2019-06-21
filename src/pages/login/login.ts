@@ -43,6 +43,8 @@ export class LoginPage {
     this.navCtrl.setRoot('TabsPage')
   }
 
- 
+  abrirPdf(){
+    this.navCtrl.setRoot('ContratoPage')
+  }
 
 }

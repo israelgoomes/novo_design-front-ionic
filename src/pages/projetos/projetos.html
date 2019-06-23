@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Projetos </ion-title>
+    <ion-title>Projetos <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -31,7 +31,7 @@
 
   <ion-card *ngFor="let projeto of listaProjetos" (click)="abrirDetalheProjeto(projeto)" tappable>
     <ion-card-content >
-      Projeto: {{projeto.tituloProjeto}} <p class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></p> <br/>
+      Projeto: {{projeto.tituloProjeto}} <br/>
       Cliente: {{projeto.nomeCliente}}<br/>
       Preço: {{projeto.preco}}
     </ion-card-content>

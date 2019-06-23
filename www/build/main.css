@@ -25704,6 +25704,79 @@ page-clientes ion-searchbar {
   background-color: transparent !important;
 }
 
+page-clientes ion-icon {
+  font-size: 20px;
+  float: right;
+}
+
+page-adm-cliente .button-block {
+  width: 48%;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  margin-right: 05px;
+}
+
+page-adm-cliente .button-md {
+  border: none;
+}
+
+page-adm-cliente .ion-md-checkmark-circle:before {
+  color: green;
+  font-size: 50px;
+  float: right;
+}
+
+page-adm-cliente .ion-md-close-circle:before {
+  color: red;
+  font-size: 50px;
+  padding-left: 10px;
+}
+
+page-adm-cliente .right {
+  float: right;
+}
+
+page-adm-cliente p {
+  float: right;
+  padding-right: 10px;
+}
+
+page-cadastro-cliente .button-block {
+  width: 70%;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  margin-left: 15%;
+}
+
+page-detalhe-cliente .btn-option {
+  width: 45%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+page-detalhe-cliente .button-block {
+  width: 48%;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  margin-right: 05px;
+}
+
+page-detalhe-cliente .ion-ios-trash:before {
+  font-size: 40px;
+  color: #4f413b;
+}
+
+page-detalhe-cliente span {
+  float: right;
+}
+
+page-detalhe-cliente .btn-right {
+  float: right !important;
+}
+
 page-login ion-title {
   text-align: left !important;
 }
@@ -25752,7 +25825,26 @@ page-projetos .ion-ios-trash:before {
   color: #4f413b;
 }
 
-page-projetos .lixo {
+page-projetos ion-icon {
+  font-size: 20px;
+  float: right;
+}
+
+page-detalhe-projeto .button-block {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  border-radius: 8px;
+  margin-right: 05px;
+}
+
+page-detalhe-projeto .ion-ios-trash:before {
+  font-size: 40px;
+  color: #4f413b;
+  float: right;
+}
+
+page-detalhe-projeto span {
   float: right;
 }
 

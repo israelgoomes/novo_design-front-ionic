@@ -63,6 +63,12 @@ abrirDetalheCliente(model?: clienteModel){
   abrirPdf(){
     this.navCtrl.setRoot('ContratoPage')
   }
+  logout(){
+    let sair  = localStorage.getItem('novadesign.user')
+    sair = '';
+    this.navCtrl.setRoot('LoginPage')
+  }
+
   
 
 }

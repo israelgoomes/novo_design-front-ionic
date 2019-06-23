@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>clientes</ion-title>
+    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -30,11 +30,10 @@
 <ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>
   <ion-card-content >
     Nome: {{cliente.nome}} <br/>
-    Email: {{cliente.email}}
+    Email: {{cliente.email}}<br/>
     Telefone: {{cliente.tel}}
   </ion-card-content>
 </ion-card>
 
-<button ion-button (click)="abrirPdf()">Abrir PDF</button>
 
 </ion-content>

@@ -1,6 +1,6 @@
 webpackJsonp([2],{
 
-/***/ 295:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheProjetoPageModule", function() { return DetalheProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__ = __webpack_require__(310);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -64,7 +64,7 @@ var projetoModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var projetoModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -174,7 +174,7 @@ var DetalheProjetoPage = /** @class */ (function () {
     };
     DetalheProjetoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-detalhe-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n  Generated template for the DetalheProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Detalhes do projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <button ion-button block (click)="addOrEdit(cliente)">Editar</button>\n\n  <ion-card>\n    <ion-card-content >\n   <p> Projeto: {{projeto.tituloProjeto}}</p> <br/>\n   <p> Descrição: {{projeto.descricaoProjeto}}</p> <br/>\n   <p> Valor: {{projeto.preco}}</p> <br/>\n   <p> Cliente: {{projeto.nomeCliente}}</p> <br/>\n   <p> Email: {{projeto.email}}</p> <br/>\n   <p> Telefone: {{projeto.telefone}}</p> <br/>\n   <p> Endereço: {{projeto.rua}}</p> <br/>\n   <p> Cidade: {{projeto.cidade}}</p> <br/>\n   <p> Bairro: {{projeto.bairro}}</p> <br/>\n   <p> Cep: {{projeto.cep}}</p> <br/>\n   <p>   <ion-item *ngIf="projeto.foto">\n      <img [src]="projeto.foto">\n    </ion-item></p> <br/>\n\n\n\n   <ion-row>\n    <button ion-button block (click)="addOrEdit(cliente)">Editar</button>\n    <button ion-button block (click)="deletar()">Delete</button>\n\n   </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/,
+            selector: 'page-detalhe-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n  Generated template for the DetalheProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Detalhes do projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <ion-card-content >\n        <span class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></span>\n   <p> Projeto: {{projeto.tituloProjeto}}</p> <br/>\n   <p> Descrição: {{projeto.descricaoProjeto}}</p> <br/>\n   <p> Valor: {{projeto.preco}}</p> <br/>\n   <p> Cliente: {{projeto.nomeCliente}}</p> <br/>\n   <p> Email: {{projeto.email}}</p> <br/>\n   <p> Telefone: {{projeto.telefone}}</p> <br/>\n   <p> Endereço: {{projeto.rua}}</p> <br/>\n   <p> Cidade: {{projeto.cidade}}</p> <br/>\n   <p> Bairro: {{projeto.bairro}}</p> <br/>\n   <p> Cep: {{projeto.cep}}</p> <br/>\n   <p>   <ion-item *ngIf="projeto.foto">\n      <img [src]="projeto.foto">\n    </ion-item></p> <br/>\n\n\n\n   <ion-row>\n    <button ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>\n\n   </ion-row>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],

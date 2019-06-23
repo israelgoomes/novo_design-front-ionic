@@ -18,6 +18,7 @@ import { AlertProvider } from '../../../providers/alert/alert';
 })
 export class DetalheProjetoPage {
   projeto: projetoModel;
+  foto = []
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
@@ -51,6 +52,7 @@ export class DetalheProjetoPage {
 }
 
   ionViewDidLoad() {
+  this.foto = this.projeto.foto;
     this.projeto = <projetoModel>this.navParams.get('_projeto');
 
     console.log('ionViewDidLoad DetalheProjetoPage');

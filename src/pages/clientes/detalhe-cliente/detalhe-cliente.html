@@ -15,6 +15,8 @@
 
   <ion-card>
     <ion-card-content >
+        <span class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></span>
+
    <p> Nome: {{cliente.nome}}</p> <br/>
    <p> Email: {{cliente.email}}</p> <br/>
    <p> Telefone: {{cliente.tel}}</p> <br/>
@@ -24,10 +26,11 @@
    <p> Estado: {{cliente.estado}}</p> <br/>
 
    <ion-row>
-      <button ion-button block (click)="gerarContrato(cliente)">Gerar Contrato</button>
-      <button ion-button block (click)="addOrEdit(cliente)">Editar</button>
+      <button ion-button block (click)="gerarContrato(cliente)" no-block outline><ion-icon name="document"></ion-icon>&nbsp;Contrato</button>
+      <button class="btn-right" ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>
 
    </ion-row>
+
     </ion-card-content>
   </ion-card>
 

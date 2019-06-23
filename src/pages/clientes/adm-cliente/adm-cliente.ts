@@ -47,6 +47,10 @@ this.navCtrl.setRoot('ClientesPage')
 }
   }
 
+  cancelar(){
+    this.navCtrl.pop();
+  }
+
   ionViewDidLoad() {
     this.cliente = this.navParams.get('_cliente')
 

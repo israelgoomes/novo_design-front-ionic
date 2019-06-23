@@ -92,10 +92,12 @@ public post(url: string, model: any): Promise<HttpResultModel> {
           if (err.status == 400) {
 
             let msg = "";
+            console.log('O erro provavelmente é aqui')
             err.error.validation.forEach(_err =>{
+
               msg += `<li>${_err.message}</li>`;
             });
-            this.alertSrvc.alert(err.error.message, msg);
+            this.alertSrvc.alert(err.error.message, msg); 
 
           } 
           else if(err.status == 404){

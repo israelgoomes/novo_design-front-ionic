@@ -58,6 +58,8 @@ getPictureOptions(): void {
         //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
         this.cameraSrvc.takePicture((photo) =>{
           this.foto.push(photo);
+          this.projeto.foto = this.foto;
+
         })
 
       }, 

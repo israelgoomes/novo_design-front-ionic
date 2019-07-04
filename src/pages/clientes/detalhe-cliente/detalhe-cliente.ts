@@ -47,6 +47,10 @@ addOrEdit(): void {
     console.log('Enviando o cliente', this.cliente)
 
 }
+cadastrarProjeto(){
+  this.navCtrl.push('CadastroProjetoPage', {_projeto: this.cliente})
+}
+
 async deletar(): Promise<void>{
   alert('Deseja deletar esse projeto ?')
   let sucesso = false;
@@ -65,14 +69,9 @@ this.navCtrl.push('ContratoPage', { _cliente: this.cliente});
   ngOnInit(): void {
   
 
-    //let clientes = this.navParams.get('clientes');
-    //console.log('Teste de clientes para Detalhe Clientes',clientes)
-    //this.detalheCliente = clientes;
-
   }
 
   back(){
     this.navCtrl.pop();
-    //ou this.viewCtrl.dismiss();  para isso é necessário inportar o viewcontroller
   }
 }

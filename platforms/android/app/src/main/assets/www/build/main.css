@@ -25764,6 +25764,10 @@ page-detalhe-cliente .button-block {
   margin-right: 05px;
 }
 
+page-detalhe-cliente button#btn-cadastro {
+  width: 100% !important;
+}
+
 page-detalhe-cliente .ion-ios-trash:before {
   font-size: 40px;
   color: #4f413b;
@@ -25786,7 +25790,7 @@ page-login .toolbar-title {
 }
 
 page-login ion-content {
-  background: url(../../assets//imgs//moveis-planejados.jpg);
+  background: url(./../../assets/imgs/moveis-planejados.jpg);
   background-size: cover;
 }
 

@@ -18,17 +18,22 @@ import { Camera } from '@ionic-native/camera';
 import { Network} from '@ionic-native/network'
 import { File } from '@ionic-native/file';
 import { FileOpener } from '@ionic-native/file-opener';
-
-
+import { EmailComposer} from '@ionic-native/email-composer';
+//import { BrMaskerIonic3 } from 'brmasker-ionic-3';
+//import { BrMaskerIonicServices3 } from 'brmasker-ionic-3';
+import {BrMaskerModule} from 'brmasker-ionic-3';
 
 @NgModule({
   declarations: [
+    //BrMaskerIonic3,
+    //BrMaskerIonicServices3,
     MyApp,
     
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    BrMaskerModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,6 +43,7 @@ import { FileOpener } from '@ionic-native/file-opener';
   providers: [
     StatusBar,
     SplashScreen,
+    EmailComposer,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SpinnerProvider,
     AlertProvider,
@@ -50,7 +56,9 @@ import { FileOpener } from '@ionic-native/file-opener';
     Camera,
     Network,
     File,
-    FileOpener
+    FileOpener,
+    //BrMaskerIonicServices3
+    
  
   ]
 })

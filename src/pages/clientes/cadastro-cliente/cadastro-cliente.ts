@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
-import { shiftInitState } from '@angular/core/src/view';
 
 /**
  * Generated class for the CadastroClientePage page.
@@ -37,7 +36,6 @@ export class CadastroClientePage {
 
   async salvar(): Promise<void>{
     let sucesso = false;
-    let erro: any;
       if(!this.cliente._id){
     let cadastroResult = await this.clienteSrvc.post(this.cliente);
     sucesso = cadastroResult.success;

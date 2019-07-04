@@ -45,6 +45,11 @@ export class DetalheProjetoPage {
     }
   }
 
+  gerarContrato(){
+    this.navCtrl.push('ContratoPage', { _projeto: this.projeto});
+      console.log(this.projeto)
+  }
+
   addOrEdit(): void {
     this.navCtrl.push('AdmProjetoPage', { _projeto: this.projeto });
     console.log('Enviando o Projeto', this.projeto)

@@ -27,7 +27,7 @@
       <ion-row>
           <ion-item>
             <ion-label floating>Telefone</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.tel"></ion-input>
+            <ion-input type="text" [(ngModel)]="cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}" value="(**) *****-****"></ion-input>
           </ion-item>
         </ion-row>
 

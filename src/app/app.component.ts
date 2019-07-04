@@ -3,7 +3,6 @@ import { Platform, ModalController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuarioProvider } from '../providers/usuario/usuario';
-import { SplashPage } from '../pages/splash/splash';
 @Component({
   templateUrl: 'app.html'
 })

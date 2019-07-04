@@ -1,13 +1,13 @@
 webpackJsonp([3],{
 
-/***/ 297:
+/***/ 296:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroProjetoPageModule", function() { return CadastroProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__ = __webpack_require__(313);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -38,7 +38,7 @@ var CadastroProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 301:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70,10 +70,10 @@ var projetoModel = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(301);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(303);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -143,6 +143,11 @@ var CadastroProjetoPage = /** @class */ (function () {
             this.projeto = new __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__["a" /* projetoModel */]();
         }
     }
+    CadastroProjetoPage.prototype.ngOnInit = function () {
+        if (this.projeto.tituloProjeto == undefined) {
+            console.log('valor do projeto', this.projeto);
+        }
+    };
     CadastroProjetoPage.prototype.salvar = function () {
         return __awaiter(this, void 0, void 0, function () {
             var sucesso, cadastroResult;
@@ -205,7 +210,7 @@ var CadastroProjetoPage = /** @class */ (function () {
     };
     CadastroProjetoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n  Generated template for the CadastroProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Novo Projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n      <ion-col>\n           <ion-row>\n        <ion-item>\n          <ion-label floating>Projeto</ion-label>\n          <ion-input [(ngModel)]="projeto.tituloProjeto" required type="text"></ion-input>\n        </ion-item>\n      </ion-row>\n      \n      <ion-row>\n          <ion-item>\n            <ion-label floating>Descrição</ion-label>\n            <ion-input type="text" [(ngModel)]="projeto.descricaoProjeto"></ion-input>\n          </ion-item>\n        </ion-row>\n    \n        <ion-row>\n            <ion-item>\n              <ion-label floating>Valor</ion-label>\n              <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n            </ion-item>\n          </ion-row>\n          \n          <ion-row>\n              <ion-item>\n                <ion-label floating>Cliente</ion-label>\n                <ion-input type="text" [(ngModel)]="projeto.nomeCliente"></ion-input>\n              </ion-item>\n            </ion-row>\n            \n            <ion-row>\n                <ion-item>\n                  <ion-label floating>Email</ion-label>\n                  <ion-input type="text" [(ngModel)]="projeto.email"></ion-input>\n                </ion-item>\n              </ion-row>\n    \n              <ion-row>\n                  <ion-item>\n                    <ion-label floating>Telefone</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.telefone"></ion-input>\n                  </ion-item>\n                </ion-row>\n              \n                <ion-row>\n                    <ion-item>\n                      <ion-label floating>Endereço</ion-label>\n                      <ion-input type="text" [(ngModel)]="projeto.rua"></ion-input>\n                    </ion-item>\n                  </ion-row>\n      \n                  <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cidade</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cidade"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Bairro</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.bairro"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cep</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cep"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                        <ion-item text-center>\n                            <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon> Selecionar Foto</button>\n                          </ion-item>\n                    </ion-row>\n                    </ion-col>\n                    </ion-row>\n                 \n                    <ion-item *ngFor="let fotos of foto">\n                        <img [src]="fotos">\n                      </ion-item> \n\n                      <ion-item>\n                      \n                      </ion-item>\n    </ion-grid>\n\n      <ion-grid>\n        <ion-row>\n          <button ion-button outline block (click)="salvar()">Cadastrar</button>\n        </ion-row>\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
+            selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n  Generated template for the CadastroProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Novo Projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n      <ion-col>\n           <ion-row>\n        <ion-item>\n          <ion-label floating>Projeto</ion-label>\n          <ion-input [(ngModel)]="projeto.tituloProjeto" required type="text"></ion-input>\n        </ion-item>\n      </ion-row>\n      \n      <ion-row>\n          <ion-item>\n            <ion-label floating>Descrição</ion-label>\n            <ion-textarea type="text" [(ngModel)]="projeto.descricaoProjeto"></ion-textarea>\n          </ion-item>\n        </ion-row>\n    \n        <ion-row>\n            <ion-item>\n              <ion-label floating>Valor</ion-label>\n              <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n            </ion-item>\n          </ion-row>\n          \n          <ion-row>\n              <ion-item>\n                <ion-label floating>Cliente</ion-label>\n                <ion-input type="text" [(ngModel)]="projeto.nomeCliente"></ion-input>\n              </ion-item>\n            </ion-row>\n            \n            <ion-row>\n                <ion-item>\n                  <ion-label floating>Email</ion-label>\n                  <ion-input type="text" [(ngModel)]="projeto.email"></ion-input>\n                </ion-item>\n              </ion-row>\n    \n              <ion-row>\n                  <ion-item>\n                    <ion-label floating>Telefone</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.tel"></ion-input>\n                  </ion-item>\n                </ion-row>\n              \n                <ion-row>\n                    <ion-item>\n                      <ion-label floating>Endereço</ion-label>\n                      <ion-input type="text" [(ngModel)]="projeto.endereco"></ion-input>\n                    </ion-item>\n                  </ion-row>\n      \n                  <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cidade</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cidade"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Bairro</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.bairro"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cep</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cep"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                        <ion-item text-center>\n                            <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon> Selecionar Foto</button>\n                          </ion-item>\n                    </ion-row>\n                    </ion-col>\n                    </ion-row>\n                 \n                    <ion-item *ngFor="let fotos of foto">\n                        <img [src]="fotos">\n                      </ion-item> \n\n                      <ion-item>\n                      \n                      </ion-item>\n    </ion-grid>\n\n      <ion-grid>\n        <ion-row>\n          <button ion-button outline block (click)="salvar()">Cadastrar</button>\n        </ion-row>\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],

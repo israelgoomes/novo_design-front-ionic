@@ -1,14 +1,14 @@
 webpackJsonp([9],{
 
-/***/ 293:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmProjetoPageModule", function() { return AdmProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_projeto__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_projeto__ = __webpack_require__(312);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,7 +22,7 @@ var AdmProjetoPageModule = /** @class */ (function () {
     function AdmProjetoPageModule() {
     }
     AdmProjetoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */],
             ],
@@ -38,13 +38,13 @@ var AdmProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 309:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(207);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__ = __webpack_require__(208);
@@ -165,7 +165,7 @@ var AdmProjetoPage = /** @class */ (function () {
         console.log('Recebendo Projeto', this.projeto._id);
     };
     AdmProjetoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'page-adm-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/'<!--\n  Generated template for the AdmProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Editar Projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-grid>\n    <ion-row>\n  <ion-col>\n       <ion-row>\n    <ion-item>\n      <ion-label floating>Projeto</ion-label>\n      <ion-input [(ngModel)]="projeto.tituloProjeto" required type="text"></ion-input>\n    </ion-item>\n  </ion-row>\n  \n  <ion-row>\n      <ion-item>\n        <ion-label floating>Descrição</ion-label>\n        <ion-input type="text" [(ngModel)]="projeto.descricaoProjeto"></ion-input>\n      </ion-item>\n    </ion-row>\n\n    <ion-row>\n        <ion-item>\n          <ion-label floating>Valor</ion-label>\n          <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n        </ion-item>\n      </ion-row>\n      \n      <ion-row>\n          <ion-item>\n            <ion-label floating>Cliente</ion-label>\n            <ion-input type="text" [(ngModel)]="projeto.nomeCliente"></ion-input>\n          </ion-item>\n        </ion-row>\n        \n        <ion-row>\n            <ion-item>\n              <ion-label floating>Email</ion-label>\n              <ion-input type="text" [(ngModel)]="projeto.email"></ion-input>\n            </ion-item>\n          </ion-row>\n\n          <ion-row>\n              <ion-item>\n                <ion-label floating>Telefone</ion-label>\n                <ion-input type="text" [(ngModel)]="projeto.telefone"></ion-input>\n              </ion-item>\n            </ion-row>\n          \n            <ion-row>\n                <ion-item>\n                  <ion-label floating>Endereço</ion-label>\n                  <ion-input type="text" [(ngModel)]="projeto.rua"></ion-input>\n                </ion-item>\n              </ion-row>\n  \n              <ion-row>\n                  <ion-item>\n                    <ion-label floating>Cidade</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.cidade"></ion-input>\n                  </ion-item>\n                </ion-row>\n\n                <ion-row>\n                  <ion-item>\n                    <ion-label floating>Bairro</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.bairro"></ion-input>\n                  </ion-item>\n                </ion-row>\n\n                <ion-row>\n                  <ion-item>\n                    <ion-label floating>Cep</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.cep"></ion-input>\n                  </ion-item>\n                </ion-row>\n\n                <ion-row>\n                    <ion-item text-center>\n                        <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon> Selecionar Foto</button>\n                      </ion-item>\n                </ion-row>\n                \n                \n\n                <ion-item *ngIf="projeto.foto">\n                    <img [src]="projeto.foto">\n                  </ion-item>\n  \n\n  </ion-col>\n    </ion-row>\n  </ion-grid>\n\n  <ion-grid>\n    <ion-row>\n      <button ion-button (click)="alterar()">Salvar</button>   \n    </ion-row>\n  </ion-grid>\n  \n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],

@@ -1,19 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform, ActionSheetController } from 'ionic-angular';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
 import { AlertProvider } from '../../../providers/alert/alert';
 import { projetoModel } from '../../../app/models/projetoModel';
 import { CameraProvider } from '../../../providers/camera/camera';
-import { ToggleGesture } from 'ionic-angular/umd/components/toggle/toggle-gesture';
-import { ThrowStmt } from '@angular/compiler';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+
 
 @IonicPage()
 @Component({
   selector: 'page-cadastro-projeto',
   templateUrl: 'cadastro-projeto.html',
 })
-export class CadastroProjetoPage {
+export class CadastroProjetoPage implements OnInit{
   foto = []
 projeto: projetoModel;
   constructor(
@@ -33,6 +31,12 @@ projeto: projetoModel;
         this.projeto = new projetoModel();
       }
   }
+
+ngOnInit():void {
+ if(this.projeto.tituloProjeto == undefined){
+    console.log('valor do projeto', this.projeto)
+  }
+}
 
 async salvar(): Promise<void> {
   this.projeto.foto = this.foto;

@@ -1,10 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, ResolvedReflectiveFactory } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { SpinnerProvider } from '../spinner/spinner';
 import { AlertProvider } from '../alert/alert';
 import { NetworkProvider } from '../network/network';
 import { HttpResultModel } from '../../app/models/httpResultModel';
-import { _ParseAST } from '@angular/compiler';
+//import { _ParseAST } from '@angular/compiler';
 import { UsuarioProvider } from '../usuario/usuario';
 
 @Injectable()

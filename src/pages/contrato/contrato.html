@@ -1,9 +1,4 @@
-<!--
-  Generated template for the ContratoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+  
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>Contrato</ion-title>
@@ -11,6 +6,8 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-grid *ngIf="cliente.nome != undefined">
+
   <ion-item>
     <ion-label floating>Nome contrato</ion-label>
     <ion-input [(ngModel)]="contrato.name"></ion-input>
@@ -62,7 +59,63 @@
     <ion-input [(ngModel)]="cliente.tel"></ion-input>
 </ion-item>
 
+</ion-grid>
 
+
+<ion-grid *ngIf="cliente.nome == undefined">
+
+    <ion-item>
+      <ion-label floating>Nome contrato</ion-label>
+      <ion-input [(ngModel)]="contrato.name"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+      <ion-label floating>Descritivo</ion-label>
+      <ion-input [(ngModel)]="projeto.descricaoProjeto"></ion-input>
+    </ion-item>
+  
+    
+  <ion-item>
+      <ion-label floating>Valor Total</ion-label>
+      <ion-input [(ngModel)]="projeto.preco"></ion-input>
+    </ion-item>
+  
+      <ion-item>
+          <ion-label floating>Prazo de entrega</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>
+    </ion-item>
+  
+  <ion-item>
+      <ion-label floating>Contratante</ion-label>
+      <ion-input [(ngModel)]="projeto.nomeCliente"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+        <ion-label floating>Cpf</ion-label>
+        <ion-input [(ngModel)]="contrato.cpf"></ion-input>
+    </ion-item>
+  <ion-item>
+      <ion-label floating>Endereço</ion-label>
+      <ion-input [(ngModel)]="projeto.rua"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Cep</ion-label>
+      <ion-input [(ngModel)]="projeto.cep"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Bairro</ion-label>
+      <ion-input [(ngModel)]="projeto.bairro"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input [(ngModel)]="projeto.cidade"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input [(ngModel)]="cliente.telefone"></ion-input>
+  </ion-item>
+  
+  </ion-grid>
 
 <button ion-button (click)="createPdf()" block>  <ion-icon ios="ios-document" md="md-document" outline> Gerar Contrato</ion-icon>
 </button>

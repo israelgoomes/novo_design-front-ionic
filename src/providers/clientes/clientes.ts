@@ -3,7 +3,6 @@ import { HttpProvider } from '../http/http';
 import { configHelper } from '../../app/helpers/configHelper';
 import { ProviderBase } from '../../app/base/providerBase';
 import { clienteModel } from '../../app/models/clienteModel';
-import { HttpResultModel } from '../../app/models/httpResultModel';
 
 /*
   Generated class for the ClientesProvider provider.

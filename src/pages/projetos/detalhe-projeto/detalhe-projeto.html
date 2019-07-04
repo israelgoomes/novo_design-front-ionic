@@ -15,13 +15,14 @@
   <ion-card>
     <ion-card-content >
         <span class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></span>
+
    <p> Projeto: {{projeto.tituloProjeto}}</p> <br/>
    <p> Descrição: {{projeto.descricaoProjeto}}</p> <br/>
    <p> Valor: {{projeto.preco}}</p> <br/>
    <p> Cliente: {{projeto.nomeCliente}}</p> <br/>
    <p> Email: {{projeto.email}}</p> <br/>
    <p> Telefone: {{projeto.telefone}}</p> <br/>
-   <p> Endereço: {{projeto.rua}}</p> <br/>
+   <p> Endereço: {{projeto.endereco}}</p> <br/>
    <p> Cidade: {{projeto.cidade}}</p> <br/>
    <p> Bairro: {{projeto.bairro}}</p> <br/>
    <p> Cep: {{projeto.cep}}</p> <br/>
@@ -32,6 +33,7 @@
 
 
    <ion-row>
+      <button ion-button block (click)="gerarContrato()" no-block outline><ion-icon name="document"></ion-icon>&nbsp;Contrato</button>
     <button ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>
 
    </ion-row>

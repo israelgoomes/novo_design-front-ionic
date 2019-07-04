@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { ClientesProvider } from '../../providers/clientes/clientes';
 import { clienteModel } from '../../app/models/clienteModel';
+import { configHelper } from '../../app/helpers/configHelper';
 
 /**
  * Generated class for the ClientesPage page.
@@ -64,8 +65,8 @@ abrirDetalheCliente(model?: clienteModel){
     this.navCtrl.setRoot('ContratoPage')
   }
   logout(){
-    let sair  = localStorage.getItem('novadesign.user')
-    sair = '';
+  localStorage.setItem(configHelper.storageKeys.token, null);
+  localStorage.setItem(configHelper.storageKeys.user, null);
     this.navCtrl.setRoot('LoginPage')
   }
 

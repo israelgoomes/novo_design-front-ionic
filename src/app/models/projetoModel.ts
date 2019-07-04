@@ -1,9 +1,9 @@
 export class projetoModel {
         _id: string
         nomeCliente: string;
-        telefone: string;
+        tel: string;
         email: string;
-        rua: string;
+        endereco: string;
         bairro: string;
         cidade: string;
         tituloProjeto: string;

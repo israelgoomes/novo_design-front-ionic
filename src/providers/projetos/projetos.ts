@@ -1,5 +1,4 @@
 import { HttpProvider } from './../http/http';
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { configHelper } from '../../app/helpers/configHelper';
 import { ProviderBase } from '../../app/base/providerBase';

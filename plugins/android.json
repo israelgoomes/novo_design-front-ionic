@@ -7,7 +7,14 @@
     "files": {}
   },
   "installed_plugins": {
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.marcenarianovadesign"
+    },
     "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.marcenarianovadesign"
+    },
+    "cordova-plugin-file-opener2": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.marcenarianovadesign"
     },
     "cordova-plugin-ionic-keyboard": {
@@ -32,10 +39,7 @@
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.marcenarianovadesign"
     },
-    "cordova-plugin-camera": {
-      "PACKAGE_NAME": "com.marcenarianovadesign"
-    },
-    "cordova-plugin-file-opener2": {
+    "cordova-plugin-email-composer": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
       "PACKAGE_NAME": "com.marcenarianovadesign"
     }

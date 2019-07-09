@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 301:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContratoPageModule", function() { return ContratoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contrato__ = __webpack_require__(318);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contrato__ = __webpack_require__(323);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var ContratoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 302:
+/***/ 307:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -53,7 +53,7 @@ var clienteModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 303:
+/***/ 308:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -79,20 +79,20 @@ var projetoModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 318:
+/***/ 323:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContratoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_file__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pdfmake_build_pdfmake__ = __webpack_require__(319);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_file__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pdfmake_build_pdfmake__ = __webpack_require__(324);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_pdfmake_build_pdfmake___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_pdfmake_build_pdfmake__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_pdfmake_build_vfs_fonts__ = __webpack_require__(323);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_pdfmake_build_vfs_fonts__ = __webpack_require__(328);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_pdfmake_build_vfs_fonts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_pdfmake_build_vfs_fonts__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models_clienteModel__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_projetoModel__ = __webpack_require__(303);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_models_clienteModel__ = __webpack_require__(307);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_models_projetoModel__ = __webpack_require__(308);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -400,7 +400,7 @@ var ContratoPage = /** @class */ (function () {
     };
     ContratoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-contrato",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/'  \n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Contrato</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid *ngIf="cliente.nome != undefined">\n\n  <ion-item>\n    <ion-label floating>Nome contrato</ion-label>\n    <ion-input [(ngModel)]="contrato.name"></ion-input>\n</ion-item>\n\n<ion-item>\n    <ion-label floating>Descritivo</ion-label>\n    <ion-input [(ngModel)]="contrato.descritivo"></ion-input>\n  </ion-item>\n\n  \n<ion-item>\n    <ion-label floating>Valor Total</ion-label>\n    <ion-input [(ngModel)]="contrato.vlTotal"></ion-input>\n  </ion-item>\n\n    <ion-item>\n        <ion-label floating>Prazo de entrega</ion-label>\n        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>\n  </ion-item>\n\n<ion-item>\n    <ion-label floating>Contratante</ion-label>\n    <ion-input [(ngModel)]="cliente.nome"></ion-input>\n  </ion-item>\n\n  <ion-item>\n      <ion-label floating>Cpf</ion-label>\n      <ion-input [(ngModel)]="contrato.cpf"></ion-input>\n  </ion-item>\n<ion-item>\n    <ion-label floating>Endereço</ion-label>\n    <ion-input [(ngModel)]="cliente.endereco"></ion-input>\n</ion-item>\n<ion-item>\n    <ion-label floating>Cep</ion-label>\n    <ion-input [(ngModel)]="cliente.cep"></ion-input>\n</ion-item>\n<ion-item>\n    <ion-label floating>Bairro</ion-label>\n    <ion-input [(ngModel)]="cliente.bairro"></ion-input>\n</ion-item>\n<ion-item>\n    <ion-label floating>Cidade</ion-label>\n    <ion-input [(ngModel)]="cliente.cidade"></ion-input>\n</ion-item>\n<ion-item>\n    <ion-label floating>Telefone</ion-label>\n    <ion-input [(ngModel)]="cliente.tel"></ion-input>\n</ion-item>\n\n</ion-grid>\n\n\n<ion-grid *ngIf="cliente.nome == undefined">\n\n    <ion-item>\n      <ion-label floating>Nome contrato</ion-label>\n      <ion-input [(ngModel)]="contrato.name"></ion-input>\n  </ion-item>\n  \n  <ion-item>\n      <ion-label floating>Descritivo</ion-label>\n      <ion-input [(ngModel)]="projeto.descricaoProjeto"></ion-input>\n    </ion-item>\n  \n    \n  <ion-item>\n      <ion-label floating>Valor Total</ion-label>\n      <ion-input [(ngModel)]="projeto.preco"></ion-input>\n    </ion-item>\n  \n      <ion-item>\n          <ion-label floating>Prazo de entrega</ion-label>\n          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>\n    </ion-item>\n  \n  <ion-item>\n      <ion-label floating>Contratante</ion-label>\n      <ion-input [(ngModel)]="projeto.nomeCliente"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n        <ion-label floating>Cpf</ion-label>\n        <ion-input [(ngModel)]="contrato.cpf"></ion-input>\n    </ion-item>\n  <ion-item>\n      <ion-label floating>Endereço</ion-label>\n      <ion-input [(ngModel)]="projeto.rua"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Cep</ion-label>\n      <ion-input [(ngModel)]="projeto.cep"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Bairro</ion-label>\n      <ion-input [(ngModel)]="projeto.bairro"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Cidade</ion-label>\n      <ion-input [(ngModel)]="projeto.cidade"></ion-input>\n  </ion-item>\n  <ion-item>\n      <ion-label floating>Telefone</ion-label>\n      <ion-input [(ngModel)]="cliente.telefone"></ion-input>\n  </ion-item>\n  \n  </ion-grid>\n\n<button ion-button (click)="createPdf()" block>  <ion-icon ios="ios-document" md="md-document" outline> Gerar Contrato</ion-icon>\n</button>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/
+            selector: "page-contrato",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/'  \n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Contrato</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-grid *ngIf="cliente.nome != undefined">\n\n\n\n  <ion-item>\n\n    <ion-label floating>Nome contrato</ion-label>\n\n    <ion-input [(ngModel)]="contrato.name"></ion-input>\n\n</ion-item>\n\n\n\n<ion-item>\n\n    <ion-label floating>Descritivo</ion-label>\n\n    <ion-input [(ngModel)]="contrato.descritivo"></ion-input>\n\n  </ion-item>\n\n\n\n  \n\n<ion-item>\n\n    <ion-label floating>Valor Total</ion-label>\n\n    <ion-input [(ngModel)]="contrato.vlTotal"></ion-input>\n\n  </ion-item>\n\n\n\n    <ion-item>\n\n        <ion-label floating>Prazo de entrega</ion-label>\n\n        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>\n\n  </ion-item>\n\n\n\n<ion-item>\n\n    <ion-label floating>Contratante</ion-label>\n\n    <ion-input [(ngModel)]="cliente.nome"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n      <ion-label floating>Cpf</ion-label>\n\n      <ion-input [(ngModel)]="contrato.cpf"></ion-input>\n\n  </ion-item>\n\n<ion-item>\n\n    <ion-label floating>Endereço</ion-label>\n\n    <ion-input [(ngModel)]="cliente.endereco"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Cep</ion-label>\n\n    <ion-input [(ngModel)]="cliente.cep"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Bairro</ion-label>\n\n    <ion-input [(ngModel)]="cliente.bairro"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Cidade</ion-label>\n\n    <ion-input [(ngModel)]="cliente.cidade"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Telefone</ion-label>\n\n    <ion-input [(ngModel)]="cliente.tel"></ion-input>\n\n</ion-item>\n\n\n\n</ion-grid>\n\n\n\n\n\n<ion-grid *ngIf="cliente.nome == undefined">\n\n\n\n    <ion-item>\n\n      <ion-label floating>Nome contrato</ion-label>\n\n      <ion-input [(ngModel)]="contrato.name"></ion-input>\n\n  </ion-item>\n\n  \n\n  <ion-item>\n\n      <ion-label floating>Descritivo</ion-label>\n\n      <ion-input [(ngModel)]="projeto.descricaoProjeto"></ion-input>\n\n    </ion-item>\n\n  \n\n    \n\n  <ion-item>\n\n      <ion-label floating>Valor Total</ion-label>\n\n      <ion-input [(ngModel)]="projeto.preco"></ion-input>\n\n    </ion-item>\n\n  \n\n      <ion-item>\n\n          <ion-label floating>Prazo de entrega</ion-label>\n\n          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>\n\n    </ion-item>\n\n  \n\n  <ion-item>\n\n      <ion-label floating>Contratante</ion-label>\n\n      <ion-input [(ngModel)]="projeto.nomeCliente"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n        <ion-label floating>Cpf</ion-label>\n\n        <ion-input [(ngModel)]="contrato.cpf"></ion-input>\n\n    </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Endereço</ion-label>\n\n      <ion-input [(ngModel)]="projeto.rua"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Cep</ion-label>\n\n      <ion-input [(ngModel)]="projeto.cep"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Bairro</ion-label>\n\n      <ion-input [(ngModel)]="projeto.bairro"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Cidade</ion-label>\n\n      <ion-input [(ngModel)]="projeto.cidade"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [(ngModel)]="cliente.telefone"></ion-input>\n\n  </ion-item>\n\n  \n\n  </ion-grid>\n\n\n\n<button ion-button (click)="createPdf()" block>  <ion-icon ios="ios-document" md="md-document" outline> Gerar Contrato</ion-icon>\n\n</button>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
@@ -415,7 +415,7 @@ var ContratoPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 319:
+/***/ 324:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(setImmediate) {/*! pdfmake v0.1.57, @license MIT, @link http://pdfmake.org */
@@ -63138,11 +63138,11 @@ module.exports = {
 /******/ ]);
 });
 //# sourceMappingURL=pdfmake.js.map
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(320).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(325).setImmediate))
 
 /***/ }),
 
-/***/ 320:
+/***/ 325:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -63198,7 +63198,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(321);
+__webpack_require__(326);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -63213,7 +63213,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 /***/ }),
 
-/***/ 321:
+/***/ 326:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -63403,11 +63403,11 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(105), __webpack_require__(322)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(105), __webpack_require__(327)))
 
 /***/ }),
 
-/***/ 322:
+/***/ 327:
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -63598,7 +63598,7 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ 323:
+/***/ 328:
 /***/ (function(module, exports) {
 
 this.pdfMake = this.pdfMake || {}; this.pdfMake.vfs = {

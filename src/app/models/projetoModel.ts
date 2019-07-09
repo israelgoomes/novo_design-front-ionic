@@ -1,17 +1,17 @@
 export class projetoModel {
         _id: string
-        nomeCliente: string;
-        tel: string;
-        email: string;
-        endereco: string;
-        bairro: string;
-        cidade: string;
+       // nomeCliente: string;
+      //  tel: string;
+       // email: string;
+      //  endereco: string;
+     //   bairro: string;
+      //  cidade: string;
         tituloProjeto: string;
         descricaoProjeto: string;
-        cep: string;
+      //  cep: string;
         preco: string;
         foto: Array<ImageData>;
-        foto2: string;
+        cliente: any;
 }
 
 /* nomeCliente: {trim: true, required: true, type: String, index: true},

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>CLientes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-col col-10>
+    <ion-searchbar [(ngModel)]="args"></ion-searchbar>
+    </ion-col>
+ 
+<ion-card *ngFor="let lista of cliente | search: args" (click)="saveClient(lista)"> 
+  <ion-card-header>
+    
+  </ion-card-header>
+  
+  <ion-card-content>
+    <p>{{lista.nome}}</p>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>

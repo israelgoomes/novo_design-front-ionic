@@ -13,8 +13,10 @@
 
 <ion-content padding>
   
-    <ion-grid>
-        <ion-row>
+    
+<ion-card>
+  <ion-card-content>
+    
       <ion-col>
       
       <ion-row>
@@ -27,7 +29,7 @@
       <ion-row>
           <ion-item>
             <ion-label floating>Telefone</ion-label>
-            <ion-input type="text" [(ngModel)]="cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}" value="(**) *****-****"></ion-input>
+            <ion-input type="text" [(ngModel)]="cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}"></ion-input>
           </ion-item>
         </ion-row>
 
@@ -41,7 +43,7 @@
           <ion-row>
               <ion-item>
                 <ion-label floating>Cep</ion-label>
-                <ion-input type="text" [(ngModel)]="cliente.cep"></ion-input>
+                <ion-input type="text" [(ngModel)]="cliente.cep" [brmasker]="{mask:'00000-120'}"></ion-input>
               </ion-item>
             </ion-row>
             
@@ -74,14 +76,27 @@
                     </ion-row>
       
       </ion-col>
-        </ion-row>
-      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+    
 
-      <ion-grid>
-        <ion-row>
-          <button ion-button outline block (click)="salvar()">  <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>&nbsp; Cadastrar
+
+    <!-- <ion-card>
+      <ion-card-content style="padding-top: 0px; padding-bottom: 0px;"> 
+        
+        <button ion-button outline block (click)="salvar()">  <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>&nbsp; Cadastrar
           </button>
-        </ion-row>
-      </ion-grid>
+        </ion-card-content>
+      </ion-card> -->
 
+      <ion-card>
+          <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">
+            <ion-item (click)="salvar()">
+      <label>Cadastrar cliente</label>        <ion-note item-end>
+          <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon> </ion-note>
+              <br/>
+            </ion-item>
+          </ion-card-content>
+        </ion-card>
+        
     </ion-content>

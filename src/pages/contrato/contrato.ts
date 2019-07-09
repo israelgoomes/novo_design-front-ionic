@@ -11,6 +11,8 @@ import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
 import { clienteModel } from "../../app/models/clienteModel";
 import { projetoModel } from '../../app/models/projetoModel';
+import * as moment from 'moment';
+
 
 @IonicPage()
 @Component({
@@ -22,7 +24,7 @@ export class ContratoPage implements OnInit{
     name: "",
     descritivo: "",
     vlTotal: "",
-    prEntrega: new Date()
+    prEntrega: ""
   };
   cliente: clienteModel;
   projeto: projetoModel;
@@ -51,7 +53,9 @@ export class ContratoPage implements OnInit{
   }
 
   ngOnInit(): void {
- 
+    this.contrato.prEntrega = moment(this.contrato.prEntrega).format("Day Month Year");
+
+    console.log(this.contrato.prEntrega)
 
     if(this.cliente.nome != undefined){
         this.values = [
@@ -66,21 +70,24 @@ export class ContratoPage implements OnInit{
         ]
     } else {
       this.values = [{
-        nome: this.projeto.nomeCliente,
-        cep: this.projeto.cep,
-        endereco: this.projeto.endereco,
-        bairro: this.projeto.bairro,
-        cidade: this.projeto.cidade,
+        nome: this.projeto.cliente.nome,
+        cep: this.projeto.cliente.cep,
+        endereco: this.projeto.cliente.endereco,
+        bairro: this.projeto.cliente.bairro,
+        cidade: this.projeto.cliente.cidade,
         descritivo: this.projeto.descricaoProjeto,
         vlTotal: this.projeto.preco,
         projeto: this.projeto.tituloProjeto,
-        tel: this.projeto.tel}
+        tel: this.projeto.cliente.tel
+      }
 
       ]
     }
-    console.log("Valores do novo array",this.values["0"].cep)
+    console.log("Valores do novo array",this.values)
   }
   saveToDevice(data: any, savefile: any) {
+    this.contrato.prEntrega = moment(this.contrato.prEntrega).format("DD/MM/YYYY");
+
     let self = this;
     self.file.writeFile(self.file.externalDataDirectory, savefile, data, {
       replace: false
@@ -96,6 +103,7 @@ export class ContratoPage implements OnInit{
     console.log("Cliente", this.cliente.cep);
     console.log("Usuário");
     console.log("ionViewDidLoad ContratoPage");
+  
   }
 
   teste() {
@@ -103,6 +111,7 @@ export class ContratoPage implements OnInit{
   }
 
   createPdf() {
+    this.contrato.prEntrega = moment(this.contrato.prEntrega).format("DD/MM/YYYY");
     if(this.cliente.nome != undefined){
 this.values["0"].descritivo = this.contrato.descritivo
 this.values["0"].vlTotal = this.contrato.vlTotal
@@ -161,17 +170,17 @@ this.values["0"].vlTotal = this.contrato.vlTotal
           margin: [10, 10, 0, 0]
         },
         {
-          text: `Bairro: ${this.values["0"].cidade}`.toUpperCase(),
+          text: `Bairro: ${this.values["0"].bairro}`.toUpperCase(),
           style: "story",
           margin: [10, 10, 0, 0]
         },
         {
-          text: `Cidade: ${this.values["0"].tel}`.toUpperCase(),
+          text: `Cidade: ${this.values["0"].cidade}`.toUpperCase(),
           style: "story",
           margin: [10, 10, 0, 0]
         },
         {
-          text: `Telefone: ${this.values["0"].endereco}`.toUpperCase(),
+          text: `Telefone: ${this.values["0"].tel}`.toUpperCase(),
           style: "story",
           margin: [10, 10, 0, 0]
         },

@@ -1,3 +1,13 @@
 page-cadastro-projeto {
-
+    .ion-ios-arrow-dropright-circle:before{
+        font-size: 35px;
+        color: #4f413b;
+    }
+    ion-icon{
+        font-size: 35px;
+        color: #4f413b;
+    }
+    ion-input, ion-textarea{
+        border-bottom: 1px solid #cecece;
+    }
 }

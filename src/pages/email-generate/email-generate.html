@@ -1,29 +1,36 @@
-
 <ion-header>
-  <ion-navbar>
-    <ion-title>email-generate</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>Gerador de Email</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <div>
-    <ion-item>
-      <ion-label stacked>Assunto</ion-label>
-      <ion-input type="text" [(ngModel)]="subject" placeholde="Digite o assunto" ></ion-input>
-    </ion-item>
-
-    <ion-item>
-        <ion-label stacked>Conteúdo</ion-label>
-        <ion-input type="text" [(ngModel)]="body" placeholde="Digite o conteúdo do email" ></ion-input>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label stacked>Assunto</ion-label>
+        <ion-input
+          type="text"
+          [(ngModel)]="subject"
+          placeholde="Digite o assunto"
+        ></ion-input>
       </ion-item>
 
       <ion-item>
-          <ion-label stacked>Para</ion-label>
-          <ion-input type="text" placeholde="Email" ></ion-input>
-        </ion-item>
-    
+        <ion-label floating>Conteúdo</ion-label>
+        <ion-textarea type="text" [(ngModel)]="body"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-    <button ion-button (click)="sendEmail()">Send</button>
-  </div>
-
+  <ion-card>
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+      <ion-item (click)="sendEmail()">
+        <label>Enviar e-mail</label>
+        <ion-note item-end>
+          <ion-icon name="mail"></ion-icon> </ion-note
+        ><br />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

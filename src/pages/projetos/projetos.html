@@ -14,10 +14,9 @@
 
     <ion-grid>
         <ion-row>
-        <ion-col col-10>
-        <ion-searchbar></ion-searchbar>
-        </ion-col>
-        
+          <ion-col col-10>
+            <ion-searchbar [(ngModel)]="args"></ion-searchbar>
+            </ion-col>
         <ion-col col-2>
             <ion-fab>
                 <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>
@@ -29,10 +28,10 @@
         </ion-row>
         </ion-grid>
 
-  <ion-card *ngFor="let projeto of listaProjetos" (click)="abrirDetalheProjeto(projeto)" tappable>
+  <ion-card *ngFor="let projeto of listaProjetos | search: args " (click)="abrirDetalheProjeto(projeto)" tappable>
     <ion-card-content >
       Projeto: {{projeto.tituloProjeto}} <br/>
-      Cliente: {{projeto.nomeCliente}}<br/>
+      Cliente: {{projeto.cliente.nome}}<br/>
       Preço: {{projeto.preco}}
     </ion-card-content>
   </ion-card>

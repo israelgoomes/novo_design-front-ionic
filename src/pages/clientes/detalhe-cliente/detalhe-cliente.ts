@@ -52,7 +52,7 @@ cadastrarProjeto(){
 }
 
 async deletar(): Promise<void>{
-  alert('Deseja deletar esse projeto ?')
+  this.alertSrvc.confirm('Excluir?', `Deseja realmente excluir o cliente ${this.cliente.nome} ?`, async() => {
   let sucesso = false;
  let result = await this.clienteSrvc.delete(this.cliente._id);
  sucesso = result.success;
@@ -60,7 +60,8 @@ async deletar(): Promise<void>{
     this. alertSrvc.toast('Deletado com sucesso', 'bottom');
     this.navCtrl.setRoot('ClientesPage')
   }
-}
+  });
+  }
 gerarContrato(){
 this.navCtrl.push('ContratoPage', { _cliente: this.cliente});
 }

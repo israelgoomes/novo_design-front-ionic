@@ -1,15 +1,15 @@
 webpackJsonp([1],{
 
-/***/ 290:
+/***/ 304:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(306);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_search_search__ = __webpack_require__(307);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetosPageModule", function() { return ProjetosPageModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pipes_pipes_module__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__projetos__ = __webpack_require__(451);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,37 +20,118 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var ClientesPageModule = /** @class */ (function () {
-    function ClientesPageModule() {
+//import { SearchPipe } from '../../pipes/search/search';
+var ProjetosPageModule = /** @class */ (function () {
+    function ProjetosPageModule() {
     }
-    ClientesPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+    ProjetosPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
-                __WEBPACK_IMPORTED_MODULE_3__pipes_search_search__["a" /* SearchPipe */]
+                __WEBPACK_IMPORTED_MODULE_3__projetos__["a" /* ProjetosPage */],
             ],
             imports: [
-                //PipesModule,
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
+                __WEBPACK_IMPORTED_MODULE_0__pipes_pipes_module__["a" /* PipesModule */],
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__projetos__["a" /* ProjetosPage */]),
             ],
         })
-    ], ClientesPageModule);
-    return ClientesPageModule;
+    ], ProjetosPageModule);
+    return ProjetosPageModule;
 }());
 
-//# sourceMappingURL=clientes.module.js.map
+//# sourceMappingURL=projetos.module.js.map
 
 /***/ }),
 
-/***/ 306:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(311);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var PipesModule = /** @class */ (function () {
+    function PipesModule() {
+    }
+    PipesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
+        })
+    ], PipesModule);
+    return PipesModule;
+}());
+
+//# sourceMappingURL=pipes.module.js.map
+
+/***/ }),
+
+/***/ 311:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SearchPipe = /** @class */ (function () {
+    function SearchPipe() {
+    }
+    SearchPipe.prototype.transform = function (items, terms) {
+        if (!items)
+            return [];
+        if (!terms)
+            return items;
+        //console.log('Termos', terms)
+        try {
+            terms = terms.toString().toLowerCase();
+            console.log(terms);
+            return items.filter(function (it) {
+                if (it.nome != undefined) {
+                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
+                }
+                else {
+                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
+                }
+            });
+        }
+        catch (error) {
+            console.log('Erro no pipe search', error);
+        }
+    };
+    SearchPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'search',
+        })
+    ], SearchPipe);
+    return SearchPipe;
+}());
+
+//# sourceMappingURL=search.js.map
+
+/***/ }),
+
+/***/ 451:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProjetosPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -98,143 +179,73 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-
-
 /**
- * Generated class for the ClientesPage page.
+ * Generated class for the ProjetosPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var ClientesPage = /** @class */ (function () {
-    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc) {
+var ProjetosPage = /** @class */ (function () {
+    function ProjetosPage(navCtrl, navParams, projetoSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
-        this.clienteSrvc = clienteSrvc;
-        this.listaClientes = new Array();
-        this._loadCliente();
+        this.projetoSrvc = projetoSrvc;
+        this.listaProjetos = new Array();
+        this._loadProjetos();
     }
-    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
-        var modal = this.modalCtrl.create('DetalheClientePage', {
-            cliente: cliente
-        });
-        modal.present();
+    ProjetosPage.prototype.ionViewDidLoad = function () {
+        console.log(' lista', this.listaProjetos);
     };
-    ClientesPage.prototype._loadCliente = function () {
+    ProjetosPage.prototype._loadProjetos = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var clientResult;
+            var result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.clienteSrvc.get()];
+                    case 0: return [4 /*yield*/, this.projetoSrvc.get()];
                     case 1:
-                        clientResult = _a.sent();
-                        if (clientResult.success) {
-                            this.listaClientes = clientResult.data;
+                        result = _a.sent();
+                        if (result.success) {
+                            this.listaProjetos = result.data;
+                            console.log(this.listaProjetos);
                         }
                         return [2 /*return*/];
                 }
             });
         });
     };
-    ClientesPage.prototype.ngOnInit = function () {
+    ProjetosPage.prototype.deletar = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var result;
             return __generator(this, function (_a) {
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.projetoSrvc.get()];
+                    case 1:
+                        result = _a.sent();
+                        this.listaProjetos = result.data;
+                        console.log('IDs', this.listaProjetos);
+                        return [2 /*return*/];
+                }
             });
         });
     };
-    ClientesPage.prototype.abrirCadastro = function (model) {
-        this.navCtrl.push('CadastroClientePage', { cliente: model });
+    ProjetosPage.prototype.abrirCadastro = function (model) {
+        this.navCtrl.push('CadastroProjetoPage', { _projeto: model });
     };
-    ClientesPage.prototype.abrirDetalheCliente = function (model) {
-        this.navCtrl.push('DetalheClientePage', { cliente: model });
+    ProjetosPage.prototype.abrirDetalheProjeto = function (model) {
+        this.navCtrl.push('DetalheProjetoPage', { _projeto: model });
     };
-    ClientesPage.prototype.ionViewDidLoad = function () {
-    };
-    ClientesPage.prototype.abrirPdf = function () {
-        this.navCtrl.setRoot('ContratoPage');
-    };
-    ClientesPage.prototype.logout = function () {
-        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
-        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
-        this.navCtrl.setRoot('LoginPage');
-    };
-    ClientesPage = __decorate([
+    ProjetosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n    \n    </ion-col>\n\n</ion-row>\n</ion-grid>\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n  <ion-card-content >\n    Nome: {{cliente.nome}} <br/>\n    Email: {{cliente.email}}<br/>\n    Telefone: {{cliente.tel}}\n  </ion-card-content>\n</ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
+            selector: 'page-projetos',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/'<!--\n  Generated template for the ProjetosPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Projetos <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n    <ion-grid>\n        <ion-row>\n          <ion-col col-10>\n            <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n            </ion-col>\n        <ion-col col-2>\n            <ion-fab>\n                <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n                </button>\n              </ion-fab>\n            \n            </ion-col>\n        \n        </ion-row>\n        </ion-grid>\n\n  <ion-card *ngFor="let projeto of listaProjetos | search: args " (click)="abrirDetalheProjeto(projeto)" tappable>\n    <ion-card-content >\n      Projeto: {{projeto.tituloProjeto}} <br/>\n      Cliente: {{projeto.cliente.nome}}<br/>\n      Preço: {{projeto.preco}}\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]])
-    ], ClientesPage);
-    return ClientesPage;
+            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */]])
+    ], ProjetosPage);
+    return ProjetosPage;
 }());
 
-//# sourceMappingURL=clientes.js.map
-
-/***/ }),
-
-/***/ 307:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var SearchPipe = /** @class */ (function () {
-    function SearchPipe() {
-    }
-    /**
-     * Takes a value and makes it lowercase.
-     */
-    /*
-      transform(value: any, args?: any): any {
-    
-        if(!value)return null;
-        if(!args)return value;
-    
-        args = args.toLowerCase();
-    
-        return value.filter(function(item){
-            return JSON.stringify(item).toLowerCase().includes(args);
-        });
-    
-      }
-       */
-    SearchPipe.prototype.transform = function (items, terms) {
-        if (!items)
-            return [];
-        if (!terms)
-            return items;
-        //console.log('Termos', terms)
-        try {
-            terms = terms.toString().toLowerCase();
-            return items.filter(function (it) {
-                //console.log('Nomes',it.name)
-                return JSON.stringify(it.nome).toLowerCase().includes(terms);
-            });
-        }
-        catch (error) {
-            //console.log('Erro no pipe search',error)
-        }
-    };
-    SearchPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
-            name: 'search',
-        })
-    ], SearchPipe);
-    return SearchPipe;
-}());
-
-//# sourceMappingURL=search.js.map
+//# sourceMappingURL=projetos.js.map
 
 /***/ })
 

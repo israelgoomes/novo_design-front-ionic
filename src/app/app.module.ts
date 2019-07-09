@@ -3,7 +3,6 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
 import { SpinnerProvider } from '../providers/spinner/spinner';
 import { AlertProvider } from '../providers/alert/alert';
@@ -22,6 +21,7 @@ import { EmailComposer} from '@ionic-native/email-composer';
 //import { BrMaskerIonic3 } from 'brmasker-ionic-3';
 //import { BrMaskerIonicServices3 } from 'brmasker-ionic-3';
 import {BrMaskerModule} from 'brmasker-ionic-3';
+//import { PipesModule } from '../pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -29,11 +29,13 @@ import {BrMaskerModule} from 'brmasker-ionic-3';
     //BrMaskerIonicServices3,
     MyApp,
     
+    
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrMaskerModule,
+    //PipesModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],

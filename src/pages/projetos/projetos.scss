@@ -4,7 +4,12 @@ page-projetos {
 margin-left: 280px;
 font-size: 40px;
 }
-
+.searchbar-ios .searchbar-input{
+    border: none !important;
+}
+ion-searchbar{
+    background-color: transparent !important;
+}
 .ion-ios-trash:before{
     font-size: 40px;
     color: #4f413b;

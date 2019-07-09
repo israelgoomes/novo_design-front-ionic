@@ -35,7 +35,7 @@ export class DetalheProjetoPage {
   }
 
   async deletar(): Promise<void>{
-    alert('Deseja deletar esse projeto ?')
+ this.alertSrvc.confirm('Excluir?', `Deseja realmente excluir o projeto ${this.projeto.tituloProjeto} ?`, async() => {
     let sucesso = false;
    let result = await this.projetoSrvc.delete(this.projeto._id);
    sucesso = result.success;
@@ -43,6 +43,7 @@ export class DetalheProjetoPage {
       this. alertSrvc.toast('Deletado com sucesso', 'bottom');
       this.navCtrl.setRoot('ProjetosPage')
     }
+  });
   }
 
   gerarContrato(){
@@ -60,7 +61,7 @@ export class DetalheProjetoPage {
   this.foto = this.projeto.foto;
     this.projeto = <projetoModel>this.navParams.get('_projeto');
 
-    console.log('ionViewDidLoad DetalheProjetoPage');
+    console.log('Projetos', this.projeto);
   }
 
 }

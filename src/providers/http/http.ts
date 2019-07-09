@@ -101,7 +101,7 @@ public post(url: string, model: any): Promise<HttpResultModel> {
 
           } 
           else if(err.status == 404){
-            this.alertSrvc.alert("informação", err.error.message);
+            this.alertSrvc.alert("informação", err.errors.message);
           }
           else
             this.alertSrvc.toast(

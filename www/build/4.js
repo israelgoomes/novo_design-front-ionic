@@ -1,14 +1,14 @@
 webpackJsonp([4],{
 
-/***/ 291:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheClientePageModule", function() { return DetalheClientePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheProjetoPageModule", function() { return DetalheProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__ = __webpack_require__(308);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__ = __webpack_require__(450);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,50 +18,61 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetalheClientePageModule = /** @class */ (function () {
-    function DetalheClientePageModule() {
+var DetalheProjetoPageModule = /** @class */ (function () {
+    function DetalheProjetoPageModule() {
     }
-    DetalheClientePageModule = __decorate([
+    DetalheProjetoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__["a" /* DetalheClientePage */],
+                __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_cliente__["a" /* DetalheClientePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */]),
             ],
         })
-    ], DetalheClientePageModule);
-    return DetalheClientePageModule;
+    ], DetalheProjetoPageModule);
+    return DetalheProjetoPageModule;
 }());
 
-//# sourceMappingURL=detalhe-cliente.module.js.map
+//# sourceMappingURL=detalhe-projeto.module.js.map
 
 /***/ }),
 
-/***/ 302:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clienteModel; });
-var clienteModel = /** @class */ (function () {
-    function clienteModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projetoModel; });
+var projetoModel = /** @class */ (function () {
+    function projetoModel() {
     }
-    return clienteModel;
+    return projetoModel;
 }());
 
-//# sourceMappingURL=clienteModel.js.map
+/* nomeCliente: {trim: true, required: true, type: String, index: true},
+    telefone: {trim:true, requried: true, type: String},
+    email: {type: String},
+    rua: {type: String, required: true},
+    bairro: {type: String, required: true},
+    cidade: {type: String, required: true, index: true},
+    tituloProjeto: {trim: true, required: true, index: true, type: String },
+    descricaoProjeto: {type: String, required: true},
+    cep: {type: String, required: true},
+    preco: {type: Number},
+    foto: {type: String}, */ 
+//# sourceMappingURL=projetoModel.js.map
 
 /***/ }),
 
-/***/ 308:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheClientePage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_clienteModel__ = __webpack_require__(302);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -113,80 +124,78 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 /**
- * Generated class for the DetalheClientePage page.
+ * Generated class for the DetalheProjetoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetalheClientePage = /** @class */ (function () {
-    function DetalheClientePage(navCtrl, navParams, clienteSrvc, alertSrvc) {
+var DetalheProjetoPage = /** @class */ (function () {
+    function DetalheProjetoPage(navCtrl, navParams, projetoSrvc, alertSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.clienteSrvc = clienteSrvc;
+        this.projetoSrvc = projetoSrvc;
         this.alertSrvc = alertSrvc;
-        this.detalheCliente = [];
-        var client = this.navParams.get('cliente');
-        if (client) {
-            this.cliente = client;
+        this.foto = [];
+        var projeto = this.navParams.get('_projeto');
+        if (projeto) {
+            this.projeto = projeto;
         }
         else {
-            this.cliente = new __WEBPACK_IMPORTED_MODULE_2__app_models_clienteModel__["a" /* clienteModel */]();
+            this.projeto = new __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__["a" /* projetoModel */]();
         }
     }
-    DetalheClientePage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad DetalheClientePage');
-        this.cliente = this.navParams.get('cliente');
-        console.log('Testando cliente', this.cliente);
-    };
-    DetalheClientePage.prototype.addOrEdit = function () {
-        this.navCtrl.push('AdmClientePage', { _cliente: this.cliente });
-        console.log('Enviando o cliente', this.cliente);
-    };
-    DetalheClientePage.prototype.cadastrarProjeto = function () {
-        this.navCtrl.push('CadastroProjetoPage', { _projeto: this.cliente });
-    };
-    DetalheClientePage.prototype.deletar = function () {
+    DetalheProjetoPage.prototype.deletar = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var sucesso, result;
+            var _this = this;
             return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        alert('Deseja deletar esse projeto ?');
-                        sucesso = false;
-                        return [4 /*yield*/, this.clienteSrvc.delete(this.cliente._id)];
-                    case 1:
-                        result = _a.sent();
-                        sucesso = result.success;
-                        if (sucesso) {
-                            this.alertSrvc.toast('Deletado com sucesso', 'bottom');
-                            this.navCtrl.setRoot('ClientesPage');
+                this.alertSrvc.confirm('Excluir?', "Deseja realmente excluir o projeto " + this.projeto.tituloProjeto + " ?", function () { return __awaiter(_this, void 0, void 0, function () {
+                    var sucesso, result;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0:
+                                sucesso = false;
+                                return [4 /*yield*/, this.projetoSrvc.delete(this.projeto._id)];
+                            case 1:
+                                result = _a.sent();
+                                sucesso = result.success;
+                                if (sucesso) {
+                                    this.alertSrvc.toast('Deletado com sucesso', 'bottom');
+                                    this.navCtrl.setRoot('ProjetosPage');
+                                }
+                                return [2 /*return*/];
                         }
-                        return [2 /*return*/];
-                }
+                    });
+                }); });
+                return [2 /*return*/];
             });
         });
     };
-    DetalheClientePage.prototype.gerarContrato = function () {
-        this.navCtrl.push('ContratoPage', { _cliente: this.cliente });
+    DetalheProjetoPage.prototype.gerarContrato = function () {
+        this.navCtrl.push('ContratoPage', { _projeto: this.projeto });
+        console.log(this.projeto);
     };
-    DetalheClientePage.prototype.ngOnInit = function () {
+    DetalheProjetoPage.prototype.addOrEdit = function () {
+        this.navCtrl.push('AdmProjetoPage', { _projeto: this.projeto });
+        console.log('Enviando o Projeto', this.projeto);
     };
-    DetalheClientePage.prototype.back = function () {
-        this.navCtrl.pop();
+    DetalheProjetoPage.prototype.ionViewDidLoad = function () {
+        this.foto = this.projeto.foto;
+        this.projeto = this.navParams.get('_projeto');
+        console.log('Projetos', this.projeto);
     };
-    DetalheClientePage = __decorate([
+    DetalheProjetoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-detalhe-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\detalhe-cliente\detalhe-cliente.html"*/'<!--\n  Generated template for the DetalheClientePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    \n    <ion-title>Detalhe Cliente</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <ion-card>\n    <ion-card-content >\n        <span class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></span>\n\n   <p> Nome: {{cliente.nome}}</p> <br/>\n   <p> Email: {{cliente.email}}</p> <br/>\n   <p> Telefone: {{cliente.tel}}</p> <br/>\n   <p> Rua: {{cliente.endereco}}</p> <br/>\n   <p> Bairro: {{cliente.bairro}}</p> <br/>\n   <p> Cidade: {{cliente.cidade}}</p> <br/>\n   <p> Estado: {{cliente.estado}}</p> <br/>\n\n   <ion-row>\n      <button ion-button block (click)="gerarContrato()" no-block outline><ion-icon name="document"></ion-icon>&nbsp;Contrato</button>\n      <button class="btn-right" ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>\n      <button id="btn-cadastro" ion-button block (click)="cadastrarProjeto(cliente)" outline>Cadastrar Projeto</button>\n\n\n   </ion-row>\n\n    </ion-card-content>\n  </ion-card>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\detalhe-cliente\detalhe-cliente.html"*/,
+            selector: 'page-detalhe-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n  Generated template for the DetalheProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Detalhes do projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-content>\n      <span class="lixo" (click)="deletar()"\n        ><ion-icon name="ios-trash"></ion-icon\n      ></span>\n\n      <p>Projeto: {{ projeto.tituloProjeto }}</p>\n      <br />\n      <p>Descrição: {{ projeto.descricaoProjeto }}</p>\n      <br />\n      <p>Valor: {{ projeto.preco }}</p>\n      <br />\n      <p>Cliente: {{ projeto.cliente.nome }}</p>\n      <br />\n      <p>Email: {{ projeto.cliente.email }}</p>\n      <br />\n      <p>Telefone: {{ projeto.cliente.tel }}</p>\n      <br />\n      <p>Endereço: {{ projeto.cliente.endereco }}</p>\n      <br />\n      <p>Cidade: {{ projeto.cliente.cidade }}</p>\n      <br />\n      <p>Bairro: {{ projeto.cliente.bairro }}</p>\n      <br />\n      <p>Cep: {{ projeto.cliente.cep }}</p>\n      <br />\n      <p>\n        <ion-item *ngFor="let fotos of foto">\n          <img [src]="fotos" />\n        </ion-item>\n      </p>\n      <br />\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n      <ion-item (click)="gerarContrato()">\n        <label>Gerar contrato</label>\n        <ion-note item-end> <ion-icon name="document"></ion-icon> </ion-note>\n        <br />\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n      <ion-item (click)="addOrEdit(cliente)">\n        <label>Editar</label>\n        <ion-note item-end> <ion-icon name="hammer"></ion-icon> </ion-note>\n        <br />\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__["a" /* ProjetosProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */]])
-    ], DetalheClientePage);
-    return DetalheClientePage;
+    ], DetalheProjetoPage);
+    return DetalheProjetoPage;
 }());
 
-//# sourceMappingURL=detalhe-cliente.js.map
+//# sourceMappingURL=detalhe-projeto.js.map
 
 /***/ })
 

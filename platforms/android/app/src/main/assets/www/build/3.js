@@ -1,14 +1,15 @@
 webpackJsonp([3],{
 
-/***/ 296:
+/***/ 295:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroProjetoPageModule", function() { return CadastroProjetoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(310);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,63 +19,120 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroProjetoPageModule = /** @class */ (function () {
-    function CadastroProjetoPageModule() {
+//import { SearchPipe } from '../../pipes/search/search';
+
+var ClientesPageModule = /** @class */ (function () {
+    function ClientesPageModule() {
     }
-    CadastroProjetoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
+    ClientesPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__["a" /* CadastroProjetoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__["a" /* CadastroProjetoPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
             ],
         })
-    ], CadastroProjetoPageModule);
-    return CadastroProjetoPageModule;
+    ], ClientesPageModule);
+    return ClientesPageModule;
 }());
 
-//# sourceMappingURL=cadastro-projeto.module.js.map
+//# sourceMappingURL=clientes.module.js.map
 
 /***/ }),
 
-/***/ 303:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projetoModel; });
-var projetoModel = /** @class */ (function () {
-    function projetoModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(311);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var PipesModule = /** @class */ (function () {
+    function PipesModule() {
     }
-    return projetoModel;
+    PipesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
+        })
+    ], PipesModule);
+    return PipesModule;
 }());
 
-/* nomeCliente: {trim: true, required: true, type: String, index: true},
-    telefone: {trim:true, requried: true, type: String},
-    email: {type: String},
-    rua: {type: String, required: true},
-    bairro: {type: String, required: true},
-    cidade: {type: String, required: true, index: true},
-    tituloProjeto: {trim: true, required: true, index: true, type: String },
-    descricaoProjeto: {type: String, required: true},
-    cep: {type: String, required: true},
-    preco: {type: Number},
-    foto: {type: String}, */ 
-//# sourceMappingURL=projetoModel.js.map
+//# sourceMappingURL=pipes.module.js.map
 
 /***/ }),
 
-/***/ 313:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroProjetoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SearchPipe = /** @class */ (function () {
+    function SearchPipe() {
+    }
+    SearchPipe.prototype.transform = function (items, terms) {
+        if (!items)
+            return [];
+        if (!terms)
+            return items;
+        //console.log('Termos', terms)
+        try {
+            terms = terms.toString().toLowerCase();
+            console.log(terms);
+            return items.filter(function (it) {
+                if (it.nome != undefined) {
+                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
+                }
+                else {
+                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
+                }
+            });
+        }
+        catch (error) {
+            console.log('Erro no pipe search', error);
+        }
+    };
+    SearchPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'search',
+        })
+    ], SearchPipe);
+    return SearchPipe;
+}());
+
+//# sourceMappingURL=search.js.map
+
+/***/ }),
+
+/***/ 442:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(303);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,106 +182,79 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-
-var CadastroProjetoPage = /** @class */ (function () {
-    function CadastroProjetoPage(navCtrl, navParams, projetoSrvc, alertSrvc, platform, actionSheetCtrl, cameraSrvc) {
+/**
+ * Generated class for the ClientesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ClientesPage = /** @class */ (function () {
+    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.projetoSrvc = projetoSrvc;
-        this.alertSrvc = alertSrvc;
-        this.platform = platform;
-        this.actionSheetCtrl = actionSheetCtrl;
-        this.cameraSrvc = cameraSrvc;
-        this.foto = [];
-        var projeto = this.navParams.get('_projeto');
-        if (projeto) {
-            this.projeto = projeto;
-        }
-        else {
-            this.projeto = new __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__["a" /* projetoModel */]();
-        }
+        this.modalCtrl = modalCtrl;
+        this.clienteSrvc = clienteSrvc;
+        this.listaClientes = new Array();
+        this._loadCliente();
     }
-    CadastroProjetoPage.prototype.ngOnInit = function () {
-        if (this.projeto.tituloProjeto == undefined) {
-            console.log('valor do projeto', this.projeto);
-        }
+    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
+        var modal = this.modalCtrl.create('DetalheClientePage', {
+            cliente: cliente
+        });
+        modal.present();
     };
-    CadastroProjetoPage.prototype.salvar = function () {
+    ClientesPage.prototype._loadCliente = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var sucesso, cadastroResult;
+            var clientResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        this.projeto.foto = this.foto;
-                        console.log('entrou aqui');
-                        sucesso = false;
-                        if (!!this.projeto._id) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.projetoSrvc.post(this.projeto)];
+                    case 0: return [4 /*yield*/, this.clienteSrvc.get()];
                     case 1:
-                        cadastroResult = _a.sent();
-                        sucesso = cadastroResult.success;
-                        _a.label = 2;
-                    case 2:
-                        if (sucesso) {
-                            this.alertSrvc.toast('Projeto salvo com sucesso', 'bottom');
-                            this.navCtrl.setRoot('ProjetosPage');
+                        clientResult = _a.sent();
+                        if (clientResult.success) {
+                            this.listaClientes = clientResult.data;
                         }
                         return [2 /*return*/];
                 }
             });
         });
     };
-    CadastroProjetoPage.prototype.getPictureOptions = function () {
-        var _this = this;
-        //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
-        var actionSheet = this.actionSheetCtrl.create({
-            title: 'Adicionar foto',
-            buttons: [
-                { text: 'Tirar foto', handler: function () {
-                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
-                        _this.cameraSrvc.takePicture(function (photo) {
-                            _this.foto.push(photo);
-                            _this.projeto.foto = _this.foto;
-                        });
-                    },
-                    icon: this.platform.is('ios') ? null : 'camera' },
-                //------------------------ Opção pegar da galeria ------------
-                { text: 'Pegar galeria', handler: function () {
-                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
-                            _this.foto.push(photo);
-                            _this.projeto.foto = _this.foto;
-                        });
-                    }, icon: this.platform.is('ios') ? null : 'images' },
-                //o role 'destructive' deixa o botao vermelho
-                { text: 'Cancelar', role: 'destructive',
-                    icon: this.platform.is('ios') ? null : 'close',
-                    handler: function () {
-                        //cancela a ação
-                    }, }
-            ]
+    ClientesPage.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
         });
-        actionSheet.present();
     };
-    CadastroProjetoPage.prototype.ionViewDidLoad = function () {
-        console.log('Todas fotos', this.projeto.foto);
-        console.log('ionViewDidLoad CadastroProjetoPage');
+    ClientesPage.prototype.abrirCadastro = function (model) {
+        this.navCtrl.push('CadastroClientePage', { cliente: model });
     };
-    CadastroProjetoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n  Generated template for the CadastroProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Novo Projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-grid>\n        <ion-row>\n      <ion-col>\n           <ion-row>\n        <ion-item>\n          <ion-label floating>Projeto</ion-label>\n          <ion-input [(ngModel)]="projeto.tituloProjeto" required type="text"></ion-input>\n        </ion-item>\n      </ion-row>\n      \n      <ion-row>\n          <ion-item>\n            <ion-label floating>Descrição</ion-label>\n            <ion-textarea type="text" [(ngModel)]="projeto.descricaoProjeto"></ion-textarea>\n          </ion-item>\n        </ion-row>\n    \n        <ion-row>\n            <ion-item>\n              <ion-label floating>Valor</ion-label>\n              <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n            </ion-item>\n          </ion-row>\n          \n          <ion-row>\n              <ion-item>\n                <ion-label floating>Cliente</ion-label>\n                <ion-input type="text" [(ngModel)]="projeto.nomeCliente"></ion-input>\n              </ion-item>\n            </ion-row>\n            \n            <ion-row>\n                <ion-item>\n                  <ion-label floating>Email</ion-label>\n                  <ion-input type="text" [(ngModel)]="projeto.email"></ion-input>\n                </ion-item>\n              </ion-row>\n    \n              <ion-row>\n                  <ion-item>\n                    <ion-label floating>Telefone</ion-label>\n                    <ion-input type="text" [(ngModel)]="projeto.tel"></ion-input>\n                  </ion-item>\n                </ion-row>\n              \n                <ion-row>\n                    <ion-item>\n                      <ion-label floating>Endereço</ion-label>\n                      <ion-input type="text" [(ngModel)]="projeto.endereco"></ion-input>\n                    </ion-item>\n                  </ion-row>\n      \n                  <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cidade</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cidade"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Bairro</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.bairro"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                      <ion-item>\n                        <ion-label floating>Cep</ion-label>\n                        <ion-input type="text" [(ngModel)]="projeto.cep"></ion-input>\n                      </ion-item>\n                    </ion-row>\n    \n                    <ion-row>\n                        <ion-item text-center>\n                            <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon> Selecionar Foto</button>\n                          </ion-item>\n                    </ion-row>\n                    </ion-col>\n                    </ion-row>\n                 \n                    <ion-item *ngFor="let fotos of foto">\n                        <img [src]="fotos">\n                      </ion-item> \n\n                      <ion-item>\n                      \n                      </ion-item>\n    </ion-grid>\n\n      <ion-grid>\n        <ion-row>\n          <button ion-button outline block (click)="salvar()">Cadastrar</button>\n        </ion-row>\n      </ion-grid>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
+    ClientesPage.prototype.abrirDetalheCliente = function (model) {
+        this.navCtrl.push('DetalheClientePage', { cliente: model });
+    };
+    ClientesPage.prototype.ionViewDidLoad = function () {
+    };
+    ClientesPage.prototype.abrirPdf = function () {
+        this.navCtrl.setRoot('ContratoPage');
+    };
+    ClientesPage.prototype.logout = function () {
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
+        this.navCtrl.setRoot('LoginPage');
+    };
+    ClientesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n    \n    </ion-col>\n\n</ion-row>\n</ion-grid>\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n  <ion-card-content >\n    Nome: {{cliente.nome}} <br/>\n    Email: {{cliente.email}}<br/>\n    Telefone: {{cliente.tel}}\n  </ion-card-content>\n</ion-card>\n\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
-    ], CadastroProjetoPage);
-    return CadastroProjetoPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]])
+    ], ClientesPage);
+    return ClientesPage;
 }());
 
-//# sourceMappingURL=cadastro-projeto.js.map
+//# sourceMappingURL=clientes.js.map
 
 /***/ })
 

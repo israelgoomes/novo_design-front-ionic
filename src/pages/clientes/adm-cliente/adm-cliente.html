@@ -14,7 +14,9 @@
 </ion-grid>
 
 <ion-content padding>
+
 <ion-card>
+  <ion-card-content>
     <ion-grid>
         <ion-row>
       <ion-col>
@@ -80,11 +82,16 @@
       </ion-grid>
 
 
+    </ion-card-content>
+  </ion-card>
 
-
-      <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>
-
-       <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>
-    </ion-card>
+<ion-card>
+  <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+    </ion-card-content>
+    <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>
+  
+     <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>
+    
+</ion-card>
 
 </ion-content>

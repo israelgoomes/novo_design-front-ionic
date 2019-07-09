@@ -1,0 +1,13 @@
+page-modal-clientes {
+    .searchbar-ios .searchbar-input{
+        border: none !important;
+    }
+
+    body{
+        background: map-get($colors, background) !important;
+    }
+
+    ion-searchbar{
+        background-color: transparent !important;
+    }
+}

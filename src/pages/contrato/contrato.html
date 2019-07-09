@@ -8,7 +8,9 @@
 <ion-content padding>
     <ion-grid *ngIf="cliente.nome != undefined">
 
-  <ion-item>
+      <ion-card>
+        <ion-card-content>    
+              <ion-item>
     <ion-label floating>Nome contrato</ion-label>
     <ion-input [(ngModel)]="contrato.name"></ion-input>
 </ion-item>
@@ -59,12 +61,17 @@
     <ion-input [(ngModel)]="cliente.tel"></ion-input>
 </ion-item>
 
+</ion-card-content>
+</ion-card>
+
 </ion-grid>
 
 
 <ion-grid *ngIf="cliente.nome == undefined">
-
-    <ion-item>
+<ion-card>
+    <ion-card-content>
+    
+      <ion-item>
       <ion-label floating>Nome contrato</ion-label>
       <ion-input [(ngModel)]="contrato.name"></ion-input>
   </ion-item>
@@ -77,7 +84,7 @@
     
   <ion-item>
       <ion-label floating>Valor Total</ion-label>
-      <ion-input [(ngModel)]="projeto.preco"></ion-input>
+      <ion-input [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>
     </ion-item>
   
       <ion-item>
@@ -87,38 +94,53 @@
   
   <ion-item>
       <ion-label floating>Contratante</ion-label>
-      <ion-input [(ngModel)]="projeto.nomeCliente"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.nome"></ion-input>
     </ion-item>
   
     <ion-item>
         <ion-label floating>Cpf</ion-label>
-        <ion-input [(ngModel)]="contrato.cpf"></ion-input>
+        <ion-input [(ngModel)]="contrato.cpf" [brmasker]="{mask:'000.000.000-00'}"></ion-input>
     </ion-item>
   <ion-item>
       <ion-label floating>Endereço</ion-label>
-      <ion-input [(ngModel)]="projeto.rua"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.endereco"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Cep</ion-label>
-      <ion-input [(ngModel)]="projeto.cep"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.cep" [brmasker]="{mask:'00000-120'}"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Bairro</ion-label>
-      <ion-input [(ngModel)]="projeto.bairro"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.bairro"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Cidade</ion-label>
-      <ion-input [(ngModel)]="projeto.cidade"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.cidade"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Telefone</ion-label>
-      <ion-input [(ngModel)]="cliente.telefone"></ion-input>
+      <ion-input [(ngModel)]="projeto.cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}"></ion-input>
   </ion-item>
-  
+</ion-card-content>
+</ion-card>
+
   </ion-grid>
 
-<button ion-button (click)="createPdf()" block>  <ion-icon ios="ios-document" md="md-document" outline> Gerar Contrato</ion-icon>
-</button>
+<!-- <ion-card (click)="createPdf()" > 
+  <ion-card-content>
+   <ion-icon ios="ios-document" md="md-document"> Gerar Contrato</ion-icon>
+  </ion-card-content>
+</ion-card> -->
+
+<ion-card>
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">
+      <ion-item (click)="createPdf()">
+<label>Gerar Contrato</label>        <ion-note item-end>
+    <ion-icon ios="ios-document" md="md-document"></ion-icon> </ion-note>
+        <br/>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
 
 </ion-content>

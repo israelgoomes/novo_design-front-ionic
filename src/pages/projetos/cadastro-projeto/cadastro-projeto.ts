@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ActionSheetController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ActionSheetController, ModalController } from 'ionic-angular';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
 import { AlertProvider } from '../../../providers/alert/alert';
 import { projetoModel } from '../../../app/models/projetoModel';
 import { CameraProvider } from '../../../providers/camera/camera';
+import { ClientesProvider } from '../../../providers/clientes/clientes';
+import { clienteModel } from '../../../app/models/clienteModel';
 
 
 @IonicPage()
@@ -14,34 +16,72 @@ import { CameraProvider } from '../../../providers/camera/camera';
 export class CadastroProjetoPage implements OnInit{
   foto = []
 projeto: projetoModel;
+clientes: Array<clienteModel> = new Array<clienteModel>();
+cliente = []
   constructor(
-    public navCtrl: NavController, 
-    public navParams: NavParams,
-    public projetoSrvc: ProjetosProvider,
-    public alertSrvc: AlertProvider,
-    public platform: Platform,
-    public actionSheetCtrl: ActionSheetController,
-    public cameraSrvc: CameraProvider
+    private navCtrl: NavController, 
+    private navParams: NavParams,
+    private projetoSrvc: ProjetosProvider,
+    private alertSrvc: AlertProvider,
+    private platform: Platform,
+    private actionSheetCtrl: ActionSheetController,
+    private cameraSrvc: CameraProvider,
+    private clientesSrvc: ClientesProvider,
+    private modalCtrl: ModalController
+    
     ) { 
-
+      
       let projeto = this.navParams.get('_projeto');
       if(projeto){
         this.projeto = <projetoModel>projeto
+        if(!this.projeto)
+        this.projeto.cliente = projeto.cliente._id;
       }else {
+      //  this.projeto.cliente = this.projeto._id
         this.projeto = new projetoModel();
       }
+      this.loadCliente();
   }
 
 ngOnInit():void {
+ 
  if(this.projeto.tituloProjeto == undefined){
-    console.log('valor do projeto', this.projeto)
+    //this.cliente.nome = this.projeto.nome
+  
   }
+}
+
+
+openClientOption(){
+  const modal = this.modalCtrl.create(
+    'ModalClientesPage' , {_cliente: this.clientes});
+    modal.present();
+
+    modal.onDidDismiss(data => {
+      console.log('Retorno do Modal',data.cliente);
+      this.cliente = data.cliente;
+      this.projeto.cliente = data.cliente._id;
+      //this.projeto = data.cliente;
+      console.log('Verificando o valor de projeto', this.projeto.cliente)
+    })
+}
+
+async loadCliente(): Promise<void>{
+  try {
+    let result = await this.clientesSrvc.get();
+    if(result.success){
+      this.clientes = <Array<clienteModel>>result.data;
+    }  
+    console.log('Clientes', this.clientes)
+  } catch (error) {
+    console.log("Erro na tela projetos", error);
+  }
+  
 }
 
 async salvar(): Promise<void> {
   this.projeto.foto = this.foto;
 
-  console.log('entrou aqui')
   let sucesso = false;
   if(!this.projeto._id){
     let cadastroResult = await this.projetoSrvc.post(this.projeto)

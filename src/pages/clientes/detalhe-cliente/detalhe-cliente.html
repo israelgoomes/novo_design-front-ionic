@@ -25,15 +25,43 @@
    <p> Cidade: {{cliente.cidade}}</p> <br/>
    <p> Estado: {{cliente.estado}}</p> <br/>
 
-   <ion-row>
-      <button ion-button block (click)="gerarContrato()" no-block outline><ion-icon name="document"></ion-icon>&nbsp;Contrato</button>
-      <button class="btn-right" ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>
-      <button id="btn-cadastro" ion-button block (click)="cadastrarProjeto(cliente)" outline>Cadastrar Projeto</button>
-
-
-   </ion-row>
 
     </ion-card-content>
   </ion-card>
+
+  <ion-card>
+
+      <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+        <ion-item (click)="gerarContrato()">
+  <label>Gerar contrato</label>        <ion-note item-end>
+      <ion-icon name="document"></ion-icon> </ion-note>
+          <br />
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+
+        <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+          <ion-item (click)="addOrEdit(cliente)">
+    <label>Editar</label>        <ion-note item-end>
+        <ion-icon name="hammer"></ion-icon> </ion-note>
+            <br />
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+
+      
+    <!-- <ion-card>
+
+        <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+          <ion-item disabled (click)="cadastrarProjeto(cliente)">
+    <label>Cadastrar Projetos</label>        <ion-note item-end>
+        <ion-icon name="albums"></ion-icon> </ion-note>
+            <br />
+          </ion-item>
+        </ion-card-content>
+      </ion-card> -->
+  
 
 </ion-content>

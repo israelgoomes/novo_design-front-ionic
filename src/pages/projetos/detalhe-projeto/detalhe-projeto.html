@@ -11,32 +11,58 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <span class="lixo" (click)="deletar()"
+        ><ion-icon name="ios-trash"></ion-icon
+      ></span>
+
+      <p>Projeto: {{ projeto.tituloProjeto }}</p>
+      <br />
+      <p>Descrição: {{ projeto.descricaoProjeto }}</p>
+      <br />
+      <p>Valor: {{ projeto.preco }}</p>
+      <br />
+      <p>Cliente: {{ projeto.cliente.nome }}</p>
+      <br />
+      <p>Email: {{ projeto.cliente.email }}</p>
+      <br />
+      <p>Telefone: {{ projeto.cliente.tel }}</p>
+      <br />
+      <p>Endereço: {{ projeto.cliente.endereco }}</p>
+      <br />
+      <p>Cidade: {{ projeto.cliente.cidade }}</p>
+      <br />
+      <p>Bairro: {{ projeto.cliente.bairro }}</p>
+      <br />
+      <p>Cep: {{ projeto.cliente.cep }}</p>
+      <br />
+      <p>
+        <ion-item *ngFor="let fotos of foto">
+          <img [src]="fotos" />
+        </ion-item>
+      </p>
+      <br />
+    </ion-card-content>
+  </ion-card>
 
   <ion-card>
-    <ion-card-content >
-        <span class="lixo" (click)="deletar()"><ion-icon name="ios-trash"></ion-icon></span>
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+      <ion-item (click)="gerarContrato()">
+        <label>Gerar contrato</label>
+        <ion-note item-end> <ion-icon name="document"></ion-icon> </ion-note>
+        <br />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 
-   <p> Projeto: {{projeto.tituloProjeto}}</p> <br/>
-   <p> Descrição: {{projeto.descricaoProjeto}}</p> <br/>
-   <p> Valor: {{projeto.preco}}</p> <br/>
-   <p> Cliente: {{projeto.nomeCliente}}</p> <br/>
-   <p> Email: {{projeto.email}}</p> <br/>
-   <p> Telefone: {{projeto.telefone}}</p> <br/>
-   <p> Endereço: {{projeto.endereco}}</p> <br/>
-   <p> Cidade: {{projeto.cidade}}</p> <br/>
-   <p> Bairro: {{projeto.bairro}}</p> <br/>
-   <p> Cep: {{projeto.cep}}</p> <br/>
-   <p>   <ion-item *ngFor="let fotos of foto">
-      <img [src]="fotos">
-    </ion-item></p> <br/>
-
-
-
-   <ion-row>
-      <button ion-button block (click)="gerarContrato()" no-block outline><ion-icon name="document"></ion-icon>&nbsp;Contrato</button>
-    <button ion-button block (click)="addOrEdit(cliente)" no-block outline>  <ion-icon name="hammer"></ion-icon>&nbsp; Editar</button>
-
-   </ion-row>
+  <ion-card>
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+      <ion-item (click)="addOrEdit(cliente)">
+        <label>Editar</label>
+        <ion-note item-end> <ion-icon name="hammer"></ion-icon> </ion-note>
+        <br />
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>

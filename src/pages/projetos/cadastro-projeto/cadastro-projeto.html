@@ -11,99 +11,90 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-grid>
-        <ion-row>
-      <ion-col>
-           <ion-row>
-        <ion-item>
-          <ion-label floating>Projeto</ion-label>
-          <ion-input [(ngModel)]="projeto.tituloProjeto" required type="text"></ion-input>
+  <ion-card>
+    <ion-card-content>
+      <ion-item>
+        <ion-label floating>Projeto</ion-label>
+        <ion-input
+          [(ngModel)]="projeto.tituloProjeto"
+          required
+          type="text"
+        ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Descrição</ion-label>
+        <ion-textarea
+          type="text"
+          [(ngModel)]="projeto.descricaoProjeto"
+        ></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Valor</ion-label>
+        <ion-input type="text" [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>
+      </ion-item>
+     
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card *ngIf="!cliente.nome">
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+      <ion-item (click)="openClientOption()">
+<label>Escolher cliente</label>        <ion-note item-end>
+          <ion-icon name="arrow-dropright-circle"></ion-icon> </ion-note
+        ><br />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="cliente.nome">
+      <ion-card-content style="padding-top: 3px; padding-bottom: 3px;">
+        <ion-item (click)="openClientOption()">
+  <label>Alterar cliente</label>        <ion-note item-end>
+            <ion-icon name="arrow-dropright-circle"></ion-icon> </ion-note
+          ><br />
         </ion-item>
-      </ion-row>
-      
-      <ion-row>
-          <ion-item>
-            <ion-label floating>Descrição</ion-label>
-            <ion-textarea type="text" [(ngModel)]="projeto.descricaoProjeto"></ion-textarea>
-          </ion-item>
-        </ion-row>
-    
-        <ion-row>
-            <ion-item>
-              <ion-label floating>Valor</ion-label>
-              <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>
-            </ion-item>
-          </ion-row>
-          
-          <ion-row>
-              <ion-item>
-                <ion-label floating>Cliente</ion-label>
-                <ion-input type="text" [(ngModel)]="projeto.nomeCliente"></ion-input>
-              </ion-item>
-            </ion-row>
-            
-            <ion-row>
-                <ion-item>
-                  <ion-label floating>Email</ion-label>
-                  <ion-input type="text" [(ngModel)]="projeto.email"></ion-input>
-                </ion-item>
-              </ion-row>
-    
-              <ion-row>
-                  <ion-item>
-                    <ion-label floating>Telefone</ion-label>
-                    <ion-input type="text" [(ngModel)]="projeto.tel"></ion-input>
-                  </ion-item>
-                </ion-row>
-              
-                <ion-row>
-                    <ion-item>
-                      <ion-label floating>Endereço</ion-label>
-                      <ion-input type="text" [(ngModel)]="projeto.endereco"></ion-input>
-                    </ion-item>
-                  </ion-row>
-      
-                  <ion-row>
-                      <ion-item>
-                        <ion-label floating>Cidade</ion-label>
-                        <ion-input type="text" [(ngModel)]="projeto.cidade"></ion-input>
-                      </ion-item>
-                    </ion-row>
-    
-                    <ion-row>
-                      <ion-item>
-                        <ion-label floating>Bairro</ion-label>
-                        <ion-input type="text" [(ngModel)]="projeto.bairro"></ion-input>
-                      </ion-item>
-                    </ion-row>
-    
-                    <ion-row>
-                      <ion-item>
-                        <ion-label floating>Cep</ion-label>
-                        <ion-input type="text" [(ngModel)]="projeto.cep"></ion-input>
-                      </ion-item>
-                    </ion-row>
-    
-                    <ion-row>
-                        <ion-item text-center>
-                            <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon> Selecionar Foto</button>
-                          </ion-item>
-                    </ion-row>
-                    </ion-col>
-                    </ion-row>
-                 
-                    <ion-item *ngFor="let fotos of foto">
-                        <img [src]="fotos">
-                      </ion-item> 
+      </ion-card-content>
+    </ion-card>
+  
 
-                      <ion-item>
-                      
-                      </ion-item>
-    </ion-grid>
 
-      <ion-grid>
-        <ion-row>
-          <button ion-button outline block (click)="salvar()">Cadastrar</button>
-        </ion-row>
-      </ion-grid>
+
+<ion-card  *ngIf="cliente.nome">
+  <ion-card-content>
+      <ion-item> Cliente: {{ cliente.nome }} </ion-item>
+  </ion-card-content>
+</ion-card>
+
+
+
+<ion-card>
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
+      <ion-item (click)="getPictureOptions()">
+<label>Selecionar Foto(s)</label>        <ion-note item-end>
+    <ion-icon name="camera" ></ion-icon> </ion-note
+        ><br />
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+
+<!-- <ion-item text-center>
+    <button ion-button clear (click)="getPictureOptions()">
+      Selecionar Foto
+    </button>
+  </ion-item> -->
+
+  <ion-item *ngIf="projeto.foto" >
+    <img [src]="fotos" *ngFor="let fotos of foto" />
+  </ion-item>
+
+
+  <ion-grid>
+    <ion-row>
+      <button ion-button outline block (click)="salvar()">Cadastrar</button>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -17,10 +17,12 @@ import { ProjetosProvider } from '../../providers/projetos/projetos';
 })
 export class ProjetosPage {
 listaProjetos: Array<projetoModel> = new Array<projetoModel>();
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
-    public projetoSrvc: ProjetosProvider
+    public projetoSrvc: ProjetosProvider,
+  
     ) {
       this._loadProjetos();
   }
@@ -29,6 +31,8 @@ listaProjetos: Array<projetoModel> = new Array<projetoModel>();
 
     console.log(' lista', this.listaProjetos);
   }
+
+
 
   async _loadProjetos(): Promise<void>{
       let result = await this.projetoSrvc.get();

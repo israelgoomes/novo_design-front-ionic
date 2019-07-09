@@ -72,10 +72,12 @@ this.navCtrl.setRoot('ProjetosPage')
     actionSheet.present();
   
   }
-
+  cancelar(){
+    this.navCtrl.pop();
+  }
   ionViewDidLoad() {
     this.projeto = this.navParams.get('_projeto')
-    console.log('Recebendo Projeto', this.projeto._id);
+    console.log('Recebendo Projeto', this.projeto);
   }
 
 }

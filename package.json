@@ -1,6 +1,6 @@
 {
   "name": "novaDesign",
-  "version": "0.0.2", 
+  "version": "0.0.2",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
   "private": true,
@@ -36,6 +36,7 @@
     "cors": "^2.8.5",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
+    "materialize-css": "^1.0.0",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "zone.js": "0.8.29"

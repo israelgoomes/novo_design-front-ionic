@@ -12,6 +12,7 @@ export class projetoModel {
         preco: string;
         foto: Array<ImageData>;
         cliente: any;
+        data: string;
 }
 
 /* nomeCliente: {trim: true, required: true, type: String, index: true},

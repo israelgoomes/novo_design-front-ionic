@@ -25,7 +25,21 @@
    <p> Cidade: {{cliente.cidade}}</p> <br/>
    <p> Estado: {{cliente.estado}}</p> <br/>
 
+   
+ 
 
+   <hr>
+
+<p style="text-align: center; font-size: 20px; padding-top: 10px; padding-bottom: 15px;">Projetos</p>
+
+<div *ngFor="let item of projeto">
+    <button (click)="expandable()" class="accordion" >Projeto: {{item.tituloProjeto}}</button>   
+    <div class="panel">
+      <p> Descricao: {{item.descricaoProjeto}}</p> <br/>
+      <p> Preco: {{item.preco}}</p> <br/>
+      <p> Data: {{item.data}}</p> <br/>
+   </div>
+  </div>
     </ion-card-content>
   </ion-card>
 
@@ -38,6 +52,8 @@
           <br />
         </ion-item>
       </ion-card-content>
+
+
     </ion-card>
 
     <ion-card>
@@ -51,7 +67,8 @@
         </ion-card-content>
       </ion-card>
 
-      
+    
+     
     <!-- <ion-card>
 
         <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
@@ -63,5 +80,5 @@
         </ion-card-content>
       </ion-card> -->
   
-
+    
 </ion-content>

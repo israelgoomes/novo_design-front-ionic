@@ -1,14 +1,15 @@
 webpackJsonp([4],{
 
-/***/ 303:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheProjetoPageModule", function() { return DetalheProjetoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(310);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,62 +19,120 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetalheProjetoPageModule = /** @class */ (function () {
-    function DetalheProjetoPageModule() {
+//import { SearchPipe } from '../../pipes/search/search';
+
+var ClientesPageModule = /** @class */ (function () {
+    function ClientesPageModule() {
     }
-    DetalheProjetoPageModule = __decorate([
+    ClientesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
             ],
         })
-    ], DetalheProjetoPageModule);
-    return DetalheProjetoPageModule;
+    ], ClientesPageModule);
+    return ClientesPageModule;
 }());
 
-//# sourceMappingURL=detalhe-projeto.module.js.map
+//# sourceMappingURL=clientes.module.js.map
 
 /***/ }),
 
-/***/ 312:
+/***/ 310:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projetoModel; });
-var projetoModel = /** @class */ (function () {
-    function projetoModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(311);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var PipesModule = /** @class */ (function () {
+    function PipesModule() {
     }
-    return projetoModel;
+    PipesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
+        })
+    ], PipesModule);
+    return PipesModule;
 }());
 
-/* nomeCliente: {trim: true, required: true, type: String, index: true},
-    telefone: {trim:true, requried: true, type: String},
-    email: {type: String},
-    rua: {type: String, required: true},
-    bairro: {type: String, required: true},
-    cidade: {type: String, required: true, index: true},
-    tituloProjeto: {trim: true, required: true, index: true, type: String },
-    descricaoProjeto: {type: String, required: true},
-    cep: {type: String, required: true},
-    preco: {type: Number},
-    foto: {type: String}, */ 
-//# sourceMappingURL=projetoModel.js.map
+//# sourceMappingURL=pipes.module.js.map
 
 /***/ }),
 
-/***/ 450:
+/***/ 311:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheProjetoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SearchPipe = /** @class */ (function () {
+    function SearchPipe() {
+    }
+    SearchPipe.prototype.transform = function (items, terms) {
+        if (!items)
+            return [];
+        if (!terms)
+            return items;
+        //console.log('Termos', terms)
+        try {
+            terms = terms.toString().toLowerCase();
+            console.log(terms);
+            return items.filter(function (it) {
+                if (it.nome != undefined) {
+                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
+                }
+                else {
+                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
+                }
+            });
+        }
+        catch (error) {
+            console.log('Erro no pipe search', error);
+        }
+    };
+    SearchPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'search',
+        })
+    ], SearchPipe);
+    return SearchPipe;
+}());
+
+//# sourceMappingURL=search.js.map
+
+/***/ }),
+
+/***/ 443:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(312);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(53);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -124,78 +183,88 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 /**
- * Generated class for the DetalheProjetoPage page.
+ * Generated class for the ClientesPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var DetalheProjetoPage = /** @class */ (function () {
-    function DetalheProjetoPage(navCtrl, navParams, projetoSrvc, alertSrvc) {
+var ClientesPage = /** @class */ (function () {
+    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.projetoSrvc = projetoSrvc;
-        this.alertSrvc = alertSrvc;
-        this.foto = [];
-        var projeto = this.navParams.get('_projeto');
-        if (projeto) {
-            this.projeto = projeto;
-        }
-        else {
-            this.projeto = new __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__["a" /* projetoModel */]();
-        }
+        this.modalCtrl = modalCtrl;
+        this.clienteSrvc = clienteSrvc;
+        this.listaClientes = new Array();
+        this._loadCliente();
     }
-    DetalheProjetoPage.prototype.deletar = function () {
+    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
+        /** enviando pelo localStorage
+       localStorage.setItem(configHelper.storageKeys.selectClient, JSON.stringify(cliente));
+       */
+        var modal = this.modalCtrl.create('DetalheClientePage', {
+            cliente: cliente
+        });
+        modal.present();
+    };
+    ClientesPage.prototype._loadCliente = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
+            var clientResult, error_1;
             return __generator(this, function (_a) {
-                this.alertSrvc.confirm('Excluir?', "Deseja realmente excluir o projeto " + this.projeto.tituloProjeto + " ?", function () { return __awaiter(_this, void 0, void 0, function () {
-                    var sucesso, result;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                sucesso = false;
-                                return [4 /*yield*/, this.projetoSrvc.delete(this.projeto._id)];
-                            case 1:
-                                result = _a.sent();
-                                sucesso = result.success;
-                                if (sucesso) {
-                                    this.alertSrvc.toast('Deletado com sucesso', 'bottom');
-                                    this.navCtrl.setRoot('ProjetosPage');
-                                }
-                                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        return [4 /*yield*/, this.clienteSrvc.get()];
+                    case 1:
+                        clientResult = _a.sent();
+                        if (clientResult.success) {
+                            this.listaClientes = clientResult.data;
                         }
-                    });
-                }); });
+                        return [3 /*break*/, 3];
+                    case 2:
+                        error_1 = _a.sent();
+                        console.log('Problema ao carregar os clientes', error_1);
+                        return [3 /*break*/, 3];
+                    case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ClientesPage.prototype.ngOnInit = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
                 return [2 /*return*/];
             });
         });
     };
-    DetalheProjetoPage.prototype.gerarContrato = function () {
-        this.navCtrl.push('ContratoPage', { _projeto: this.projeto });
-        console.log(this.projeto);
+    ClientesPage.prototype.abrirCadastro = function (model) {
+        this.navCtrl.push('CadastroClientePage', { cliente: model });
     };
-    DetalheProjetoPage.prototype.addOrEdit = function () {
-        this.navCtrl.push('AdmProjetoPage', { _projeto: this.projeto });
-        console.log('Enviando o Projeto', this.projeto);
+    ClientesPage.prototype.abrirDetalheCliente = function (model) {
+        this.navCtrl.push('DetalheClientePage', { cliente: model });
     };
-    DetalheProjetoPage.prototype.ionViewDidLoad = function () {
-        this.foto = this.projeto.foto;
-        this.projeto = this.navParams.get('_projeto');
-        console.log('Projetos', this.projeto);
+    ClientesPage.prototype.ionViewDidLoad = function () {
     };
-    DetalheProjetoPage = __decorate([
+    ClientesPage.prototype.abrirPdf = function () {
+        this.navCtrl.setRoot('ContratoPage');
+    };
+    ClientesPage.prototype.logout = function () {
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
+        this.navCtrl.setRoot('LoginPage');
+    };
+    ClientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-detalhe-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n  Generated template for the DetalheProjetoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>Detalhes do projeto</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-card>\n    <ion-card-content>\n      <span class="lixo" (click)="deletar()"\n        ><ion-icon name="ios-trash"></ion-icon\n      ></span>\n\n      <p>Projeto: {{ projeto.tituloProjeto }}</p>\n      <br />\n      <p>Descrição: {{ projeto.descricaoProjeto }}</p>\n      <br />\n      <p>Valor: {{ projeto.preco }}</p>\n      <br />\n      <p>Cliente: {{ projeto.cliente.nome }}</p>\n      <br />\n      <p>Email: {{ projeto.cliente.email }}</p>\n      <br />\n      <p>Telefone: {{ projeto.cliente.tel }}</p>\n      <br />\n      <p>Endereço: {{ projeto.cliente.endereco }}</p>\n      <br />\n      <p>Cidade: {{ projeto.cliente.cidade }}</p>\n      <br />\n      <p>Bairro: {{ projeto.cliente.bairro }}</p>\n      <br />\n      <p>Cep: {{ projeto.cliente.cep }}</p>\n      <br />\n      <p>\n        <ion-item *ngFor="let fotos of foto">\n          <img [src]="fotos" />\n        </ion-item>\n      </p>\n      <br />\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n      <ion-item (click)="gerarContrato()">\n        <label>Gerar contrato</label>\n        <ion-note item-end> <ion-icon name="document"></ion-icon> </ion-note>\n        <br />\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n\n  <ion-card>\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n      <ion-item (click)="addOrEdit(cliente)">\n        <label>Editar</label>\n        <ion-note item-end> <ion-icon name="hammer"></ion-icon> </ion-note>\n        <br />\n      </ion-item>\n    </ion-card-content>\n  </ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/,
+            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n    \n    </ion-col>\n\n</ion-row>\n</ion-grid>\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n  <ion-card-content >\n    Nome: {{cliente.nome}} <br/>\n    Email: {{cliente.email}}<br/>\n    Telefone: {{cliente.tel}}\n  </ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__["a" /* ProjetosProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */]])
-    ], DetalheProjetoPage);
-    return DetalheProjetoPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]])
+    ], ClientesPage);
+    return ClientesPage;
 }());
 
-//# sourceMappingURL=detalhe-projeto.js.map
+//# sourceMappingURL=clientes.js.map
 
 /***/ })
 

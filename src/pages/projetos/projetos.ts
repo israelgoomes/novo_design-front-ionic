@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { projetoModel } from '../../app/models/projetoModel';
 import { ProjetosProvider } from '../../providers/projetos/projetos';
+import { configHelper } from '../../app/helpers/configHelper';
 
 /**
  * Generated class for the ProjetosPage page.
@@ -53,7 +54,7 @@ listaProjetos: Array<projetoModel> = new Array<projetoModel>();
     this.navCtrl.push('CadastroProjetoPage', {_projeto: model})
   
   }
-  abrirDetalheProjeto(model: projetoModel): void {
+  abrirDetalheProjeto(model: projetoModel, item: projetoModel): void {
       this.navCtrl.push('DetalheProjetoPage', {_projeto: model})
   }
 

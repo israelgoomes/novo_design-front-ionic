@@ -49,7 +49,7 @@
     <name>NovaDesign</name>
     <description>Aplicativo para estudo de curso</description>
     <author email="rael_goomes@hotmail.com" href="http://ionicframework.com/">Israel gomes da lapa</author>
-    <content original-src="index.html" src="http://192.168.0.110:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -57,7 +57,6 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
-    <allow-navigation href="http://192.168.0.110:8100" sessionid="17ec236d" />
     <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application" xmlns:android="http://schemas.android.com/apk/res/android">
         <application android:networkSecurityConfig="@xml/network_security_config" />
     </edit-config>

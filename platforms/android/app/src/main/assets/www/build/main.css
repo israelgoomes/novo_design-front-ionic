@@ -28086,6 +28086,10 @@ page-detalhe-cliente .ion-ios-trash:before {
   color: #4f413b;
 }
 
+page-detalhe-cliente ion-icon#icone {
+  color: white !important;
+}
+
 page-detalhe-cliente span {
   float: right;
 }
@@ -28102,6 +28106,67 @@ page-detalhe-cliente ion-icon {
 page-detalhe-cliente .scroll-content {
   padding-left: 0px !important;
   padding-right: 0px !important;
+}
+
+page-detalhe-cliente div#minha-div-1 {
+  padding-top: 20px;
+  -webkit-transition: 3s;
+  transition: 3s;
+}
+
+page-detalhe-cliente .accordion {
+  background-color: #eee;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-color: #4f413b;
+  border-radius: 04px;
+}
+
+page-detalhe-cliente .active, page-detalhe-cliente .accordion:hover {
+  background-color: #4f413b;
+}
+
+page-detalhe-cliente .accordion:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+  font-size: 18px;
+}
+
+page-detalhe-cliente .active:after {
+  content: "\2212";
+  color: white;
+  font-size: 20px;
+}
+
+page-detalhe-cliente .panel {
+  padding: 0px 18px;
+  padding-top: 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
+page-detalhe-cliente h3 {
+  opacity: 0;
+  -webkit-transition: opacity 500ms ease-in;
+  transition: opacity 500ms ease-in;
+}
+
+page-detalhe-cliente input:checked + h3 {
+  opacity: 1;
 }
 
 page-contrato ion-input, page-contrato ion-textarea {

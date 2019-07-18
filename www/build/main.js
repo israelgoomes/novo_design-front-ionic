@@ -95,81 +95,27 @@ webpackEmptyAsyncContext.id = 118;
 
 var map = {
 	"../pages/clientes/adm-cliente/adm-cliente.module": [
-		293,
-<<<<<<< HEAD
-		13
-	],
-	"../pages/clientes/cadastro-cliente/cadastro-cliente.module": [
 		294,
-		5
-	],
-	"../pages/clientes/clientes.module": [
-		295,
-		1
-	],
-	"../pages/clientes/detalhe-cliente/detalhe-cliente.module": [
-		296,
-		4
-	],
-	"../pages/contrato/contrato.module": [
-		306,
-=======
 		14
 	],
 	"../pages/clientes/cadastro-cliente/cadastro-cliente.module": [
-		294,
+		293,
 		7
 	],
 	"../pages/clientes/clientes.module": [
 		295,
-		3
+		4
 	],
 	"../pages/clientes/detalhe-cliente/detalhe-cliente.module": [
 		296,
-		6
+		1
 	],
 	"../pages/contrato/contrato.module": [
 		307,
->>>>>>> 8be39a7
 		0
 	],
 	"../pages/email-generate/email-generate.module": [
 		297,
-<<<<<<< HEAD
-		12
-	],
-	"../pages/fotos/fotos.module": [
-		298,
-		11
-	],
-	"../pages/login/login.module": [
-		299,
-		10
-	],
-	"../pages/projetos/adm-projeto/adm-projeto.module": [
-		300,
-		9
-	],
-	"../pages/projetos/cadastro-projeto/cadastro-projeto.module": [
-		301,
-		3
-	],
-	"../pages/projetos/detalhe-projeto/detalhe-projeto.module": [
-		302,
-		2
-	],
-	"../pages/projetos/projetos.module": [
-		303,
-		8
-	],
-	"../pages/splash/splash.module": [
-		304,
-		7
-	],
-	"../pages/tabs/tabs.module": [
-		305,
-		6
-=======
 		13
 	],
 	"../pages/fotos/fotos.module": [
@@ -182,7 +128,7 @@ var map = {
 	],
 	"../pages/modal-clientes/modal-clientes.module": [
 		300,
-		2
+		3
 	],
 	"../pages/projetos/adm-projeto/adm-projeto.module": [
 		301,
@@ -190,15 +136,15 @@ var map = {
 	],
 	"../pages/projetos/cadastro-projeto/cadastro-projeto.module": [
 		302,
-		5
+		6
 	],
 	"../pages/projetos/detalhe-projeto/detalhe-projeto.module": [
-		303,
-		4
+		304,
+		5
 	],
 	"../pages/projetos/projetos.module": [
-		304,
-		1
+		303,
+		2
 	],
 	"../pages/splash/splash.module": [
 		305,
@@ -207,7 +153,6 @@ var map = {
 	"../pages/tabs/tabs.module": [
 		306,
 		8
->>>>>>> 8be39a7
 	]
 };
 function webpackAsyncContext(req) {
@@ -423,6 +368,41 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (this && this.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -441,6 +421,13 @@ var ProjetosProvider = /** @class */ (function (_super) {
         _this.url = __WEBPACK_IMPORTED_MODULE_2__app_helpers_configHelper__["a" /* configHelper */].url + "projetos";
         return _this;
     }
+    ProjetosProvider.prototype.projetoByClienteId = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.http.get(this.url + "/cliente/" + id)];
+            });
+        });
+    };
     ProjetosProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["B" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__http_http__["a" /* HttpProvider */]])
@@ -452,11 +439,7 @@ var ProjetosProvider = /** @class */ (function (_super) {
 
 /***/ }),
 
-<<<<<<< HEAD
-/***/ 210:
-=======
 /***/ 211:
->>>>>>> 8be39a7
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -585,21 +568,13 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__angular_common_http__ = __webpack_require__(161);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_clientes_clientes__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__providers_projetos_projetos__ = __webpack_require__(209);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_camera_camera__ = __webpack_require__(210);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_camera_camera__ = __webpack_require__(211);
->>>>>>> 8be39a7
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__ionic_native_camera__ = __webpack_require__(167);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_network__ = __webpack_require__(291);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__ionic_native_file__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__ionic_native_file_opener__ = __webpack_require__(292);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__ionic_native_email_composer__ = __webpack_require__(212);
-<<<<<<< HEAD
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_brmasker_ionic_3__ = __webpack_require__(211);
-=======
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_brmasker_ionic_3__ = __webpack_require__(210);
->>>>>>> 8be39a7
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -647,8 +622,8 @@ var AppModule = /** @class */ (function () {
                 //PipesModule,
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/clientes/adm-cliente/adm-cliente.module#AdmClientePageModule', name: 'AdmClientePage', segment: 'adm-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/cadastro-cliente/cadastro-cliente.module#CadastroClientePageModule', name: 'CadastroClientePage', segment: 'cadastro-cliente', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clientes/adm-cliente/adm-cliente.module#AdmClientePageModule', name: 'AdmClientePage', segment: 'adm-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/clientes.module#ClientesPageModule', name: 'ClientesPage', segment: 'clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/detalhe-cliente/detalhe-cliente.module#DetalheClientePageModule', name: 'DetalheClientePage', segment: 'detalhe-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/email-generate/email-generate.module#EmailGeneratePageModule', name: 'EmailGeneratePage', segment: 'email-generate', priority: 'low', defaultHistory: [] },
@@ -657,8 +632,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/modal-clientes/modal-clientes.module#ModalClientesPageModule', name: 'ModalClientesPage', segment: 'modal-clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/adm-projeto/adm-projeto.module#AdmProjetoPageModule', name: 'AdmProjetoPage', segment: 'adm-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/cadastro-projeto/cadastro-projeto.module#CadastroProjetoPageModule', name: 'CadastroProjetoPage', segment: 'cadastro-projeto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/projetos/detalhe-projeto/detalhe-projeto.module#DetalheProjetoPageModule', name: 'DetalheProjetoPage', segment: 'detalhe-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/projetos.module#ProjetosPageModule', name: 'ProjetosPage', segment: 'projetos', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/projetos/detalhe-projeto/detalhe-projeto.module#DetalheProjetoPageModule', name: 'DetalheProjetoPage', segment: 'detalhe-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/splash/splash.module#SplashPageModule', name: 'SplashPage', segment: 'splash', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contrato/contrato.module#ContratoPageModule', name: 'ContratoPage', segment: 'contrato', priority: 'low', defaultHistory: [] }
@@ -1065,14 +1040,15 @@ var configHelper = /** @class */ (function () {
     function configHelper() {
     }
     //colocado desse jeito para configurar o cors, foi configura no ionic.config.json n aparte de proxies
-    configHelper.url = '/v1/';
-    //public static url: string = 'https://marcenarianovadesign.com.br/api/';
+    //public static url: string = '/v1/';
+    configHelper.url = 'https://marcenarianovadesign.com.br/api/';
     //public static url: string ='http://localhost:3000/api/';
     //https://marcenarianovadesign.com.br/api/
-    //http://localhost:3000/api/'
+    // public static url: string = 'http://localhost:3000/api/'
     configHelper.storageKeys = {
         token: 'novadesign.token',
-        user: 'novadesign.user'
+        user: 'novadesign.user',
+        selectClient: 'novadesign.select.client'
     };
     return configHelper;
 }());

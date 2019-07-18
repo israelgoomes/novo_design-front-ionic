@@ -32,6 +32,9 @@ export class ClientesPage implements OnInit{
   }
 
  abrirDetalheClientePage(cliente: clienteModel) {
+   /** enviando pelo localStorage
+  localStorage.setItem(configHelper.storageKeys.selectClient, JSON.stringify(cliente));
+  */
   const modal =  this.modalCtrl.create('DetalheClientePage', {
     cliente: cliente
   });
@@ -39,14 +42,21 @@ export class ClientesPage implements OnInit{
 }
 
 private async _loadCliente(): Promise<void>{
-  let clientResult = await this.clienteSrvc.get();
-  if(clientResult.success){
-    this.listaClientes = <Array<clienteModel>>clientResult.data;
+  try {
+    let clientResult = await this.clienteSrvc.get();
+    if(clientResult.success){
+      this.listaClientes = <Array<clienteModel>>clientResult.data;
+    }
+  } catch (error) {
+    console.log('Problema ao carregar os clientes', error)
   }
+
 }
 
 
-async ngOnInit(): Promise<void> {
+ ngOnInit():void{
+   let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+   console.log('usuario Logado', user.nome )
   
 }
 

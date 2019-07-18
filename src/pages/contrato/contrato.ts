@@ -24,7 +24,8 @@ export class ContratoPage implements OnInit{
     name: "",
     descritivo: "",
     vlTotal: "",
-    prEntrega: ""
+    prEntrega: "",
+    cpf: ''
   };
   cliente: clienteModel;
   projeto: projetoModel;
@@ -160,6 +161,11 @@ this.values["0"].vlTotal = this.contrato.vlTotal
           margin: [10, 10, 0, 0]
         },
         {
+          text: `CPF: ${this.contrato.cpf}`.toUpperCase(),
+          style: "story",
+          margin: [10, 10, 0, 0]
+        },
+        {
           text: `Cep: ${this.values["0"].cep}`.toUpperCase(),
           style: "story",
           margin: [10, 10, 0, 0]
@@ -202,7 +208,7 @@ this.values["0"].vlTotal = this.contrato.vlTotal
         {
           text: "Cidade: São vicente/SP",
           style: "story",
-          margin: [0, 10, 0, 0]
+          margin: [10, 10, 0, 0]
         },
 
         //-----------------------Descrição do serviço ------------------------------------------

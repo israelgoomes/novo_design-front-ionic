@@ -56,7 +56,7 @@ private async _loadCliente(): Promise<void>{
 
  ngOnInit():void{
    let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
-   console.log('usuario Logado', user.nome )
+   console.log('usuario Logado', user )
   
 }
 

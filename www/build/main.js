@@ -95,11 +95,11 @@ webpackEmptyAsyncContext.id = 118;
 
 var map = {
 	"../pages/clientes/adm-cliente/adm-cliente.module": [
-		294,
+		293,
 		14
 	],
 	"../pages/clientes/cadastro-cliente/cadastro-cliente.module": [
-		293,
+		294,
 		7
 	],
 	"../pages/clientes/clientes.module": [
@@ -139,11 +139,11 @@ var map = {
 		6
 	],
 	"../pages/projetos/detalhe-projeto/detalhe-projeto.module": [
-		304,
+		303,
 		5
 	],
 	"../pages/projetos/projetos.module": [
-		303,
+		304,
 		2
 	],
 	"../pages/splash/splash.module": [
@@ -622,8 +622,8 @@ var AppModule = /** @class */ (function () {
                 //PipesModule,
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/clientes/cadastro-cliente/cadastro-cliente.module#CadastroClientePageModule', name: 'CadastroClientePage', segment: 'cadastro-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/adm-cliente/adm-cliente.module#AdmClientePageModule', name: 'AdmClientePage', segment: 'adm-cliente', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clientes/cadastro-cliente/cadastro-cliente.module#CadastroClientePageModule', name: 'CadastroClientePage', segment: 'cadastro-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/clientes.module#ClientesPageModule', name: 'ClientesPage', segment: 'clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/detalhe-cliente/detalhe-cliente.module#DetalheClientePageModule', name: 'DetalheClientePage', segment: 'detalhe-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/email-generate/email-generate.module#EmailGeneratePageModule', name: 'EmailGeneratePage', segment: 'email-generate', priority: 'low', defaultHistory: [] },
@@ -632,8 +632,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/modal-clientes/modal-clientes.module#ModalClientesPageModule', name: 'ModalClientesPage', segment: 'modal-clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/adm-projeto/adm-projeto.module#AdmProjetoPageModule', name: 'AdmProjetoPage', segment: 'adm-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/cadastro-projeto/cadastro-projeto.module#CadastroProjetoPageModule', name: 'CadastroProjetoPage', segment: 'cadastro-projeto', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/projetos/projetos.module#ProjetosPageModule', name: 'ProjetosPage', segment: 'projetos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/detalhe-projeto/detalhe-projeto.module#DetalheProjetoPageModule', name: 'DetalheProjetoPage', segment: 'detalhe-projeto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/projetos/projetos.module#ProjetosPageModule', name: 'ProjetosPage', segment: 'projetos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/splash/splash.module#SplashPageModule', name: 'SplashPage', segment: 'splash', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contrato/contrato.module#ContratoPageModule', name: 'ContratoPage', segment: 'contrato', priority: 'low', defaultHistory: [] }

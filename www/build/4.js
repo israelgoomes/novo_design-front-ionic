@@ -231,7 +231,7 @@ var ClientesPage = /** @class */ (function () {
     };
     ClientesPage.prototype.ngOnInit = function () {
         var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-        console.log('usuario Logado', user.nome);
+        console.log('usuario Logado', user);
     };
     ClientesPage.prototype.abrirCadastro = function (model) {
         this.navCtrl.push('CadastroClientePage', { cliente: model });
@@ -251,12 +251,14 @@ var ClientesPage = /** @class */ (function () {
     };
     ClientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="primary">\n    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n    \n    </ion-col>\n\n</ion-row>\n</ion-grid>\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n  <ion-card-content >\n    Nome: {{cliente.nome}} <br/>\n    Email: {{cliente.email}}<br/>\n    Telefone: {{cliente.tel}}\n  </ion-card-content>\n</ion-card>\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
+            selector: 'page-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n\n  Generated template for the ClientesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>clientes <ion-icon (click)="logout()" name="exit">&nbsp; Sair</ion-icon></ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n<ion-grid>\n\n<ion-row>\n\n<ion-col col-10>\n\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n</ion-col>\n\n\n\n<ion-col col-2>\n\n    <ion-fab>\n\n        <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n    \n\n    </ion-col>\n\n\n\n</ion-row>\n\n</ion-grid>\n\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n\n  <ion-card-content >\n\n    Nome: {{cliente.nome}} <br/>\n\n    Email: {{cliente.email}}<br/>\n\n    Telefone: {{cliente.tel}}\n\n  </ion-card-content>\n\n</ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]])
     ], ClientesPage);
     return ClientesPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=clientes.js.map

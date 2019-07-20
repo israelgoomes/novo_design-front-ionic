@@ -35,13 +35,28 @@ listaProjetos: Array<projetoModel> = new Array<projetoModel>();
 
 
 
+  async _loadProjetos(): Promise<void> {
+    let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+      console.log('Usuário logado',user)
+    try {
+      let result = await this.projetoSrvc.projetobyIdUser(user._id);
+      if (result.success) {
+        this.listaProjetos = <Array<projetoModel>>result.data;
+     
+        console.log("Projetos pertencentes ao usuario logado", this.listaProjetos);
+      }
+    } catch (error) {}
+  }
+  
+/*
+
   async _loadProjetos(): Promise<void>{
       let result = await this.projetoSrvc.get();
       if(result.success){
         this.listaProjetos = <Array<projetoModel>>result.data;
         console.log(this.listaProjetos)
       }
-  }
+  }*/
 
   async deletar(): Promise<void> {
       let result = await this.projetoSrvc.get()

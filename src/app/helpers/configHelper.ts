@@ -10,4 +10,7 @@ export class configHelper {
         user: 'novadesign.user',
         selectClient: 'novadesign.select.client'
     }
+    public static Events = {
+        atualizacaoUserMenu: 'atualizacao.user.menu'
+    }
 }

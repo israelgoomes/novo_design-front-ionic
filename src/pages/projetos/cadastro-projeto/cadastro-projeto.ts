@@ -6,6 +6,7 @@ import { projetoModel } from '../../../app/models/projetoModel';
 import { CameraProvider } from '../../../providers/camera/camera';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
+import { configHelper } from '../../../app/helpers/configHelper';
 
 
 @IonicPage()
@@ -66,6 +67,20 @@ openClientOption(){
     })
 }
 
+
+async loadCliente(): Promise<void> {
+  let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+    console.log('Usuário logado',user)
+  try {
+    let result = await this.clientesSrvc.clientebyIdUser(user._id);
+    if (result.success) {
+      this.clientes = <Array<clienteModel>>result.data;
+      console.log("projeto pertencente pertencentes ao usuario logado", this.clientes);
+    }
+  } catch (error) {}
+}
+
+/*
 async loadCliente(): Promise<void>{
   try {
     let result = await this.clientesSrvc.get();
@@ -77,11 +92,13 @@ async loadCliente(): Promise<void>{
     console.log("Erro na tela projetos", error);
   }
   
-}
+}*/
 
 async salvar(): Promise<void> {
   this.projeto.foto = this.foto;
-
+  let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+  console.log('Usuário logado em projetos',user)
+  this.projeto.usuario = user._id;
   let sucesso = false;
   if(!this.projeto._id){
     let cadastroResult = await this.projetoSrvc.post(this.projeto)

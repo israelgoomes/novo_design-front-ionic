@@ -23,20 +23,20 @@
       <br />
       <p>Valor: {{ projeto.preco }}</p>
       <br />
-      <p>Cliente: {{ projeto.cliente.nome }}</p>
+      <p>Cliente: {{ cliente.nome }}</p> 
       <br />
-      <p>Email: {{ projeto.cliente.email }}</p>
+      <p>Email: {{ cliente.email }}</p>
       <br />
-      <p>Telefone: {{ projeto.cliente.tel }}</p>
+      <p>Telefone: {{ cliente.tel }}</p>
       <br />
-      <p>Endereço: {{ projeto.cliente.endereco }}</p>
+      <p>Endereço: {{ cliente.endereco }}</p>
       <br />
-      <p>Cidade: {{ projeto.cliente.cidade }}</p>
+      <p>Cidade: {{ cliente.cidade }}</p>
       <br />
-      <p>Bairro: {{ projeto.cliente.bairro }}</p>
+      <p>Bairro: {{ cliente.bairro }}</p>
       <br />
-      <p>Cep: {{ projeto.cliente.cep }}</p>
-      <br />
+      <p>Cep: {{ cliente.cep }}</p>
+      <br/>
       <p>
         <ion-item *ngFor="let fotos of foto">
           <img [src]="fotos" />
@@ -50,7 +50,7 @@
     <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
       <ion-item (click)="gerarContrato()">
         <label>Gerar contrato</label>
-        <ion-note item-end> <ion-icon name="document"></ion-icon> </ion-note>
+        <ion-note item-end> <ion-icon id="icon-color" name="document"></ion-icon> </ion-note>
         <br />
       </ion-item>
     </ion-card-content>
@@ -60,7 +60,7 @@
     <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">
       <ion-item (click)="addOrEdit(cliente)">
         <label>Editar</label>
-        <ion-note item-end> <ion-icon name="hammer"></ion-icon> </ion-note>
+        <ion-note item-end> <ion-icon id="icon-color" name="hammer"></ion-icon> </ion-note>
         <br />
       </ion-item>
     </ion-card-content>

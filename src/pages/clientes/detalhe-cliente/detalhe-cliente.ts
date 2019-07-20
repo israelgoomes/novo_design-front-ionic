@@ -6,7 +6,7 @@ import { AlertProvider } from "../../../providers/alert/alert";
 import { projetoModel } from "../../../app/models/projetoModel";
 import { configHelper } from "../../../app/helpers/configHelper";
 import { ProjetosProvider } from "../../../providers/projetos/projetos";
-import * as moment from 'moment';
+import * as moment from "moment";
 
 @IonicPage()
 @Component({
@@ -31,7 +31,6 @@ export class DetalheClientePage implements OnInit {
     } else {
       this.cliente = new clienteModel();
     }
-
   }
 
   ionViewWillEnter() {
@@ -54,9 +53,9 @@ export class DetalheClientePage implements OnInit {
       let result = await this.projetoSrvc.projetoByClienteId(this.cliente._id);
       if (result.success) {
         this.projeto = <Array<projetoModel>>result.data;
-        this.projeto.forEach(v =>{
+        this.projeto.forEach(v => {
           v.data = moment(v.data).format("DD/MM/YYYY");
-        })
+        });
         console.log("Projetos", this.projeto);
       }
     } catch (error) {}

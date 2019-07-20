@@ -1,14 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 299:
+/***/ 303:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmProjetoPageModule", function() { return AdmProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__login__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_projeto__ = __webpack_require__(455);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,34 +18,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = /** @class */ (function () {
-    function LoginPageModule() {
+var AdmProjetoPageModule = /** @class */ (function () {
+    function AdmProjetoPageModule() {
     }
-    LoginPageModule = __decorate([
+    AdmProjetoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */]),
             ],
         })
-    ], LoginPageModule);
-    return LoginPageModule;
+    ], AdmProjetoPageModule);
+    return AdmProjetoPageModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=adm-projeto.module.js.map
 
 /***/ }),
 
-/***/ 448:
+/***/ 455:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(52);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -93,58 +96,105 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams, usuarioSrvc) {
+
+
+
+var AdmProjetoPage = /** @class */ (function () {
+    function AdmProjetoPage(navCtrl, navParams, projetoSrvc, alertSrvc, cameraSrvc, actionSheetCtrl, platform, clienteSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.usuarioSrvc = usuarioSrvc;
-        this.form = {};
+        this.projetoSrvc = projetoSrvc;
+        this.alertSrvc = alertSrvc;
+        this.cameraSrvc = cameraSrvc;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.platform = platform;
+        this.clienteSrvc = clienteSrvc;
+        this.projeto = this.navParams.get('_projeto');
+        this.cliente = this.navParams.get('_cliente');
     }
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    LoginPage.prototype.login = function () {
+    AdmProjetoPage.prototype.alterar = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var sucesso, updateResult, updateResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.usuarioSrvc.autenticate(this.form.email, this.form.senha)];
+                    case 0:
+                        sucesso = false;
+                        if (!this.projeto._id) return [3 /*break*/, 2];
+                        return [4 /*yield*/, this.projetoSrvc.put(this.projeto._id, this.projeto)];
                     case 1:
-                        result = _a.sent();
-                        console.log('Teste', result);
-                        if (result.success) {
-                            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */].RegisterLogin(result.data);
-                            this.navCtrl.setRoot('TabsPage');
+                        updateResult = _a.sent();
+                        sucesso = updateResult.success;
+                        _a.label = 2;
+                    case 2:
+                        if (!this.cliente._id) return [3 /*break*/, 4];
+                        return [4 /*yield*/, this.clienteSrvc.put(this.cliente._id, this.cliente)];
+                    case 3:
+                        updateResult = _a.sent();
+                        sucesso = updateResult.success;
+                        _a.label = 4;
+                    case 4:
+                        if (sucesso) {
+                            this.alertSrvc.toast('Projeto salvo com sucesso', 'bottom');
+                            this.navCtrl.setRoot('ProjetosPage');
                         }
                         return [2 /*return*/];
                 }
             });
         });
     };
-    LoginPage.prototype.abrirClientes = function () {
-        this.navCtrl.setRoot('TabsPage');
+    AdmProjetoPage.prototype.getPictureOptions = function () {
+        var _this = this;
+        //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
+        var actionSheet = this.actionSheetCtrl.create({
+            title: 'Adicionar foto',
+            buttons: [
+                { text: 'Tirar foto', handler: function () {
+                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
+                        _this.cameraSrvc.takePicture(function (photo) {
+                            _this.projeto.foto = photo;
+                        });
+                    },
+                    icon: this.platform.is('ios') ? null : 'camera' },
+                //------------------------ Opção pegar da galeria ------------
+                { text: 'Pegar galeria', handler: function () {
+                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
+                            _this.projeto.foto = photo;
+                        });
+                    }, icon: this.platform.is('ios') ? null : 'images' },
+                //o role 'destructive' deixa o botao vermelho
+                { text: 'Cancelar', role: 'destructive',
+                    icon: this.platform.is('ios') ? null : 'close',
+                    handler: function () {
+                        //cancela a ação
+                    }, }
+            ]
+        });
+        actionSheet.present();
     };
-    LoginPage.prototype.abrirPdf = function () {
-        this.navCtrl.setRoot('ContratoPage');
+    AdmProjetoPage.prototype.cancelar = function () {
+        this.navCtrl.pop();
     };
-    LoginPage = __decorate([
+    AdmProjetoPage.prototype.ionViewDidLoad = function () {
+        this.projeto = this.navParams.get('_projeto');
+        console.log('Recebendo Projeto', this.projeto);
+    };
+    AdmProjetoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n </ion-header>\n\n<ion-content padding>\n    <ion-row>\n    <img src="./../../assets/imgs/logo_marcenaria_oficial.png">  \n    </ion-row>\n\n  <section class="login">\n<ion-item>\n    <ion-label floating >Nome</ion-label>\n  <ion-input [(ngModel)]="form.email" type="text" tappable></ion-input>\n</ion-item>\n<ion-item>\n  <ion-label floating >Senha</ion-label>\n  <ion-input [(ngModel)]="form.senha" type="password" tappable></ion-input>\n</ion-item>\n\n\n<button class="btn" ion-button block (click)="login()"> Entrar</button>\n<button class="btn" ion-button block (click)="abrirClientes()">Cadastro</button>\n\n\n\n\n</section>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/,
+            selector: 'page-adm-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/'<!--\n\n  Generated template for the AdmProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Editar Projeto</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Projeto</ion-label>\n\n                <ion-input\n\n                  [(ngModel)]="projeto.tituloProjeto"\n\n                  \n\n                  type="text"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Descrição</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="projeto.descricaoProjeto"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Valor</ion-label>\n\n                <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cliente</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.nome"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Email</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.email"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Telefone</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.tel"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Endereço</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.endereco"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cidade</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cidade"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Bairro</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.bairro"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cep"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-item *ngIf="projeto.foto">\n\n              <img [src]="projeto.foto" />\n\n            </ion-item>\n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n \n\n        <ion-card>\n\n            <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n              <ion-item (click)="getPictureOptions()">\n\n        <label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n            <ion-icon name="camera" ></ion-icon> </ion-note\n\n                ><br />\n\n              </ion-item>\n\n            </ion-card-content>\n\n          </ion-card>    \n\n\n\n          <ion-card>\n\n            <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>\n\n            \n\n            <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>\n\n          </ion-card>\n\n    \n\n   \n\n\n\n  <!-- <ion-grid>\n\n    <ion-row>\n\n      <button ion-button (click)="alterar()">Salvar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content> -->\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */]])
-    ], LoginPage);
-    return LoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
+            __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__["a" /* CameraProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__["a" /* ClientesProvider */]])
+    ], AdmProjetoPage);
+    return AdmProjetoPage;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=adm-projeto.js.map
 
 /***/ })
 

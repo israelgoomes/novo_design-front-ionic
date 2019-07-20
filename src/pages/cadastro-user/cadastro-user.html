@@ -1,0 +1,47 @@
+<ion-content padding>
+    <div class="logo">
+    <div>
+      <ion-item  *ngIf="usuario.foto" class="circle">
+          <img [src]="usuario.foto" />
+      </ion-item>
+ 
+      <ion-item  *ngIf="!usuario.foto" class="circle">
+          <img src="../../assets/imgs/user.jpg" />
+      </ion-item> 
+  </div> 
+
+
+        <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon></button>
+      </div>
+
+
+  
+      <ion-list no-lines class="list-transparent">
+        <ion-item>
+          <ion-label style="color: black;" floating>Nome</ion-label>
+          <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label style="color: black;"  floating>Email</ion-label>
+          <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label style="color: black;"  floating>Senha</ion-label>
+          <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label style="color: black;"  floating>Confirme a senha</ion-label>
+          <ion-input [(ngModel)]="usuario.senhaConfirmacao" type="password" ></ion-input>
+        </ion-item>
+  
+  <ion-grid>
+    <ion-row> 
+    <button ion-button block outline color="dark" (click)="cadastrar()">Cadastrar</button>
+    </ion-row>
+    <ion-row> 
+      <button ion-button block outline color="dark" (click)="cancelar()">Cancelar</button>
+      </ion-row>
+  </ion-grid>
+  
+      </ion-list>
+    

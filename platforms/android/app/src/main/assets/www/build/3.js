@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 300:
+/***/ 302:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,8 +8,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalClientesPageModule", function() { return ModalClientesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_clientes__ = __webpack_require__(449);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(310);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_clientes__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(312);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -30,7 +30,7 @@ var ModalClientesPageModule = /** @class */ (function () {
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_clientes__["a" /* ModalClientesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_clientes__["a" /* ModalClientesPage */]),
             ],
         })
     ], ModalClientesPageModule);
@@ -41,13 +41,13 @@ var ModalClientesPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 310:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(313);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -73,7 +73,7 @@ var PipesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -123,7 +123,7 @@ var SearchPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 449:
+/***/ 454:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -170,9 +170,9 @@ var ModalClientesPage = /** @class */ (function () {
     ], ModalClientesPage.prototype, "cliente", void 0);
     ModalClientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-modal-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>CLientes</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-col col-10>\n\n    <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n    </ion-col>\n\n \n\n<ion-card *ngFor="let lista of cliente | search: args" (click)="saveClient(lista)"> \n\n  <ion-card-header>\n\n    \n\n  </ion-card-header>\n\n  \n\n  <ion-card-content>\n\n    <p>{{lista.nome}}</p>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/,
+            selector: 'page-modal-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Clientes</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-col col-10>\n\n    <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n    </ion-col>\n\n \n\n<ion-card *ngFor="let lista of cliente | search: args" (click)="saveClient(lista)"> \n\n  <ion-card-header>\n\n    \n\n  </ion-card-header>\n\n  \n\n  <ion-card-content>\n\n    <p>{{lista.nome}}</p>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* ViewController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["p" /* ViewController */]])
     ], ModalClientesPage);
     return ModalClientesPage;
 }());

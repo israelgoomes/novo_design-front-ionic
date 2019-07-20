@@ -24,4 +24,9 @@ export class ProjetosProvider extends ProviderBase<projetoModel>{
   async projetoByClienteId(id: string): Promise<HttpResultModel>{
     return this.http.get(`${this.url}/cliente/${id}`);
   }
+
+  async projetobyIdUser(id: string): Promise<HttpResultModel>{
+    return this.http.get(`${this.url}/usuario/${id}`);
+  }
+  
 }

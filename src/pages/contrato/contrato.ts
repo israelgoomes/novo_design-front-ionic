@@ -39,12 +39,14 @@ export class ContratoPage implements OnInit{
     private toastCtrl: ToastController
   ) {
     let client = this.navParams.get("_cliente");
+    let clienteProjeto = this.navParams.get('_clienteProjeto')
     if (client) {
       this.cliente = <clienteModel>client;
-    } else {
-      this.cliente = new clienteModel();
+    } else if(clienteProjeto) {
+      this.cliente = <clienteModel>clienteProjeto;
+    }else{
+    this.cliente = new clienteModel();
     }
-
     let projeto = this.navParams.get('_projeto');
     if(projeto){
       this.projeto = <projetoModel>projeto;
@@ -55,10 +57,8 @@ export class ContratoPage implements OnInit{
 
   ngOnInit(): void {
     this.contrato.prEntrega = moment(this.contrato.prEntrega).format("Day Month Year");
-
-    console.log(this.contrato.prEntrega)
-
-    if(this.cliente.nome != undefined){
+    console.log('cliente', this.cliente)
+    if(this.projeto.tituloProjeto == undefined){
         this.values = [
           {nome: this.cliente.nome,
           cep: this.cliente.cep,
@@ -71,15 +71,15 @@ export class ContratoPage implements OnInit{
         ]
     } else {
       this.values = [{
-        nome: this.projeto.cliente.nome,
-        cep: this.projeto.cliente.cep,
-        endereco: this.projeto.cliente.endereco,
-        bairro: this.projeto.cliente.bairro,
-        cidade: this.projeto.cliente.cidade,
+        nome: this.cliente.nome,
+        cep: this.cliente.cep,
+        endereco: this.cliente.endereco,
+        bairro: this.cliente.bairro,
+        cidade: this.cliente.cidade,
         descritivo: this.projeto.descricaoProjeto,
         vlTotal: this.projeto.preco,
         projeto: this.projeto.tituloProjeto,
-        tel: this.projeto.cliente.tel
+        tel: this.cliente.tel
       }
 
       ]
@@ -101,10 +101,7 @@ export class ContratoPage implements OnInit{
     toast.present();
   }
   ionViewDidLoad() {
-    console.log("Cliente", this.cliente.cep);
-    console.log("Usuário");
-    console.log("ionViewDidLoad ContratoPage");
-  
+
   }
 
   teste() {
@@ -113,10 +110,11 @@ export class ContratoPage implements OnInit{
 
   createPdf() {
     this.contrato.prEntrega = moment(this.contrato.prEntrega).format("DD/MM/YYYY");
-    if(this.cliente.nome != undefined){
+  if(this.projeto.tituloProjeto == undefined){
 this.values["0"].descritivo = this.contrato.descritivo
 this.values["0"].vlTotal = this.contrato.vlTotal
     }
+    console.log('Itens enviados', this.values)
     let self = this;
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
     var docDefinition = {

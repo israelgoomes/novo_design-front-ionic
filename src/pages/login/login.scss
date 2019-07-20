@@ -5,10 +5,25 @@ text-align: left !important;
 .toolbar-title{
     text-align: left !important;
 }
+
+.scroll-content{
+    padding: 5px !important;
+    background-image: linear-gradient(to bottom, white, rgb(82, 127, 118)); 
+}
 ion-content{
-    background: url(./../../assets/imgs/moveis-planejados.jpg);
+   // background-image: url(./../../assets/imgs/login.jpg);
+ //  background-image: linear-gradient(to bottom, white, #527F76); 
+
     background-size: cover;
 
+}
+
+
+.logo{
+    width: 140px;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 img {
     padding-top: 50px;

@@ -8,4 +8,5 @@ export class clienteModel {
     bairro: string;
     cidade: string;
     estado: string;
+    usuario: string;
 }

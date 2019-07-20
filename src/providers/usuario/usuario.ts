@@ -28,9 +28,17 @@ async get(): Promise<HttpResultModel>{
 return await this.http.get(`${this.url}`);
 }
 
+async getByIdUser(id: string): Promise<HttpResultModel>{
+  return await this.http.get(`${this.url}/${id}`)
+}
 
 static get getTokenAcess(): string{
   return localStorage.getItem(configHelper.storageKeys.token);
+}
+
+async register(usuario: usuarioModel): Promise<HttpResultModel>{
+  console.log('Usuario Provider');
+  return this.http.post(`${this.url}/register`, usuario);
 }
 
 static RegisterLogin(result: any){

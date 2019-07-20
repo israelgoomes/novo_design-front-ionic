@@ -13,6 +13,7 @@ export class projetoModel {
         foto: Array<ImageData>;
         cliente: any;
         data: string;
+        usuario: string;
 }
 
 /* nomeCliente: {trim: true, required: true, type: String, index: true},

@@ -6,7 +6,7 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-grid *ngIf="cliente.nome != undefined">
+    <ion-grid *ngIf="projeto.tituloProjeto == undefined">
 
       <ion-card>
         <ion-card-content>    
@@ -67,7 +67,7 @@
 </ion-grid>
 
 
-<ion-grid *ngIf="cliente.nome == undefined">
+<ion-grid *ngIf="projeto.tituloProjeto != undefined">
 <ion-card>
     <ion-card-content>
     
@@ -94,7 +94,7 @@
   
   <ion-item>
       <ion-label floating>Contratante</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.nome"></ion-input>
+      <ion-input [(ngModel)]="cliente.nome"></ion-input>
     </ion-item>
   
     <ion-item>
@@ -103,23 +103,23 @@
     </ion-item>
   <ion-item>
       <ion-label floating>Endereço</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.endereco"></ion-input>
+      <ion-input [(ngModel)]="cliente.endereco"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Cep</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.cep" [brmasker]="{mask:'00000-120'}"></ion-input>
+      <ion-input [(ngModel)]="cliente.cep" [brmasker]="{mask:'00000-120'}"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Bairro</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.bairro"></ion-input>
+      <ion-input [(ngModel)]="cliente.bairro"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Cidade</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.cidade"></ion-input>
+      <ion-input [(ngModel)]="cliente.cidade"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label floating>Telefone</ion-label>
-      <ion-input [(ngModel)]="projeto.cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}"></ion-input>
+      <ion-input [(ngModel)]="cliente.tel" [brmasker]="{mask:'(00) 00000-0000'}"></ion-input>
   </ion-item>
 </ion-card-content>
 </ion-card>
@@ -136,7 +136,7 @@
     <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">
       <ion-item (click)="createPdf()">
 <label>Gerar Contrato</label>        <ion-note item-end>
-    <ion-icon ios="ios-document" md="md-document"></ion-icon> </ion-note>
+    <ion-icon id="icon-color" ios="ios-document" md="md-document"></ion-icon> </ion-note>
         <br/>
       </ion-item>
     </ion-card-content>

@@ -1,0 +1,56 @@
+page-cadastro-user {
+
+    .scroll-content{
+        padding: 15px !important;
+        //background-image: linear-gradient(to bottom, white, #527F76); 
+        background-color: rgba(82, 127, 118, 0.6);
+        background-position:0px 0px;
+
+
+   }
+   ion-content{
+     background: url(./../../assets/imgs/login.jpg) no-repeat center center;
+  // background-image: linear-gradient(to bottom, white, #527F76); 
+
+     background-size: cover;
+ 
+ }
+    .logo{
+        text-align: center;
+    }
+    .logo img{
+     
+    }
+    .logo ion-icon{
+        font-size: 35px;
+        color: white;
+    }
+    ion-item {
+        background: transparent !important;
+        color: black;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .circle {
+        background-color: #aaa;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+       // margin-left: 20%;
+        padding-left: 0px !important;
+        margin-left: auto;
+        margin-right: auto;
+       // width: 6em
+      }
+      .circle img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding-top: 0px;
+      }
+      ion-label{
+        color: black;
+    }
+}

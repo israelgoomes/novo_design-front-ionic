@@ -46,7 +46,7 @@
     <feature name="EmailComposer">
         <param name="android-package" value="de.appplant.cordova.emailcomposer.EmailComposer" />
     </feature>
-    <name>NovaDesign</name>
+    <name>CM</name>
     <description>Aplicativo para estudo de curso</description>
     <author email="rael_goomes@hotmail.com" href="http://ionicframework.com/">Israel gomes da lapa</author>
     <content src="index.html" />

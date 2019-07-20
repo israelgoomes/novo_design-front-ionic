@@ -9,10 +9,10 @@
 
 <ion-content padding>
     <ion-row>
-    <img src="./../../assets/imgs/logo_marcenaria_oficial.png">  
+    <img class="logo" src="./../../assets/imgs/logo_app.png">  
     </ion-row>
-
   <section class="login">
+
 <ion-item>
     <ion-label floating >Nome</ion-label>
   <ion-input [(ngModel)]="form.email" type="text" tappable></ion-input>
@@ -23,8 +23,8 @@
 </ion-item>
 
 
-<button class="btn" ion-button block (click)="login()"> Entrar</button>
-<button class="btn" ion-button block (click)="abrirClientes()">Cadastro</button>
+<button ion-button block outline color="dark"  (click)="login()"> Entrar</button>
+<button ion-button block outline color="dark"  (click)="cadastroUser()">Cadastro</button>
 
 
 

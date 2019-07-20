@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
+import { configHelper } from '../../../app/helpers/configHelper';
 
 /**
  * Generated class for the CadastroClientePage page.
@@ -36,10 +37,14 @@ export class CadastroClientePage {
 
   async salvar(): Promise<void>{
     let sucesso = false;
+    let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+    console.log('Usuário logado',user)
+    this.cliente.usuario = user._id
       if(!this.cliente._id){
     let cadastroResult = await this.clienteSrvc.post(this.cliente);
     sucesso = cadastroResult.success;
     console.log('Sem id')
+
       }
       /* 
       else {
@@ -62,6 +67,8 @@ back(){
 
 
   ionViewDidLoad() {
+    let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+    console.log('Usuário logado',user._id)
     console.log('ionViewDidLoad CadastroClientePage');
   }
 

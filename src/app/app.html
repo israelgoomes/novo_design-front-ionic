@@ -1,1 +1,42 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu [content]="content">
+        <ion-content no-padding>
+            
+
+            <section id="menu-color">
+
+                <div style="padding-top: 50px; text-align: center;">
+            <ion-item class="circle">
+                <img [src]="usuario.foto" />
+            </ion-item>
+        </div> 
+
+        <div style="font-size: 20px; padding-top: 20px; text-align: center; color: white;">
+                {{usuario.nome}}<br/>
+                {{usuario.email}}
+            </div>
+       
+        </section>
+        <ion-item >
+                Clientes <ion-note item-end>
+                        <ion-icon id="menu-icon" ios="ios-contacts" md="md-contacts"></ion-icon> </ion-note>
+             </ion-item>
+        <ion-item >
+                Serviços <ion-note item-end>    <ion-icon id="menu-icon" name="folder-open"></ion-icon></ion-note>
+             </ion-item>
+             <ion-item >
+                    Enviar email <ion-note item-end>   <ion-icon id="menu-icon" name="mail"></ion-icon> </ion-note>
+                 </ion-item>
+            <ion-item (click)="logout()">
+                   Sair <ion-note item-end>  <ion-icon id="menu-icon" name="settings"></ion-icon></ion-note>
+                </ion-item>
+          <!-- <ion-list>
+            <p>some menu content, could be list items</p>
+          </ion-list> -->
+          <ion-footer id="menu-footer" color="primary">
+              Developed By Israel Gomes  
+          </ion-footer>
+        </ion-content>
+      </ion-menu>
+      
+
+<ion-nav [root]="rootPage" #content></ion-nav>

@@ -4,6 +4,8 @@ import { projetoModel } from '../../../app/models/projetoModel';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
 import { AlertProvider } from '../../../providers/alert/alert';
 import { CameraProvider } from '../../../providers/camera/camera';
+import { ClientesProvider } from '../../../providers/clientes/clientes';
+import { clienteModel } from '../../../app/models/clienteModel';
 
 @IonicPage()
 @Component({
@@ -12,6 +14,7 @@ import { CameraProvider } from '../../../providers/camera/camera';
 })
 export class AdmProjetoPage {
 projeto: projetoModel;
+cliente: clienteModel;
   constructor(
     public navCtrl: NavController,
      public navParams: NavParams,
@@ -19,10 +22,16 @@ projeto: projetoModel;
       public alertSrvc: AlertProvider,
       public cameraSrvc: CameraProvider,
       public actionSheetCtrl: ActionSheetController,
-      public platform: Platform
+      public platform: Platform,
+      private clienteSrvc: ClientesProvider
      ) {
     this.projeto = this.navParams.get('_projeto')
+    this.cliente = this.navParams.get('_cliente')
   }
+
+
+
+
 
   async alterar(): Promise<void>{
     let sucesso = false
@@ -33,6 +42,10 @@ projeto: projetoModel;
     //passando o id e o modelo.
     let updateResult= await this.projetoSrvc.put(this.projeto._id, this.projeto)
     sucesso = updateResult.success;
+    }
+    if(this.cliente._id){
+      let updateResult = await this.clienteSrvc.put(this.cliente._id, this.cliente)
+      sucesso = updateResult.success
     }
 if(sucesso){
 this.alertSrvc.toast('Projeto salvo com sucesso', 'bottom');

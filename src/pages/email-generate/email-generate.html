@@ -1,7 +1,11 @@
 <ion-header>
   <ion-navbar color="primary">
-    <ion-title>Gerador de Email</ion-title>
-  </ion-navbar>
+    <ion-buttons position>
+        <button ion-button icon-only menuToggle>
+          <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Gerador de email
+        </button>
+        </ion-buttons>
+</ion-navbar>
 </ion-header>
 
 <ion-content padding>
@@ -28,7 +32,7 @@
       <ion-item (click)="sendEmail()">
         <label>Enviar e-mail</label>
         <ion-note item-end>
-          <ion-icon name="mail"></ion-icon> </ion-note
+          <ion-icon id="send" name="mail"></ion-icon> </ion-note
         ><br />
       </ion-item>
     </ion-card-content>

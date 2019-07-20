@@ -1,5 +1,39 @@
 // http://ionicframework.com/docs/theming/
+.circle {
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 48px;
+    padding-left: 0px !important;
+  }
+  
+  section#menu-color{
+    //background-image: url('../assets/imgs/menu-img.jpg');
+    background-image: linear-gradient(to bottom, white, #527F76); 
+    width: 100%;
+    padding: 0px;
+    height: 60%;
+}
+ion-footer#menu-footer{
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: #527F76;
+    color: white;
+}
+  .circle img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 
+  ion-icon#menu-icon{
+      font-size: 30px;
+      color: #4f413b;
+  }
 
 // App Global Sass
 // --------------------------------------------------

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content, Events } from 'ionic-angular';
 import { UsuarioProvider } from '../../providers/usuario/usuario';
+import { configHelper } from '../../app/helpers/configHelper';
 
 /**
  * Generated class for the LoginPage page.
@@ -16,13 +17,15 @@ import { UsuarioProvider } from '../../providers/usuario/usuario';
 })
 export class LoginPage {
 
+
   form: any ={
 
   }
   constructor(
     public navCtrl: NavController,
      public navParams: NavParams,
-     public usuarioSrvc: UsuarioProvider
+     public usuarioSrvc: UsuarioProvider,
+     public events: Events
      ) {
   }
 
@@ -30,22 +33,24 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
+
+
   async login(): Promise<void> {
+
+    this.navCtrl.setRoot(this.navCtrl.getActive().component);  
+
     let result = await this.usuarioSrvc.autenticate(this.form.email, this.form.senha);
     console.log('Teste',result);
     if(result.success){
       UsuarioProvider.RegisterLogin(result.data);
       this.navCtrl.setRoot('TabsPage')
     }
+
   }
 
-  abrirClientes(){
-    this.navCtrl.setRoot('TabsPage')
+  cadastroUser(){
+    this.navCtrl.setRoot('CadastroUserPage')
   }
 
-
-  abrirPdf(){
-    this.navCtrl.setRoot('ContratoPage')
-  }
 
 }

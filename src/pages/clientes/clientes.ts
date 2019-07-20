@@ -1,9 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Content, MenuController, Events } from 'ionic-angular';
 import { ModalController } from 'ionic-angular';
 import { ClientesProvider } from '../../providers/clientes/clientes';
 import { clienteModel } from '../../app/models/clienteModel';
 import { configHelper } from '../../app/helpers/configHelper';
+import { UsuarioProvider } from '../../providers/usuario/usuario';
+import { usuarioModel } from '../../app/models/usuarioModel';
 
 /**
  * Generated class for the ClientesPage page.
@@ -18,17 +20,23 @@ import { configHelper } from '../../app/helpers/configHelper';
   templateUrl: 'clientes.html',
 })
 export class ClientesPage implements OnInit{
+  @ViewChild(Content) content: Content;
 
   listaClientes: Array<clienteModel> = new Array<clienteModel>();
-
+  usuario: Array<usuarioModel> = new Array<usuarioModel>();
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public modalCtrl: ModalController,
-    public clienteSrvc: ClientesProvider
+    public clienteSrvc: ClientesProvider,
+    private usuarioSrvc: UsuarioProvider, 
+    private menuCtrl: MenuController,
+    private events: Events
 
     ) {
-      this._loadCliente();
+
+      this.load();
+     // this.usuarioLogado();
   }
 
  abrirDetalheClientePage(cliente: clienteModel) {
@@ -41,6 +49,34 @@ export class ClientesPage implements OnInit{
   modal.present();
 }
 
+
+
+async load(): Promise<void> {
+//this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
+  let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+    console.log('Usuário logado',user)
+  try {
+    let result = await this.clienteSrvc.clientebyIdUser(user._id);
+    if (result.success) {
+      this.listaClientes = <Array<clienteModel>>result.data;
+   
+      console.log("Cliente pertencentes ao usuario logado", this.listaClientes);
+    }
+  } catch (error) {}
+}
+
+/*
+async usuarioLogado(): Promise<void>{
+  //this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
+  let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+let result = await this.usuarioSrvc.getByIdUser(user._id);
+if(result.success){
+  this.usuario = <Array<usuarioModel>>result.data;
+  console.log('Usuario Logado pelo método', this.usuario)
+}
+}*/
+
+/*
 private async _loadCliente(): Promise<void>{
   try {
     let clientResult = await this.clienteSrvc.get();
@@ -51,13 +87,19 @@ private async _loadCliente(): Promise<void>{
     console.log('Problema ao carregar os clientes', error)
   }
 
-}
+}*/
 
 
  ngOnInit():void{
+  this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
    let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
    console.log('usuario Logado', user )
+}
+
+ionViewWillEnter(){
   
+  this.load();
+  //this.usuarioLogado();
 }
 
 abrirCadastro(model?: clienteModel){
@@ -68,9 +110,10 @@ abrirDetalheCliente(model?: clienteModel){
   this.navCtrl.push('DetalheClientePage', {cliente: model})
   
 }
-  ionViewDidLoad() {
-
-  }
+  
+menu(){
+  this.navCtrl.setRoot('MenuPage')
+}
   abrirPdf(){
     this.navCtrl.setRoot('ContratoPage')
   }

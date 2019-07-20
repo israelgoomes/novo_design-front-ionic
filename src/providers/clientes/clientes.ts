@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewChild } from '@angular/core';
 import { HttpProvider } from '../http/http';
 import { configHelper } from '../../app/helpers/configHelper';
 import { ProviderBase } from '../../app/base/providerBase';
 import { clienteModel } from '../../app/models/clienteModel';
-
+import { HttpResultModel } from '../../app/models/httpResultModel';
 /*
   Generated class for the ClientesProvider provider.
 
@@ -19,6 +19,13 @@ url: string = `${configHelper.url}clientes`
     super(`${configHelper.url}clientes`, http);
   }
 
+  async clientebyIdUser(id: string): Promise<HttpResultModel>{
+    return this.http.get(`${this.url}/usuario/${id}`);
+  }
+
+  async getByIdClient(id: string): Promise<HttpResultModel>{
+    return this.http.get(`${this.url}/${id}`);
+  }
 
 
 }

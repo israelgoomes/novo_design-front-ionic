@@ -10,9 +10,31 @@
     padding-left: 0px !important;
   }
   
-  section#menu-color{
+  $color: theme;
+
+  .menu-color{
     //background-image: url('../assets/imgs/menu-img.jpg');
     background-image: linear-gradient(to bottom, white, #527F76); 
+    width: 100%;
+    padding: 0px;
+    height: 60%;
+}
+
+.menu-purple{
+  background-image: linear-gradient(to bottom, white, purple); 
+    width: 100%;
+    padding: 0px;
+    height: 60%;
+}
+
+.menu-blue{
+  background-image: linear-gradient(to bottom, white, Navy); 
+    width: 100%;
+    padding: 0px;
+    height: 60%;
+}
+.menu-black{
+  background-image: linear-gradient(to bottom, white, black); 
     width: 100%;
     padding: 0px;
     height: 60%;
@@ -33,6 +55,22 @@ ion-footer#menu-footer{
   ion-icon#menu-icon{
       font-size: 30px;
       color: #4f413b;
+  }
+
+  button#logout{
+    margin-top: 10px;
+    margin-right: 10px;
+    background: transparent;
+    border-bottom: 1px solid #4f413b;
+    color: #527F76;
+    border-radius: 5px;
+    font-size: 10px;
+    padding-left: 10px;
+    padding-right: 12px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    float: right;
+
   }
 
 // App Global Sass

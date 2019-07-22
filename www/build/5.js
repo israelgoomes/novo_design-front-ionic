@@ -1,14 +1,15 @@
 webpackJsonp([5],{
 
-/***/ 294:
+/***/ 297:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUserPageModule", function() { return CadastroUserPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(450);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(442);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,37 +19,123 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroUserPageModule = /** @class */ (function () {
-    function CadastroUserPageModule() {
+//import { SearchPipe } from '../../pipes/search/search';
+
+var ClientesPageModule = /** @class */ (function () {
+    function ClientesPageModule() {
     }
-    CadastroUserPageModule = __decorate([
+    ClientesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */],
+                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */]),
+                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
+                //IonicModule.forRoot(MyApp),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
             ],
+            entryComponents: [],
         })
-    ], CadastroUserPageModule);
-    return CadastroUserPageModule;
+    ], ClientesPageModule);
+    return ClientesPageModule;
 }());
 
-//# sourceMappingURL=cadastro-user.module.js.map
+//# sourceMappingURL=clientes.module.js.map
 
 /***/ }),
 
-/***/ 445:
+/***/ 442:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUserPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(443);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+var PipesModule = /** @class */ (function () {
+    function PipesModule() {
+    }
+    PipesModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
+            imports: [],
+            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
+        })
+    ], PipesModule);
+    return PipesModule;
+}());
+
+//# sourceMappingURL=pipes.module.js.map
+
+/***/ }),
+
+/***/ 443:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var SearchPipe = /** @class */ (function () {
+    function SearchPipe() {
+    }
+    SearchPipe.prototype.transform = function (items, terms) {
+        if (!items)
+            return [];
+        if (!terms)
+            return items;
+        //console.log('Termos', terms)
+        try {
+            terms = terms.toString().toLowerCase();
+            console.log(terms);
+            return items.filter(function (it) {
+                if (it.nome != undefined) {
+                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
+                }
+                else {
+                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
+                }
+            });
+        }
+        catch (error) {
+            console.log('Erro no pipe search', error);
+        }
+    };
+    SearchPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
+            name: 'search',
+        })
+    ], SearchPipe);
+    return SearchPipe;
+}());
+
+//# sourceMappingURL=search.js.map
+
+/***/ }),
+
+/***/ 450:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__ = __webpack_require__(212);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -99,116 +186,119 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var CadastroUserPage = /** @class */ (function () {
-    function CadastroUserPage(navCtrl, navParams, usuarioSrvc, alertSrvc, platform, actionSheetCtrl, cameraSrvc) {
+var ClientesPage = /** @class */ (function () {
+    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc, events, appVersion) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.usuarioSrvc = usuarioSrvc;
-        this.alertSrvc = alertSrvc;
-        this.platform = platform;
-        this.actionSheetCtrl = actionSheetCtrl;
-        this.cameraSrvc = cameraSrvc;
-        this.usuario = new __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__["a" /* usuarioModel */]();
+        this.modalCtrl = modalCtrl;
+        this.clienteSrvc = clienteSrvc;
+        this.events = events;
+        this.appVersion = appVersion;
+        this.class = 'primary';
+        this.listaClientes = new Array();
+        this.usuario = new Array();
+        console.log("Versão do aplicativo", this.appVersion.getVersionNumber());
+        console.log("Versão do aplicativo", this.appVersion.getAppName());
+        this.load();
+        this.loadEvent();
     }
-    CadastroUserPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad CadastroUserPage");
+    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
+        var modal = this.modalCtrl.create("DetalheClientePage", {
+            cliente: cliente
+        });
+        modal.present();
     };
-    CadastroUserPage.prototype.cadastrar = function () {
+    ClientesPage.prototype.load = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var cadastroResult;
+            var user, result, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.usuarioSrvc.register(this.usuario)];
+                    case 0:
+                        user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
+                        console.log("Usuário logado", user);
+                        _a.label = 1;
                     case 1:
-                        cadastroResult = _a.sent();
-                        if (cadastroResult.success) {
-                            this.alertSrvc.toast("Cadastro realizado com sucesso", "bottom");
-                            this.navCtrl.setRoot("LoginPage");
+                        _a.trys.push([1, 3, , 4]);
+                        return [4 /*yield*/, this.clienteSrvc.clientebyIdUser(user._id)];
+                    case 2:
+                        result = _a.sent();
+                        if (result.success) {
+                            this.listaClientes = result.data;
+                            console.log("Cliente pertencentes ao usuario logado", this.listaClientes);
                         }
-                        return [2 /*return*/];
+                        return [3 /*break*/, 4];
+                    case 3:
+                        error_1 = _a.sent();
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
                 }
             });
         });
     };
-    CadastroUserPage.prototype.getPictureOptions = function () {
-        var _this = this;
-        //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
-        var actionSheet = this.actionSheetCtrl.create({
-            title: "Adicionar foto",
-            buttons: [
-                {
-                    text: "Tirar foto",
-                    handler: function () {
-                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o categoria.foto
-                        _this.cameraSrvc.takePicture(function (photo) {
-                            _this.usuario.foto = photo;
-                        });
-                    },
-                    icon: this.platform.is("ios") ? null : "camera"
-                },
-                //------------------------ Opção pegar da galeria ------------
-                {
-                    text: "Pegar galeria",
-                    handler: function () {
-                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
-                            _this.usuario.foto = photo;
-                        });
-                    },
-                    icon: this.platform.is("ios") ? null : "images"
-                },
-                //o role 'destructive' deixa o botao vermelho
-                {
-                    text: "Cancelar",
-                    role: "destructive",
-                    icon: this.platform.is("ios") ? null : "close",
-                    handler: function () {
-                        //cancela a ação
-                    }
-                }
-            ]
-        });
-        actionSheet.present();
+    ClientesPage.prototype.ngOnInit = function () {
+        this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizacaoUserMenu, {});
+        var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
+        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+        if (this.theme == "#527F76") {
+            this.theme = 'primary';
+        }
+        else if (!this.theme) {
+            this.theme = 'primary';
+        }
+        this.eventChangeColor();
     };
-    CadastroUserPage.prototype.cancelar = function () {
+    ClientesPage.prototype.abrirCadastro = function (model) {
+        this.navCtrl.push("CadastroClientePage", { cliente: model });
+    };
+    ClientesPage.prototype.abrirDetalheCliente = function (model) {
+        this.navCtrl.push("DetalheClientePage", { cliente: model });
+    };
+    ClientesPage.prototype.loadEvent = function () {
+        var _this = this;
+        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaClienteByProjetos, function () {
+            _this.load();
+        });
+    };
+    ClientesPage.prototype.eventChangeColor = function () {
+        var _this = this;
+        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, function () {
+            _this.menuController();
+            console.log('Menu adicionado', _this.class);
+        });
+    };
+    ClientesPage.prototype.menuController = function () {
+        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+        if (this.theme == "#527F76") {
+            this.theme = 'primary';
+        }
+    };
+    ClientesPage.prototype.abrirPdf = function () {
+        this.navCtrl.setRoot("ContratoPage");
+    };
+    ClientesPage.prototype.logout = function () {
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
         this.navCtrl.setRoot("LoginPage");
     };
-    CadastroUserPage = __decorate([
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
+    ], ClientesPage.prototype, "content", void 0);
+    ClientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-cadastro-user",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n\n  <div class="logo">\n\n    <div>\n\n      <ion-item *ngIf="usuario.foto" class="circle">\n\n        <img [src]="usuario.foto" />\n\n      </ion-item>\n\n\n\n      <ion-item *ngIf="!usuario.foto" class="circle">\n\n        <img src="../../assets/imgs/user.jpg" />\n\n      </ion-item>\n\n    </div>\n\n\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      <ion-icon name="camera" item-left></ion-icon>\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Email</ion-label>\n\n      <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Senha</ion-label>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Confirme a senha</ion-label>\n\n      <ion-input\n\n        [(ngModel)]="usuario.senhaConfirmacao"\n\n        type="password"\n\n      ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-grid>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cadastrar()">\n\n          Cadastrar\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cancelar()">\n\n          Cancelar\n\n        </button>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/
+            selector: "page-clientes",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n\n  Generated template for the ClientesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n      <ion-buttons position>\n\n          <button ion-button icon-only menuToggle>\n\n            <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Clientes\n\n\n\n          </button>\n\n          </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n<ion-grid>\n\n<ion-row>\n\n<ion-col col-10>\n\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n</ion-col>\n\n\n\n<ion-col col-2>\n\n    <ion-fab>\n\n        <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n    \n\n    </ion-col>\n\n\n\n</ion-row>\n\n</ion-grid>\n\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n\n  <ion-card-content >\n\n    Nome: {{cliente.nome}} <br/>\n\n    Email: {{cliente.email}}<br/>\n\n    Telefone: {{cliente.tel}}\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
-    ], CadastroUserPage);
-    return CadastroUserPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],
+            __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */]])
+    ], ClientesPage);
+    return ClientesPage;
 }());
 
-//# sourceMappingURL=cadastro-user.js.map
-
-/***/ }),
-
-/***/ 446:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usuarioModel; });
-var usuarioModel = /** @class */ (function () {
-    function usuarioModel() {
-    }
-    return usuarioModel;
-}());
-
-/*    nome: {type: String, required: true, trim: true, index: true},
-    email: {type: String, require: true},
-    senha: {type: String, required: true},
-    foto: {type: String},
-    ativo: {type: Boolean},
-    dataCriacao: {type: Date, default: new Date()}*/ 
-//# sourceMappingURL=usuarioModel.js.map
+//# sourceMappingURL=clientes.js.map
 
 /***/ })
 

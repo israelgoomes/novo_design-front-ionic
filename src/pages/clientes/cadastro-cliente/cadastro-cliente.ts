@@ -1,5 +1,5 @@
 import { AlertProvider } from './../../../providers/alert/alert';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
@@ -11,8 +11,8 @@ import { configHelper } from '../../../app/helpers/configHelper';
   selector: 'page-cadastro-cliente',
   templateUrl: 'cadastro-cliente.html',
 })
-export class CadastroClientePage {
-
+export class CadastroClientePage implements OnInit{
+  theme: string;
   cliente: clienteModel;
   constructor(
     public navCtrl: NavController, 
@@ -29,6 +29,15 @@ export class CadastroClientePage {
       }
   }
 
+ngOnInit(){
+  this.eventChangeColor();
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary'
+  }else if(!this.theme){
+    this.theme = 'primary'
+  }
+}
 
   async salvar(): Promise<void>{
     let sucesso = false;
@@ -49,16 +58,29 @@ export class CadastroClientePage {
     }
 }
 
+eventChangeColor(){
+  this.events.subscribe(configHelper.Events.changeColor, ()=>{
+    this.menuController();
+       })
+}
+
+menuController(){
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary'
+  }
+}
+
 
 back(){
   this.navCtrl.pop();
 }
 
-
+/*
   ionViewDidLoad() {
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
     console.log('Usuário logado',user._id)
     console.log('ionViewDidLoad CadastroClientePage');
-  }
+  }*/
 
 }

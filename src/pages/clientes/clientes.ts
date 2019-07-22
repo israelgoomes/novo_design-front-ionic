@@ -12,6 +12,7 @@ import { clienteModel } from "../../app/models/clienteModel";
 import { configHelper } from "../../app/helpers/configHelper";
 import { usuarioModel } from "../../app/models/usuarioModel";
 import { AppVersion } from "@ionic-native/app-version";
+import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @IonicPage()
 @Component({
@@ -20,7 +21,8 @@ import { AppVersion } from "@ionic-native/app-version";
 })
 export class ClientesPage implements OnInit {
   @ViewChild(Content) content: Content;
-
+theme: string;
+class = 'primary';
   listaClientes: Array<clienteModel> = new Array<clienteModel>();
   usuario: Array<usuarioModel> = new Array<usuarioModel>();
   constructor(
@@ -64,6 +66,15 @@ export class ClientesPage implements OnInit {
   ngOnInit(): void {
     this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
+    this.eventChangeColor();
+
   }
 
   abrirCadastro(model?: clienteModel) {
@@ -78,6 +89,21 @@ export class ClientesPage implements OnInit {
       this.load();
     });
   }
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+       console.log('Menu adicionado', this.class);
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
 
   abrirPdf() {
     this.navCtrl.setRoot("ContratoPage");

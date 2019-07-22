@@ -1,11 +1,11 @@
 <ion-content padding>
   <div class="logo">
     <div>
-      <ion-item *ngIf="usuario.foto" class="circle">
+      <ion-item (click)="getPictureOptions()" *ngIf="usuario.foto" class="circle">
         <img [src]="usuario.foto" />
       </ion-item>
 
-      <ion-item *ngIf="!usuario.foto" class="circle">
+      <ion-item (click)="getPictureOptions()"  *ngIf="!usuario.foto" class="circle">
         <img src="../../assets/imgs/user.jpg" />
       </ion-item>
     </div>

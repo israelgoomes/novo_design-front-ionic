@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ActionSheetController, Platform, Events } from 'ionic-angular';
 import { projetoModel } from '../../../app/models/projetoModel';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
@@ -13,9 +13,10 @@ import { configHelper } from '../../../app/helpers/configHelper';
   selector: 'page-adm-projeto',
   templateUrl: 'adm-projeto.html',
 })
-export class AdmProjetoPage {
+export class AdmProjetoPage implements OnInit{
 projeto: projetoModel;
 cliente: clienteModel;
+theme: string;
   constructor(
     public navCtrl: NavController,
      public navParams: NavParams,
@@ -25,15 +26,35 @@ cliente: clienteModel;
       public actionSheetCtrl: ActionSheetController,
       public platform: Platform,
       private clienteSrvc: ClientesProvider,
-      private events: Events
+      private events: Events,
      ) {
     this.projeto = this.navParams.get('_projeto')
     this.cliente = this.navParams.get('_cliente')
   }
 
 
+ngOnInit(): void {
+  this.eventChangeColor();
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary';
+  }else if(!this.theme){
+    this.theme = 'primary';
+  }
 
+}
+eventChangeColor(){
+  this.events.subscribe(configHelper.Events.changeColor, ()=>{
+    this.menuController();
+       })
+}
 
+menuController(){
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary';
+  }
+}
 
   async alterar(): Promise<void>{
     let sucesso = false
@@ -91,9 +112,13 @@ this.events.publish(configHelper.Events.atualizaClienteByProjetos);
   cancelar(){
     this.navCtrl.pop();
   }
+
+  
+
+  /*
   ionViewDidLoad() {
     this.projeto = this.navParams.get('_projeto')
     console.log('Recebendo Projeto', this.projeto);
-  }
+  }*/
 
 }

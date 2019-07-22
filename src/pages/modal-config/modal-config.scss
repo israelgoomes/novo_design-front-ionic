@@ -1,0 +1,145 @@
+page-modal-config {
+div#header{
+    height: 170px;
+   // background-color: #527F76;
+    text-align: center;
+}
+
+.scroll-content{
+    padding: 0px !important;
+}
+
+ion-content{
+    padding: 5px !important;
+}
+ion-icon#trash{
+  font-size: 25px;
+}
+
+ion-icon#off{
+  font-size: 20px;
+  color: red;
+}
+ion-label#title{
+    padding-top: 5px;
+    color: white;
+    margin-top: 0px;
+    font-size: 20px;
+}
+ion-card-header{
+  text-align: center;
+    padding-bottom: 0px !important;
+}
+div#header span{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+.circle {
+    margin-top: 50px;
+    background-color: #aaa;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 48px;
+    padding-left: 0px !important;
+  }
+
+  .theme1{
+    margin-top: 50px;
+    background-color: purple;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    padding-left: 0px !important; 
+  }
+  .theme2{
+    margin-top: 50px;
+    background-color: #527F76;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    padding-left: 0px !important; 
+  }
+  .theme3{
+    margin-top: 50px;
+    background-color: Navy;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    padding-left: 0px !important; 
+  }
+  .theme4{
+    margin-top: 50px;
+    background-color: black;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+    margin-left: 5px;
+    padding-left: 0px !important; 
+  }
+  .circle img {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+  #left {
+    width:30%;
+    float: left;
+    }
+    
+    #right {
+        text-align: center;
+       // padding-top: 30px;
+        width: 70%;
+        float: left;
+    }
+    .dataUser{
+        margin-top: 50px;
+        background: transparent;
+        color: white;
+
+    }
+
+    .div1{
+        text-align: center;
+        // padding-top: 30px;
+         width: 25%;
+         float: left;
+
+    }
+    .div2{
+        text-align: center;
+        // padding-top: 30px;
+         width: 25%;
+         float: left;
+
+    }
+    .div3{
+        text-align: center;
+        // padding-top: 30px;
+         width: 25%;
+         float: left;
+
+    }
+    .div4{
+        text-align: center;
+        // padding-top: 30px;
+         width: 25%;
+         float: left;
+
+    }
+}

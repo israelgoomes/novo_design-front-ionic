@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { projetoModel } from '../../app/models/projetoModel';
 import { ProjetosProvider } from '../../providers/projetos/projetos';
 import { configHelper } from '../../app/helpers/configHelper';
@@ -22,12 +22,12 @@ export class ProjetosPage implements OnInit{
 listaProjetos: Array<projetoModel> = new Array<projetoModel>();
 cliente: Array<clienteModel> = new Array<clienteModel>();
 clienteId = [];
+theme: string;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public projetoSrvc: ProjetosProvider,
-    private clienteSrvc: ClientesProvider
-  
+    private events: Events
     ) {
       this._loadProjetos();
      console.log('Lista de projetos', this.listaProjetos)
@@ -35,20 +35,16 @@ clienteId = [];
 
   ngOnInit(): void {
     this._loadProjetos();
+    this.eventChangeColor();
     console.log('Lista de projetos', this.listaProjetos)
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
 
   }
-
-/*
-  async loadCliente(): Promise<void> {
-    try {
-      let result = await this.clienteSrvc.getByIdClient(this.clienteId.toString());
-      if (result.success) {
-        this.cliente = <Array<clienteModel>>result.data;
-        console.log("CLiente responsável", this.cliente);
-      }
-    } catch (error) {}
-  }*/
 
   async _loadProjetos(): Promise<void> {
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
@@ -76,6 +72,19 @@ clienteId = [];
   }
   abrirDetalheProjeto(model: projetoModel, item: projetoModel): void {
       this.navCtrl.push('DetalheProjetoPage', {_projeto: model})
+  }
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
   }
 
 }

@@ -18,6 +18,7 @@ export class DetalheClientePage implements OnInit {
   clienteSelecionado: projetoModel = new projetoModel();
   icone = false;
   projeto: Array<projetoModel> = new Array<projetoModel>();
+  theme: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -47,7 +48,29 @@ export class DetalheClientePage implements OnInit {
 
   ngOnInit(): void {
     this.load();
+    this.eventChangeColor();
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
   }
+
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
 
   async load(): Promise<void> {
     try {

@@ -15,7 +15,7 @@ export class EmailGeneratePage implements OnInit{
   body = "";
   listaClientes: Array<clienteModel> = new Array<clienteModel>();
   listaEmails = []
-
+  theme: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -68,7 +68,28 @@ export class EmailGeneratePage implements OnInit{
     })
   }
 
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
   ngOnInit(): void {
     this.loadEvent();
+    this.eventChangeColor();
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
   }
 }

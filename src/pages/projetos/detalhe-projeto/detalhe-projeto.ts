@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { projetoModel } from "../../../app/models/projetoModel";
 import { ProjetosProvider } from "../../../providers/projetos/projetos";
 import { AlertProvider } from "../../../providers/alert/alert";
 import { clienteModel } from "../../../app/models/clienteModel";
 import { ClientesProvider } from "../../../providers/clientes/clientes";
+import { configHelper } from "../../../app/helpers/configHelper";
 
 
 @IonicPage()
@@ -12,16 +13,18 @@ import { ClientesProvider } from "../../../providers/clientes/clientes";
   selector: "page-detalhe-projeto",
   templateUrl: "detalhe-projeto.html"
 })
-export class DetalheProjetoPage {
+export class DetalheProjetoPage implements OnInit{
   projeto: projetoModel;
   foto = [];
   cliente: Array<clienteModel> = new Array<clienteModel>();
+  theme: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public projetoSrvc: ProjetosProvider,
     public alertSrvc: AlertProvider,
-    private clienteSrvc: ClientesProvider
+    private clienteSrvc: ClientesProvider,
+    private events: Events
   ) {
     let projeto = this.navParams.get("_projeto");
     if (projeto) {
@@ -31,6 +34,16 @@ export class DetalheProjetoPage {
     }
     this.load();
   }
+ngOnInit(): void {
+  this.eventChangeColor();
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary'
+  }else if(!this.theme){
+    this.theme = 'primary'
+  }
+}
+
 
   //gera os projetos relacionados ao cliente
   async load(): Promise<void> {
@@ -74,11 +87,24 @@ export class DetalheProjetoPage {
     });
     console.log("Enviando o Projeto e o cliente", this.projeto, this.cliente);
   }
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
 
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
+  /*
   ionViewDidLoad() {
     this.foto = this.projeto.foto;
     this.projeto = <projetoModel>this.navParams.get("_projeto");
 
     console.log("Projetos", this.projeto);
-  }
+  }*/
 }

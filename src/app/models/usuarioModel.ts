@@ -3,6 +3,7 @@ export class usuarioModel {
     email: string;
     senha: string;
     foto: string;
+    dataCriacao: string;
 
 }
 

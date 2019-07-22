@@ -1,0 +1,87 @@
+<ion-content padding>
+<div id="header" [ngStyle]="{'background-color': tema}">
+  
+<ion-label id="title">Congifurações</ion-label>
+
+
+<div id="left">
+  
+  <ion-item class="circle">
+    <img [src]="usuario.foto" />
+  </ion-item>
+</div>
+<div id="right">
+  <ion-item  class="dataUser">  
+    {{usuario.nome}}<br/>
+    {{usuario.email}}
+  </ion-item>
+</div>
+</div>
+
+<ion-card>
+  <ion-card-header center>
+    Mudar Tema
+  </ion-card-header>
+  <ion-card-content>
+
+    <div class="div1"> 
+      <div class="theme1" (click)="theme('purple')">
+      </div>
+        <ion-input style="padding-left: 14px;" type="text" value="purple" readonly ></ion-input>
+    </div>
+    
+    <div class="div2"> 
+        <div class="theme2" (click)="theme('#527F76')">
+        </div>
+        <ion-input style="padding-left: 11px;" type="text" value="Original" readonly ></ion-input>
+      </div>
+    
+      <div class="div3"> 
+          <div class="theme3" (click)="theme('blue')">
+          </div>
+          <ion-input style="padding-left: 20px;" type="text" value="blue" readonly ></ion-input>
+        </div>
+    
+        <div class="div4"> 
+            <div class="theme4" (click)="theme('black')">
+            </div>
+            <ion-input style="padding-left: 19px;" type="text" value="black" readonly ></ion-input>
+          </div>
+          
+
+  </ion-card-content>
+</ion-card>
+
+<ion-card>
+  <ion-card-content>
+ Membro desde: {{usuario.dataCriacao}}    
+  </ion-card-content>
+</ion-card>
+
+<ion-card (click)="delete()">
+    <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;">
+      <ion-item>
+<label>Excluir conta</label>        <ion-note item-end>
+    <ion-icon [ngStyle]="{'color': tema}" id="trash" name="trash"></ion-icon> </ion-note>
+        <br/>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+      <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;" >
+        <ion-item (click)="logout()">
+  <label>Sair da conta</label>        <ion-note item-end>
+      <ion-icon id="off" name="power"></ion-icon> </ion-note>
+          <br/>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-fab>
+        <button (click)="back()" [ngStyle]="{'background-color': tema}" ion-fab>    <ion-icon name="arrow-round-back"></ion-icon>
+
+        </button>
+      </ion-fab>
+
+</ion-content>

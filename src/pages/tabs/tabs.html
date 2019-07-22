@@ -1,7 +1,7 @@
 
-<ion-tabs>
+<ion-tabs *ngIf="userOn">
 
-<ion-tab tabIcon="people" tabTitle="Clientes" [root]="'ClientesPage'" ></ion-tab>
+<ion-tab class="teste" tabIcon="people" tabTitle="Clientes" [root]="'ClientesPage'" ></ion-tab>
 <ion-tab tabIcon="bookmarks" tabTitle="Serviços" [root]="'ProjetosPage'" ></ion-tab>
 <ion-tab tabIcon="mail" tabTitle="Email" [root]="'EmailGeneratePage'" ></ion-tab>
 

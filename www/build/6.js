@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 305:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetalheProjetoPageModule", function() { return DetalheProjetoPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUserPageModule", function() { return CadastroUserPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__ = __webpack_require__(457);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(447);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,63 +18,58 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var DetalheProjetoPageModule = /** @class */ (function () {
-    function DetalheProjetoPageModule() {
+var CadastroUserPageModule = /** @class */ (function () {
+    function CadastroUserPageModule() {
     }
-    DetalheProjetoPageModule = __decorate([
+    CadastroUserPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */],
+                __WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__detalhe_projeto__["a" /* DetalheProjetoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */]),
             ],
         })
-    ], DetalheProjetoPageModule);
-    return DetalheProjetoPageModule;
+    ], CadastroUserPageModule);
+    return CadastroUserPageModule;
 }());
 
-//# sourceMappingURL=detalhe-projeto.module.js.map
+//# sourceMappingURL=cadastro-user.module.js.map
 
 /***/ }),
 
-/***/ 311:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projetoModel; });
-var projetoModel = /** @class */ (function () {
-    function projetoModel() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usuarioModel; });
+var usuarioModel = /** @class */ (function () {
+    function usuarioModel() {
     }
-    return projetoModel;
+    return usuarioModel;
 }());
 
-/* nomeCliente: {trim: true, required: true, type: String, index: true},
-    telefone: {trim:true, requried: true, type: String},
-    email: {type: String},
-    rua: {type: String, required: true},
-    bairro: {type: String, required: true},
-    cidade: {type: String, required: true, index: true},
-    tituloProjeto: {trim: true, required: true, index: true, type: String },
-    descricaoProjeto: {type: String, required: true},
-    cep: {type: String, required: true},
-    preco: {type: Number},
-    foto: {type: String}, */ 
-//# sourceMappingURL=projetoModel.js.map
+/*    nome: {type: String, required: true, trim: true, index: true},
+    email: {type: String, require: true},
+    senha: {type: String, required: true},
+    foto: {type: String},
+    ativo: {type: Boolean},
+    dataCriacao: {type: Date, default: new Date()}*/ 
+//# sourceMappingURL=usuarioModel.js.map
 
 /***/ }),
 
-/***/ 457:
+/***/ 447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheProjetoPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(311);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(53);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(446);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -125,107 +120,95 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var DetalheProjetoPage = /** @class */ (function () {
-    function DetalheProjetoPage(navCtrl, navParams, projetoSrvc, alertSrvc, clienteSrvc) {
+var CadastroUserPage = /** @class */ (function () {
+    function CadastroUserPage(navCtrl, navParams, usuarioSrvc, alertSrvc, platform, actionSheetCtrl, cameraSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.projetoSrvc = projetoSrvc;
+        this.usuarioSrvc = usuarioSrvc;
         this.alertSrvc = alertSrvc;
-        this.clienteSrvc = clienteSrvc;
-        this.foto = [];
-        this.cliente = new Array();
-        var projeto = this.navParams.get("_projeto");
-        if (projeto) {
-            this.projeto = projeto;
-        }
-        else {
-            this.projeto = new __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__["a" /* projetoModel */]();
-        }
-        this.load();
+        this.platform = platform;
+        this.actionSheetCtrl = actionSheetCtrl;
+        this.cameraSrvc = cameraSrvc;
+        this.usuario = new __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__["a" /* usuarioModel */]();
     }
-    //gera os projetos relacionados ao cliente
-    DetalheProjetoPage.prototype.load = function () {
+    CadastroUserPage.prototype.ionViewDidLoad = function () {
+        console.log("ionViewDidLoad CadastroUserPage");
+    };
+    CadastroUserPage.prototype.cadastrar = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result, error_1;
+            var cadastroResult;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0:
-                        _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.clienteSrvc.getByIdClient(this.projeto.cliente)];
+                    case 0: return [4 /*yield*/, this.usuarioSrvc.register(this.usuario)];
                     case 1:
-                        result = _a.sent();
-                        if (result.success) {
-                            this.cliente = result.data;
-                            console.log("CLiente responsável", this.cliente);
+                        cadastroResult = _a.sent();
+                        if (cadastroResult.success) {
+                            this.alertSrvc.toast("Cadastro realizado com sucesso", "bottom");
+                            this.navCtrl.setRoot("LoginPage");
                         }
-                        return [3 /*break*/, 3];
-                    case 2:
-                        error_1 = _a.sent();
-                        return [3 /*break*/, 3];
-                    case 3: return [2 /*return*/];
+                        return [2 /*return*/];
                 }
             });
         });
     };
-    DetalheProjetoPage.prototype.deletar = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var _this = this;
-            return __generator(this, function (_a) {
-                this.alertSrvc.confirm("Excluir?", "Deseja realmente excluir o projeto " + this.projeto.tituloProjeto + " ?", function () { return __awaiter(_this, void 0, void 0, function () {
-                    var sucesso, result;
-                    return __generator(this, function (_a) {
-                        switch (_a.label) {
-                            case 0:
-                                sucesso = false;
-                                return [4 /*yield*/, this.projetoSrvc.delete(this.projeto._id)];
-                            case 1:
-                                result = _a.sent();
-                                sucesso = result.success;
-                                if (sucesso) {
-                                    this.alertSrvc.toast("Deletado com sucesso", "bottom");
-                                    this.navCtrl.setRoot("ProjetosPage");
-                                }
-                                return [2 /*return*/];
-                        }
-                    });
-                }); });
-                return [2 /*return*/];
-            });
+    CadastroUserPage.prototype.getPictureOptions = function () {
+        var _this = this;
+        //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
+        var actionSheet = this.actionSheetCtrl.create({
+            title: "Adicionar foto",
+            buttons: [
+                {
+                    text: "Tirar foto",
+                    handler: function () {
+                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o categoria.foto
+                        _this.cameraSrvc.takePicture(function (photo) {
+                            _this.usuario.foto = photo;
+                        });
+                    },
+                    icon: this.platform.is("ios") ? null : "camera"
+                },
+                //------------------------ Opção pegar da galeria ------------
+                {
+                    text: "Pegar galeria",
+                    handler: function () {
+                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
+                            _this.usuario.foto = photo;
+                        });
+                    },
+                    icon: this.platform.is("ios") ? null : "images"
+                },
+                //o role 'destructive' deixa o botao vermelho
+                {
+                    text: "Cancelar",
+                    role: "destructive",
+                    icon: this.platform.is("ios") ? null : "close",
+                    handler: function () {
+                        //cancela a ação
+                    }
+                }
+            ]
         });
+        actionSheet.present();
     };
-    DetalheProjetoPage.prototype.gerarContrato = function () {
-        this.navCtrl.push("ContratoPage", {
-            _projeto: this.projeto,
-            _clienteProjeto: this.cliente
-        });
-        console.log(this.projeto);
+    CadastroUserPage.prototype.cancelar = function () {
+        this.navCtrl.setRoot("LoginPage");
     };
-    DetalheProjetoPage.prototype.addOrEdit = function () {
-        this.navCtrl.push("AdmProjetoPage", {
-            _projeto: this.projeto,
-            _cliente: this.cliente
-        });
-        console.log("Enviando o Projeto e o cliente", this.projeto, this.cliente);
-    };
-    DetalheProjetoPage.prototype.ionViewDidLoad = function () {
-        this.foto = this.projeto.foto;
-        this.projeto = this.navParams.get("_projeto");
-        console.log("Projetos", this.projeto);
-    };
-    DetalheProjetoPage = __decorate([
+    CadastroUserPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-detalhe-projeto",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n\n  Generated template for the DetalheProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Detalhes do projeto</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <span class="lixo" (click)="deletar()"\n\n        ><ion-icon name="ios-trash"></ion-icon\n\n      ></span>\n\n\n\n      <p>Projeto: {{ projeto.tituloProjeto }}</p>\n\n      <br />\n\n      <p>Descrição: {{ projeto.descricaoProjeto }}</p>\n\n      <br />\n\n      <p>Valor: {{ projeto.preco }}</p>\n\n      <br />\n\n      <p>Cliente: {{ cliente.nome }}</p> \n\n      <br />\n\n      <p>Email: {{ cliente.email }}</p>\n\n      <br />\n\n      <p>Telefone: {{ cliente.tel }}</p>\n\n      <br />\n\n      <p>Endereço: {{ cliente.endereco }}</p>\n\n      <br />\n\n      <p>Cidade: {{ cliente.cidade }}</p>\n\n      <br />\n\n      <p>Bairro: {{ cliente.bairro }}</p>\n\n      <br />\n\n      <p>Cep: {{ cliente.cep }}</p>\n\n      <br/>\n\n      <p>\n\n        <ion-item *ngFor="let fotos of foto">\n\n          <img [src]="fotos" />\n\n        </ion-item>\n\n      </p>\n\n      <br />\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="gerarContrato()">\n\n        <label>Gerar contrato</label>\n\n        <ion-note item-end> <ion-icon id="icon-color" name="document"></ion-icon> </ion-note>\n\n        <br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="addOrEdit(cliente)">\n\n        <label>Editar</label>\n\n        <ion-note item-end> <ion-icon id="icon-color" name="hammer"></ion-icon> </ion-note>\n\n        <br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/
+            selector: "page-cadastro-user",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n\n  <div class="logo">\n\n    <div>\n\n      <ion-item (click)="getPictureOptions()" *ngIf="usuario.foto" class="circle">\n\n        <img [src]="usuario.foto" />\n\n      </ion-item>\n\n\n\n      <ion-item (click)="getPictureOptions()"  *ngIf="!usuario.foto" class="circle">\n\n        <img src="../../assets/imgs/user.jpg" />\n\n      </ion-item>\n\n    </div>\n\n\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      <ion-icon name="camera" item-left></ion-icon>\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Email</ion-label>\n\n      <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Senha</ion-label>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Confirme a senha</ion-label>\n\n      <ion-input\n\n        [(ngModel)]="usuario.senhaConfirmacao"\n\n        type="password"\n\n      ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-grid>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cadastrar()">\n\n          Cadastrar\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cancelar()">\n\n          Cancelar\n\n        </button>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__["a" /* ProjetosProvider */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__["a" /* ClientesProvider */]])
-    ], DetalheProjetoPage);
-    return DetalheProjetoPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
+    ], CadastroUserPage);
+    return CadastroUserPage;
 }());
 
-//# sourceMappingURL=detalhe-projeto.js.map
+//# sourceMappingURL=cadastro-user.js.map
 
 /***/ })
 

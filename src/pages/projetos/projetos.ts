@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, OnInit } from '@angular/core';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { projetoModel } from '../../app/models/projetoModel';
 import { ProjetosProvider } from '../../providers/projetos/projetos';
 import { configHelper } from '../../app/helpers/configHelper';
+import { ClientesProvider } from '../../providers/clientes/clientes';
+import { clienteModel } from '../../app/models/clienteModel';
 
 /**
  * Generated class for the ProjetosPage page.
@@ -16,24 +18,33 @@ import { configHelper } from '../../app/helpers/configHelper';
   selector: 'page-projetos',
   templateUrl: 'projetos.html',
 })
-export class ProjetosPage {
+export class ProjetosPage implements OnInit{
 listaProjetos: Array<projetoModel> = new Array<projetoModel>();
-
+cliente: Array<clienteModel> = new Array<clienteModel>();
+clienteId = [];
+theme: string;
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     public projetoSrvc: ProjetosProvider,
-  
+    private events: Events
     ) {
       this._loadProjetos();
+     console.log('Lista de projetos', this.listaProjetos)
   }
 
-  ionViewDidLoad() {
+  ngOnInit(): void {
+    this._loadProjetos();
+    this.eventChangeColor();
+    console.log('Lista de projetos', this.listaProjetos)
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
 
-    console.log(' lista', this.listaProjetos);
   }
-
-
 
   async _loadProjetos(): Promise<void> {
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
@@ -42,21 +53,11 @@ listaProjetos: Array<projetoModel> = new Array<projetoModel>();
       let result = await this.projetoSrvc.projetobyIdUser(user._id);
       if (result.success) {
         this.listaProjetos = <Array<projetoModel>>result.data;
-     
-        console.log("Projetos pertencentes ao usuario logado", this.listaProjetos);
+        console.log('projetos: ', this.listaProjetos)
       }
     } catch (error) {}
   }
   
-/*
-
-  async _loadProjetos(): Promise<void>{
-      let result = await this.projetoSrvc.get();
-      if(result.success){
-        this.listaProjetos = <Array<projetoModel>>result.data;
-        console.log(this.listaProjetos)
-      }
-  }*/
 
   async deletar(): Promise<void> {
       let result = await this.projetoSrvc.get()
@@ -71,6 +72,19 @@ listaProjetos: Array<projetoModel> = new Array<projetoModel>();
   }
   abrirDetalheProjeto(model: projetoModel, item: projetoModel): void {
       this.navCtrl.push('DetalheProjetoPage', {_projeto: model})
+  }
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
   }
 
 }

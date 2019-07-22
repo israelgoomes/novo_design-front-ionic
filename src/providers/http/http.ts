@@ -93,12 +93,18 @@ public post(url: string, model: any): Promise<HttpResultModel> {
 
             let msg = "";
             console.log('O erro provavelmente é aqui')
+            try {
+              
+          
             err.error.validation.forEach(_err =>{
 
               msg += `<li>${_err.message}</li>`;
             });
             this.alertSrvc.alert(err.error.message, msg); 
-
+          } catch (error) {
+              let msg: "Senha incorreta"
+              this.alertSrvc.alert(err.error.message, msg);
+          }
           } 
           else if(err.status == 404){
             this.alertSrvc.alert("informação", err.errors.message);

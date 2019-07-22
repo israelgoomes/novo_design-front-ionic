@@ -2,7 +2,12 @@
         <ion-content no-padding>
             
 
-            <section id="menu-color">
+            <section [class]="class">
+
+                <button (click)="logout()" id="logout" [ngStyle]="{'color': theme}">
+                    <ion-icon name="power"> Sair da Conta</ion-icon>
+                </button>
+                
 
                 <div style="padding-top: 50px; text-align: center;">
             <ion-item class="circle">
@@ -16,24 +21,24 @@
             </div>
        
         </section>
-        <ion-item >
+              
+
+        <ion-item (click)="clientes()">
                 Clientes <ion-note item-end>
                         <ion-icon id="menu-icon" ios="ios-contacts" md="md-contacts"></ion-icon> </ion-note>
              </ion-item>
-        <ion-item >
+        <ion-item (click)="projetos()">
                 Serviços <ion-note item-end>    <ion-icon id="menu-icon" name="folder-open"></ion-icon></ion-note>
              </ion-item>
-             <ion-item >
+             <ion-item (click)="sendEmail()">
                     Enviar email <ion-note item-end>   <ion-icon id="menu-icon" name="mail"></ion-icon> </ion-note>
                  </ion-item>
-            <ion-item (click)="logout()">
-                   Sair <ion-note item-end>  <ion-icon id="menu-icon" name="settings"></ion-icon></ion-note>
-                </ion-item>
-          <!-- <ion-list>
-            <p>some menu content, could be list items</p>
-          </ion-list> -->
-          <ion-footer id="menu-footer" color="primary">
-              Developed By Israel Gomes  
+            <ion-item (click)="openConfigOptions()">
+                   Configurações <ion-note item-end>  <ion-icon id="menu-icon" name="settings"></ion-icon></ion-note>
+                </ion-item>      
+          <ion-footer id="menu-footer" [ngStyle]="{'background-color': theme}">
+              Developed By Israel Gomes  <br/>
+              Version 1.0.0
           </ion-footer>
         </ion-content>
       </ion-menu>

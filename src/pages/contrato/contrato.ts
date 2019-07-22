@@ -12,6 +12,8 @@ import pdfFonts from "pdfmake/build/vfs_fonts";
 import { clienteModel } from "../../app/models/clienteModel";
 import { projetoModel } from '../../app/models/projetoModel';
 import * as moment from 'moment';
+import { configHelper } from '../../app/helpers/configHelper';
+import { Events } from 'ionic-angular';
 
 
 @IonicPage()
@@ -31,12 +33,14 @@ export class ContratoPage implements OnInit{
   projeto: projetoModel;
   pdfObj = null;
   values = {}
+  theme: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private platform: Platform,
     private file: File,
-    private toastCtrl: ToastController
+    private toastCtrl: ToastController,
+    private events: Events
   ) {
     let client = this.navParams.get("_cliente");
     let clienteProjeto = this.navParams.get('_clienteProjeto')
@@ -58,6 +62,17 @@ export class ContratoPage implements OnInit{
   ngOnInit(): void {
     this.contrato.prEntrega = moment(this.contrato.prEntrega).format("Day Month Year");
     console.log('cliente', this.cliente)
+
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
+    this.eventChangeColor();
+
+
     if(this.projeto.tituloProjeto == undefined){
         this.values = [
           {nome: this.cliente.nome,
@@ -86,6 +101,20 @@ export class ContratoPage implements OnInit{
     }
     console.log("Valores do novo array",this.values)
   }
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
   saveToDevice(data: any, savefile: any) {
     this.contrato.prEntrega = moment(this.contrato.prEntrega).format("DD/MM/YYYY");
 

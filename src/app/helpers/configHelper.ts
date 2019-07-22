@@ -8,9 +8,13 @@ export class configHelper {
     public static storageKeys = {
         token: 'novadesign.token',
         user: 'novadesign.user',
-        selectClient: 'novadesign.select.client'
+        selectClient: 'novadesign.select.client',
+        color: 'cm.theme'
     }
     public static Events = {
-        atualizacaoUserMenu: 'atualizacao.user.menu'
+        atualizacaoUserMenu: 'atualizacao.user.menu',
+        atualizaClienteByProjetos: 'atualiza.client.by.projeto',
+        atualizaEmailByCliente: 'atualiza.email.by.cliente',
+        changeColor: 'change.color'
     }
 }

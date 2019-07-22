@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform, ActionSheetController, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform, ActionSheetController, ModalController, Events } from 'ionic-angular';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
 import { AlertProvider } from '../../../providers/alert/alert';
 import { projetoModel } from '../../../app/models/projetoModel';
@@ -19,6 +19,7 @@ export class CadastroProjetoPage implements OnInit{
 projeto: projetoModel;
 clientes: Array<clienteModel> = new Array<clienteModel>();
 cliente = []
+theme: string;
   constructor(
     private navCtrl: NavController, 
     private navParams: NavParams,
@@ -28,7 +29,8 @@ cliente = []
     private actionSheetCtrl: ActionSheetController,
     private cameraSrvc: CameraProvider,
     private clientesSrvc: ClientesProvider,
-    private modalCtrl: ModalController
+    private modalCtrl: ModalController,
+    private events: Events
     
     ) { 
       
@@ -45,13 +47,31 @@ cliente = []
   }
 
 ngOnInit():void {
- 
- if(this.projeto.tituloProjeto == undefined){
-    //this.cliente.nome = this.projeto.nome
-  
+  this.eventChangeColor();
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary'
+  }else if(!this.theme){
+    this.theme = 'primary'
   }
+           if(this.projeto.tituloProjeto == undefined){
+              //this.cliente.nome = this.projeto.nome
+            }
 }
 
+
+eventChangeColor(){
+  this.events.subscribe(configHelper.Events.changeColor, ()=>{
+    this.menuController();
+       })
+}
+
+menuController(){
+  this.theme = localStorage.getItem(configHelper.storageKeys.color);
+  if(this.theme == "#527F76"){
+    this.theme = 'primary'
+  }
+}
 
 openClientOption(){
   const modal = this.modalCtrl.create(
@@ -59,11 +79,17 @@ openClientOption(){
     modal.present();
 
     modal.onDidDismiss(data => {
-      console.log('Retorno do Modal',data.cliente);
-      this.cliente = data.cliente;
-      this.projeto.cliente = data.cliente._id;
-      //this.projeto = data.cliente;
-      console.log('Verificando o valor de projeto', this.projeto.cliente)
+      try {
+        console.log('Retorno do Modal',data.cliente);
+        this.cliente = data.cliente;
+        this.projeto.cliente = data.cliente._id;
+        //this.projeto = data.cliente;
+        console.log('Verificando o valor de projeto', this.projeto.cliente)
+      } catch (error) {
+        this.alertSrvc.toast('Nenhum cliente escolhido.', 'top')
+      }
+    
+      
     })
 }
 
@@ -80,19 +106,6 @@ async loadCliente(): Promise<void> {
   } catch (error) {}
 }
 
-/*
-async loadCliente(): Promise<void>{
-  try {
-    let result = await this.clientesSrvc.get();
-    if(result.success){
-      this.clientes = <Array<clienteModel>>result.data;
-    }  
-    console.log('Clientes', this.clientes)
-  } catch (error) {
-    console.log("Erro na tela projetos", error);
-  }
-  
-}*/
 
 async salvar(): Promise<void> {
   this.projeto.foto = this.foto;
@@ -146,9 +159,6 @@ getPictureOptions(): void {
   actionSheet.present();
 }
 
-  ionViewDidLoad() {
-    console.log('Todas fotos', this.projeto.foto)
-    console.log('ionViewDidLoad CadastroProjetoPage');
-  }
+
 
 }

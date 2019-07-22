@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { clienteModel } from "../../../app/models/clienteModel";
 import { ClientesProvider } from "../../../providers/clientes/clientes";
 import { AlertProvider } from "../../../providers/alert/alert";
@@ -18,12 +18,14 @@ export class DetalheClientePage implements OnInit {
   clienteSelecionado: projetoModel = new projetoModel();
   icone = false;
   projeto: Array<projetoModel> = new Array<projetoModel>();
+  theme: string;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private clienteSrvc: ClientesProvider,
     private alertSrvc: AlertProvider,
-    private projetoSrvc: ProjetosProvider
+    private projetoSrvc: ProjetosProvider,
+    private events: Events
   ) {
     let client = this.navParams.get("cliente");
     if (client) {
@@ -46,7 +48,29 @@ export class DetalheClientePage implements OnInit {
 
   ngOnInit(): void {
     this.load();
+    this.eventChangeColor();
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }else if(!this.theme){
+      this.theme = 'primary'
+    }
   }
+
+
+  eventChangeColor(){
+    this.events.subscribe(configHelper.Events.changeColor, ()=>{
+      this.menuController();
+         })
+  }
+
+  menuController(){
+    this.theme = localStorage.getItem(configHelper.storageKeys.color);
+    if(this.theme == "#527F76"){
+      this.theme = 'primary'
+    }
+  }
+
 
   async load(): Promise<void> {
     try {
@@ -93,6 +117,7 @@ export class DetalheClientePage implements OnInit {
       async () => {
         let sucesso = false;
         let result = await this.clienteSrvc.delete(this.cliente._id);
+        this.events.publish(configHelper.Events.atualizaEmailByCliente);
         sucesso = result.success;
         if (sucesso) {
           this.alertSrvc.toast("Deletado com sucesso", "bottom");

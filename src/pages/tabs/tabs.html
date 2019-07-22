@@ -1,5 +1,5 @@
 
-<ion-tabs>
+<ion-tabs *ngIf="userOn">
 
 <ion-tab tabIcon="people" tabTitle="Clientes" [root]="'ClientesPage'" ></ion-tab>
 <ion-tab tabIcon="bookmarks" tabTitle="Serviços" [root]="'ProjetosPage'" ></ion-tab>

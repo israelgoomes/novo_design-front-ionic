@@ -93,12 +93,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var LoginPage = /** @class */ (function () {
     function LoginPage(navCtrl, navParams, usuarioSrvc, events) {
         this.navCtrl = navCtrl;
@@ -135,10 +129,10 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n </ion-header>\n\n<ion-content padding>\n    <ion-row>\n    <img class="logo" src="./../../assets/imgs/logo_app.png">  \n    </ion-row>\n  <section class="login">\n\n<ion-item>\n    <ion-label floating >Nome</ion-label>\n  <ion-input [(ngModel)]="form.email" type="text" tappable></ion-input>\n</ion-item>\n<ion-item>\n  <ion-label floating >Senha</ion-label>\n  <ion-input [(ngModel)]="form.senha" type="password" tappable></ion-input>\n</ion-item>\n\n\n<button ion-button block outline color="dark"  (click)="login()"> Entrar</button>\n<button ion-button block outline color="dark"  (click)="cadastroUser()">Cadastro</button>\n\n\n\n\n</section>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/'<ion-header>\n\n </ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-row>\n\n    <img class="logo" src="./../../assets/imgs/logo_app.png">  \n\n    </ion-row>\n\n  <section class="login">\n\n\n\n<ion-item>\n\n    <ion-label floating >Nome</ion-label>\n\n  <ion-input [(ngModel)]="form.email" type="text" tappable></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n  <ion-label floating >Senha</ion-label>\n\n  <ion-input [(ngModel)]="form.senha" type="password" tappable></ion-input>\n\n</ion-item>\n\n\n\n\n\n<button ion-button block outline color="dark"  (click)="login()"> Entrar</button>\n\n<button ion-button block outline color="dark"  (click)="cadastroUser()">Cadastro</button>\n\n\n\n\n\n\n\n\n\n</section>\n\n\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\login\login.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
     ], LoginPage);

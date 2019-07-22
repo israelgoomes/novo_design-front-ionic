@@ -41,7 +41,7 @@ var CadastroProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -76,7 +76,7 @@ var projetoModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_helpers_configHelper__ = __webpack_require__(42);
@@ -168,11 +168,16 @@ var CadastroProjetoPage = /** @class */ (function () {
         var modal = this.modalCtrl.create('ModalClientesPage', { _cliente: this.clientes });
         modal.present();
         modal.onDidDismiss(function (data) {
-            console.log('Retorno do Modal', data.cliente);
-            _this.cliente = data.cliente;
-            _this.projeto.cliente = data.cliente._id;
-            //this.projeto = data.cliente;
-            console.log('Verificando o valor de projeto', _this.projeto.cliente);
+            try {
+                console.log('Retorno do Modal', data.cliente);
+                _this.cliente = data.cliente;
+                _this.projeto.cliente = data.cliente._id;
+                //this.projeto = data.cliente;
+                console.log('Verificando o valor de projeto', _this.projeto.cliente);
+            }
+            catch (error) {
+                _this.alertSrvc.toast('Nenhum cliente escolhido.', 'top');
+            }
         });
     };
     CadastroProjetoPage.prototype.loadCliente = function () {
@@ -202,19 +207,6 @@ var CadastroProjetoPage = /** @class */ (function () {
             });
         });
     };
-    /*
-    async loadCliente(): Promise<void>{
-      try {
-        let result = await this.clientesSrvc.get();
-        if(result.success){
-          this.clientes = <Array<clienteModel>>result.data;
-        }
-        console.log('Clientes', this.clientes)
-      } catch (error) {
-        console.log("Erro na tela projetos", error);
-      }
-      
-    }*/
     CadastroProjetoPage.prototype.salvar = function () {
         return __awaiter(this, void 0, void 0, function () {
             var user, sucesso, cadastroResult;
@@ -279,19 +271,12 @@ var CadastroProjetoPage = /** @class */ (function () {
     };
     CadastroProjetoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n\n  Generated template for the CadastroProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Novo Serviço</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-item>\n\n        <ion-label floating>Projeto</ion-label>\n\n        <ion-input\n\n          [(ngModel)]="projeto.tituloProjeto"\n\n          required\n\n          type="text"\n\n        ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Descrição</ion-label>\n\n        <ion-textarea\n\n          type="text"\n\n          [(ngModel)]="projeto.descricaoProjeto"\n\n        ></ion-textarea>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Valor</ion-label>\n\n        <ion-input type="text" [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>\n\n      </ion-item>\n\n     \n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n\n\n  <ion-card *ngIf="!cliente.nome">\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="openClientOption()">\n\n<label>Escolher cliente</label>        <ion-note item-end>\n\n          <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card *ngIf="cliente.nome">\n\n      <ion-card-content style="padding-top: 3px; padding-bottom: 3px;">\n\n        <ion-item (click)="openClientOption()">\n\n  <label>Alterar cliente</label>        <ion-note item-end>\n\n            <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n          ><br />\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  \n\n\n\n\n\n\n\n<ion-card  *ngIf="cliente.nome">\n\n  <ion-card-content>\n\n      <ion-item> Cliente: {{ cliente.nome }} </ion-item>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n\n\n\n\n<ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="getPictureOptions()">\n\n<label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n    <ion-icon id="icon-color" name="camera" ></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n\n\n<!-- <ion-item text-center>\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      Selecionar Foto\n\n    </button>\n\n  </ion-item> -->\n\n\n\n  <ion-item *ngIf="projeto.foto" >\n\n    <img [src]="fotos" *ngFor="let fotos of foto" />\n\n  </ion-item>\n\n\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button ion-button outline block (click)="salvar()">Cadastrar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
+            selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n\n  Generated template for the CadastroProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Novo Serviço</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-item>\n\n        <ion-label floating>Projeto</ion-label>\n\n        <ion-input\n\n          [(ngModel)]="projeto.tituloProjeto"\n\n          required\n\n          type="text"\n\n        ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Descrição</ion-label>\n\n        <ion-textarea\n\n          type="text"\n\n          [(ngModel)]="projeto.descricaoProjeto"\n\n        ></ion-textarea>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Valor</ion-label>\n\n        <ion-input type="text" [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>\n\n      </ion-item>\n\n     \n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n\n\n  <ion-card *ngIf="!cliente.nome">\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="openClientOption()">\n\n<label>Escolher cliente</label>        <ion-note item-end>\n\n          <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card *ngIf="cliente.nome">\n\n      <ion-card-content style="padding-top: 3px; padding-bottom: 3px;">\n\n        <ion-item (click)="openClientOption()">\n\n  <label>Alterar cliente</label>        <ion-note item-end>\n\n            <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n          ><br />\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  \n\n\n\n\n\n\n\n<ion-card  *ngIf="cliente.nome">\n\n  <ion-card-content>\n\n      <ion-item> Cliente: {{ cliente.nome }} </ion-item>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n\n\n\n\n<ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="getPictureOptions()">\n\n<label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n    <ion-icon id="icon-color" name="camera" ></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <div *ngFor="let fotos of foto">\n\n  <ion-item *ngIf="projeto.foto" >\n\n    <img [src]="fotos"  />\n\n  </ion-item>\n\n</div>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button ion-button outline block (click)="salvar()">Cadastrar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-            __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */],
-            __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__["a" /* ClientesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__["a" /* ClientesProvider */]) === "function" && _h || Object, typeof (_j = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */]) === "function" && _j || Object])
     ], CadastroProjetoPage);
     return CadastroProjetoPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j;
 }());
 
 //# sourceMappingURL=cadastro-projeto.js.map

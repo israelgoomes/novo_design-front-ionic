@@ -1,6 +1,6 @@
 webpackJsonp([5],{
 
-/***/ 293:
+/***/ 294:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUserPageModule", function() { return CadastroUserPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(444);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(445);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,7 +38,7 @@ var CadastroUserPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 444:
+/***/ 445:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46,7 +46,7 @@ var CadastroUserPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(445);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(446);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -99,12 +99,6 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/**
- * Generated class for the CadastroUserPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var CadastroUserPage = /** @class */ (function () {
     function CadastroUserPage(navCtrl, navParams, usuarioSrvc, alertSrvc, platform, actionSheetCtrl, cameraSrvc) {
         this.navCtrl = navCtrl;
@@ -117,7 +111,7 @@ var CadastroUserPage = /** @class */ (function () {
         this.usuario = new __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__["a" /* usuarioModel */]();
     }
     CadastroUserPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CadastroUserPage');
+        console.log("ionViewDidLoad CadastroUserPage");
     };
     CadastroUserPage.prototype.cadastrar = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -128,8 +122,8 @@ var CadastroUserPage = /** @class */ (function () {
                     case 1:
                         cadastroResult = _a.sent();
                         if (cadastroResult.success) {
-                            this.alertSrvc.toast('Cadastro realizado com sucesso', 'bottom');
-                            this.navCtrl.setRoot('LoginPage');
+                            this.alertSrvc.toast("Cadastro realizado com sucesso", "bottom");
+                            this.navCtrl.setRoot("LoginPage");
                         }
                         return [2 /*return*/];
                 }
@@ -140,43 +134,53 @@ var CadastroUserPage = /** @class */ (function () {
         var _this = this;
         //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
         var actionSheet = this.actionSheetCtrl.create({
-            title: 'Adicionar foto',
+            title: "Adicionar foto",
             buttons: [
-                { text: 'Tirar foto', handler: function () {
+                {
+                    text: "Tirar foto",
+                    handler: function () {
                         //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o categoria.foto
                         _this.cameraSrvc.takePicture(function (photo) {
                             _this.usuario.foto = photo;
                         });
                     },
-                    icon: this.platform.is('ios') ? null : 'camera' },
+                    icon: this.platform.is("ios") ? null : "camera"
+                },
                 //------------------------ Opção pegar da galeria ------------
-                { text: 'Pegar galeria', handler: function () {
+                {
+                    text: "Pegar galeria",
+                    handler: function () {
                         _this.cameraSrvc.getPictureFromGalery(function (photo) {
                             _this.usuario.foto = photo;
                         });
-                    }, icon: this.platform.is('ios') ? null : 'images' },
+                    },
+                    icon: this.platform.is("ios") ? null : "images"
+                },
                 //o role 'destructive' deixa o botao vermelho
-                { text: 'Cancelar', role: 'destructive',
-                    icon: this.platform.is('ios') ? null : 'close',
+                {
+                    text: "Cancelar",
+                    role: "destructive",
+                    icon: this.platform.is("ios") ? null : "close",
                     handler: function () {
                         //cancela a ação
-                    }, }
+                    }
+                }
             ]
         });
         actionSheet.present();
     };
     CadastroUserPage.prototype.cancelar = function () {
-        this.navCtrl.setRoot('LoginPage');
+        this.navCtrl.setRoot("LoginPage");
     };
     CadastroUserPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-cadastro-user',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n    <div class="logo">\n    <div>\n      <ion-item  *ngIf="usuario.foto" class="circle">\n          <img [src]="usuario.foto" />\n      </ion-item>\n \n      <ion-item  *ngIf="!usuario.foto" class="circle">\n          <img src="../../assets/imgs/user.jpg" />\n      </ion-item> \n  </div> \n\n\n        <button ion-button clear (click)="getPictureOptions()"><ion-icon name="camera" item-left></ion-icon></button>\n      </div>\n\n\n  \n      <ion-list no-lines class="list-transparent">\n        <ion-item>\n          <ion-label style="color: black;" floating>Nome</ion-label>\n          <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label style="color: black;"  floating>Email</ion-label>\n          <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label style="color: black;"  floating>Senha</ion-label>\n          <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n        </ion-item>\n        <ion-item>\n            <ion-label style="color: black;"  floating>Confirme a senha</ion-label>\n          <ion-input [(ngModel)]="usuario.senhaConfirmacao" type="password" ></ion-input>\n        </ion-item>\n  \n  <ion-grid>\n    <ion-row> \n    <button ion-button block outline color="dark" (click)="cadastrar()">Cadastrar</button>\n    </ion-row>\n    <ion-row> \n      <button ion-button block outline color="dark" (click)="cancelar()">Cancelar</button>\n      </ion-row>\n  </ion-grid>\n  \n      </ion-list>\n    '/*ion-inline-end:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/,
+            selector: "page-cadastro-user",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n\n  <div class="logo">\n\n    <div>\n\n      <ion-item *ngIf="usuario.foto" class="circle">\n\n        <img [src]="usuario.foto" />\n\n      </ion-item>\n\n\n\n      <ion-item *ngIf="!usuario.foto" class="circle">\n\n        <img src="../../assets/imgs/user.jpg" />\n\n      </ion-item>\n\n    </div>\n\n\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      <ion-icon name="camera" item-left></ion-icon>\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-label style="color: black;" floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: black;" floating>Email</ion-label>\n\n      <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: black;" floating>Senha</ion-label>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: black;" floating>Confirme a senha</ion-label>\n\n      <ion-input\n\n        [(ngModel)]="usuario.senhaConfirmacao"\n\n        type="password"\n\n      ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-grid>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cadastrar()">\n\n          Cadastrar\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cancelar()">\n\n          Cancelar\n\n        </button>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
             __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
     ], CadastroUserPage);
@@ -187,7 +191,7 @@ var CadastroUserPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 445:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -1,6 +1,6 @@
 webpackJsonp([15],{
 
-/***/ 297:
+/***/ 298:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmailGeneratePageModule", function() { return EmailGeneratePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_generate__ = __webpack_require__(449);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__email_generate__ = __webpack_require__(450);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,14 +38,14 @@ var EmailGeneratePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 449:
+/***/ 450:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EmailGeneratePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_helpers_configHelper__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -98,16 +98,18 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 var EmailGeneratePage = /** @class */ (function () {
-    function EmailGeneratePage(navCtrl, navParams, emailComposer, clienteSrvc) {
+    function EmailGeneratePage(navCtrl, navParams, emailComposer, clienteSrvc, events) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.emailComposer = emailComposer;
         this.clienteSrvc = clienteSrvc;
+        this.events = events;
         this.subject = "";
         this.body = "";
         this.listaClientes = new Array();
         this.listaEmails = [];
         this.load();
+        console.log('Emails', this.listaEmails);
     }
     EmailGeneratePage.prototype.ionViewDidLoad = function () {
         console.log("ionViewDidLoad EmailGeneratePage");
@@ -128,6 +130,7 @@ var EmailGeneratePage = /** @class */ (function () {
                         result = _a.sent();
                         if (result.success) {
                             this.listaClientes = result.data;
+                            this.listaEmails = [];
                             for (i = 0; i < this.listaClientes.length; i++) {
                                 console.log('Percorrendo o for', this.listaClientes[i]);
                                 this.listaEmails.push(this.listaClientes[i].email);
@@ -156,14 +159,24 @@ var EmailGeneratePage = /** @class */ (function () {
         };
         this.emailComposer.open(email);
     };
+    EmailGeneratePage.prototype.loadEvent = function () {
+        var _this = this;
+        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_4__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaEmailByCliente, function () {
+            _this.load();
+        });
+    };
+    EmailGeneratePage.prototype.ngOnInit = function () {
+        this.loadEvent();
+    };
     EmailGeneratePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-email-generate",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\email-generate\email-generate.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-buttons position>\n\n        <button ion-button icon-only menuToggle>\n\n          <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Gerador de email\n\n        </button>\n\n        </ion-buttons>\n\n</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-item>\n\n        <ion-label floating>Assunto</ion-label>\n\n        <ion-input\n\n          type="text"\n\n          [(ngModel)]="subject"\n\n          placeholde="Digite o assunto"\n\n        ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Conteúdo</ion-label>\n\n        <ion-textarea type="text" [(ngModel)]="body"></ion-textarea>\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="sendEmail()">\n\n        <label>Enviar e-mail</label>\n\n        <ion-note item-end>\n\n          <ion-icon id="send" name="mail"></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\email-generate\email-generate.html"*/
+            selector: "page-email-generate",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\email-generate\email-generate.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-buttons position>\n\n        <button ion-button icon-only menuToggle>\n\n          <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Gerador de email\n\n        </button>\n\n        </ion-buttons>\n\n</ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-item>\n\n        <ion-label floating>Assunto</ion-label>\n\n        <ion-input\n\n          type="text"\n\n          [(ngModel)]="subject"\n\n          placeholde="Digite o assunto"\n\n        ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Conteúdo</ion-label>\n\n        <ion-textarea type="text" [(ngModel)]="body"></ion-textarea>\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="sendEmail()">\n\n        <label>Enviar e-mail</label>\n\n        <ion-note item-end>\n\n          <ion-icon id="send" name="mail"></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\email-generate\email-generate.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__ionic_native_email_composer__["a" /* EmailComposer */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */]])
+            __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
     ], EmailGeneratePage);
     return EmailGeneratePage;
 }());

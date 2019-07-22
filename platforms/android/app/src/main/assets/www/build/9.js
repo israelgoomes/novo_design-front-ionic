@@ -45,6 +45,7 @@ var TabsPageModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TabsPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_helpers_configHelper__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -54,6 +55,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 /**
@@ -66,15 +68,19 @@ var TabsPage = /** @class */ (function () {
     function TabsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        var user = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_2__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user);
+        if (user) {
+            this.userOn = true;
+        }
     }
     TabsPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad TabsPage');
     };
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\tabs\tabs.html"*/'\n<ion-tabs>\n\n<ion-tab tabIcon="people" tabTitle="Clientes" [root]="\'ClientesPage\'" ></ion-tab>\n<ion-tab tabIcon="bookmarks" tabTitle="Serviços" [root]="\'ProjetosPage\'" ></ion-tab>\n<ion-tab tabIcon="mail" tabTitle="Email" [root]="\'EmailGeneratePage\'" ></ion-tab>\n\n</ion-tabs> \n\n<ion-footer>\n  \n</ion-footer>'/*ion-inline-end:"C:\Users\lsrael\Desktop\ND-TEstes\novo_design-front-ionic\src\pages\tabs\tabs.html"*/,
+            selector: 'page-tabs',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\tabs\tabs.html"*/'\n\n<ion-tabs *ngIf="userOn">\n\n\n\n<ion-tab tabIcon="people" tabTitle="Clientes" [root]="\'ClientesPage\'" ></ion-tab>\n\n<ion-tab tabIcon="bookmarks" tabTitle="Serviços" [root]="\'ProjetosPage\'" ></ion-tab>\n\n<ion-tab tabIcon="mail" tabTitle="Email" [root]="\'EmailGeneratePage\'" ></ion-tab>\n\n\n\n</ion-tabs> \n\n\n\n<ion-footer>\n\n  \n\n</ion-footer>'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\tabs\tabs.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */]])
     ], TabsPage);
     return TabsPage;
 }());

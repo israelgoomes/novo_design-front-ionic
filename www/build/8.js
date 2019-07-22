@@ -1,6 +1,6 @@
 webpackJsonp([8],{
 
-/***/ 295:
+/***/ 309:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroClientePageModule", function() { return CadastroClientePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__ = __webpack_require__(461);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(211);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -41,7 +41,7 @@ var CadastroClientePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 312:
+/***/ 315:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -56,7 +56,7 @@ var clienteModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 447:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -65,7 +65,7 @@ var clienteModel = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__ = __webpack_require__(312);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__ = __webpack_require__(315);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__ = __webpack_require__(42);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -117,18 +117,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/**
- * Generated class for the CadastroClientePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 var CadastroClientePage = /** @class */ (function () {
-    function CadastroClientePage(navCtrl, navParams, clienteSrvc, alertSrvc) {
+    function CadastroClientePage(navCtrl, navParams, clienteSrvc, alertSrvc, events) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.clienteSrvc = clienteSrvc;
         this.alertSrvc = alertSrvc;
+        this.events = events;
         var _client = this.navParams.get('_cliente');
         if (_client) {
             this.cliente = _client;
@@ -151,17 +146,11 @@ var CadastroClientePage = /** @class */ (function () {
                         return [4 /*yield*/, this.clienteSrvc.post(this.cliente)];
                     case 1:
                         cadastroResult = _a.sent();
+                        this.events.publish(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaEmailByCliente);
                         sucesso = cadastroResult.success;
                         console.log('Sem id');
                         _a.label = 2;
                     case 2:
-                        /*
-                        else {
-                          console.log('com id')
-                            //passando o id e o modelo.
-                            let updateResult= await this.clienteSrvc.put(this.cliente._id, this.cliente)
-                            sucesso = updateResult.success;
-                        }*/
                         if (sucesso) {
                             this.alertSrvc.toast('Cliente salva com sucesso', 'bottom');
                             this.navCtrl.setRoot('ClientesPage');
@@ -173,7 +162,6 @@ var CadastroClientePage = /** @class */ (function () {
     };
     CadastroClientePage.prototype.back = function () {
         this.navCtrl.pop();
-        //ou this.viewCtrl.dismiss();  para isso é necessário inportar o viewcontroller
     };
     CadastroClientePage.prototype.ionViewDidLoad = function () {
         var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
@@ -184,10 +172,11 @@ var CadastroClientePage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Component */])({
             selector: 'page-cadastro-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/'<!--\n\n  Generated template for the CadastroClientePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n     \n\n    <ion-title >&nbsp;&nbsp;&nbsp; Novo Cliente</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n    \n\n<ion-card>\n\n  <ion-card-content>\n\n    \n\n      <ion-col>\n\n      \n\n      <ion-row>\n\n        <ion-item>\n\n          <ion-label floating>Nome</ion-label>\n\n          <ion-input [(ngModel)]="cliente.nome"  type="text"></ion-input>\n\n        </ion-item>\n\n      </ion-row>\n\n      \n\n      <ion-row>\n\n          <ion-item>\n\n            <ion-label floating>Telefone</ion-label>\n\n            <ion-input type="text" [(ngModel)]="cliente.tel" [brmasker]="{mask:\'(00) 00000-0000\'}"></ion-input>\n\n          </ion-item>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n            <ion-item>\n\n              <ion-label floating>Email</ion-label>\n\n              <ion-input type="text" [(ngModel)]="cliente.email"></ion-input>\n\n            </ion-item>\n\n          </ion-row>\n\n          \n\n          <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input type="text" [(ngModel)]="cliente.cep" [brmasker]="{mask:\'00000-120\'}"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n            \n\n            <ion-row>\n\n                <ion-item>\n\n                  <ion-label floating>Rua</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="cliente.endereco"></ion-input>\n\n                </ion-item>\n\n              </ion-row>\n\n\n\n              <ion-row>\n\n                  <ion-item>\n\n                    <ion-label floating>Bairro</ion-label>\n\n                    <ion-input type="text" [(ngModel)]="cliente.bairro"></ion-input>\n\n                  </ion-item>\n\n                </ion-row>\n\n              \n\n                <ion-row>\n\n                    <ion-item>\n\n                      <ion-label floating>Cidade</ion-label>\n\n                      <ion-input type="text" [(ngModel)]="cliente.cidade"></ion-input>\n\n                    </ion-item>\n\n                  </ion-row>\n\n      \n\n                  <ion-row>\n\n                      <ion-item>\n\n                        <ion-label floating>Estado</ion-label>\n\n                        <ion-input type="text" [(ngModel)]="cliente.estado"></ion-input>\n\n                      </ion-item>\n\n                    </ion-row>\n\n      \n\n      </ion-col>\n\n    </ion-card-content>\n\n  </ion-card>\n\n    \n\n\n\n\n\n    <!-- <ion-card>\n\n      <ion-card-content style="padding-top: 0px; padding-bottom: 0px;"> \n\n        \n\n        <button ion-button outline block (click)="salvar()">  <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>&nbsp; Cadastrar\n\n          </button>\n\n        </ion-card-content>\n\n      </ion-card> -->\n\n\n\n      <ion-card>\n\n          <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">\n\n            <ion-item (click)="salvar()">\n\n      <label>Cadastrar cliente</label>        <ion-note item-end>\n\n          <ion-icon id="icon-color" ios="ios-contacts" md="md-contacts"></ion-icon> </ion-note>\n\n              <br/>\n\n            </ion-item>\n\n          </ion-card-content>\n\n        </ion-card>\n\n        \n\n    </ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["n" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__["a" /* AlertProvider */]])
+            __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__["a" /* AlertProvider */],
+            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* Events */]])
     ], CadastroClientePage);
     return CadastroClientePage;
 }());

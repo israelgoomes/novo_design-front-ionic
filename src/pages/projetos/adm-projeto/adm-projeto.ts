@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ActionSheetController, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ActionSheetController, Platform, Events } from 'ionic-angular';
 import { projetoModel } from '../../../app/models/projetoModel';
 import { ProjetosProvider } from '../../../providers/projetos/projetos';
 import { AlertProvider } from '../../../providers/alert/alert';
 import { CameraProvider } from '../../../providers/camera/camera';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
+import { configHelper } from '../../../app/helpers/configHelper';
 
 @IonicPage()
 @Component({
@@ -23,7 +24,8 @@ cliente: clienteModel;
       public cameraSrvc: CameraProvider,
       public actionSheetCtrl: ActionSheetController,
       public platform: Platform,
-      private clienteSrvc: ClientesProvider
+      private clienteSrvc: ClientesProvider,
+      private events: Events
      ) {
     this.projeto = this.navParams.get('_projeto')
     this.cliente = this.navParams.get('_cliente')
@@ -51,6 +53,7 @@ if(sucesso){
 this.alertSrvc.toast('Projeto salvo com sucesso', 'bottom');
 this.navCtrl.setRoot('ProjetosPage')
 }
+this.events.publish(configHelper.Events.atualizaClienteByProjetos);
   }
 
 

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { IonicPage, NavController, NavParams, Events } from "ionic-angular";
 import { clienteModel } from "../../../app/models/clienteModel";
 import { ClientesProvider } from "../../../providers/clientes/clientes";
 import { AlertProvider } from "../../../providers/alert/alert";
@@ -23,7 +23,8 @@ export class DetalheClientePage implements OnInit {
     public navParams: NavParams,
     private clienteSrvc: ClientesProvider,
     private alertSrvc: AlertProvider,
-    private projetoSrvc: ProjetosProvider
+    private projetoSrvc: ProjetosProvider,
+    private events: Events
   ) {
     let client = this.navParams.get("cliente");
     if (client) {
@@ -93,6 +94,7 @@ export class DetalheClientePage implements OnInit {
       async () => {
         let sucesso = false;
         let result = await this.clienteSrvc.delete(this.cliente._id);
+        this.events.publish(configHelper.Events.atualizaEmailByCliente);
         sucesso = result.success;
         if (sucesso) {
           this.alertSrvc.toast("Deletado com sucesso", "bottom");

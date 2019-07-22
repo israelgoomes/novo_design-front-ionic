@@ -35,7 +35,7 @@ export class DetalheProjetoPage {
   //gera os projetos relacionados ao cliente
   async load(): Promise<void> {
     try {
-      let result = await this.clienteSrvc.getByIdClient(this.projeto.cliente);
+      let result = await this.clienteSrvc.getByIdClient(this.projeto.cliente._id);
       if (result.success) {
         this.cliente = <Array<clienteModel>>result.data;
         console.log("CLiente responsável", this.cliente);

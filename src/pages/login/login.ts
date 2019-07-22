@@ -1,14 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content, Events } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { UsuarioProvider } from '../../providers/usuario/usuario';
-import { configHelper } from '../../app/helpers/configHelper';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -36,9 +28,7 @@ export class LoginPage {
 
 
   async login(): Promise<void> {
-
     this.navCtrl.setRoot(this.navCtrl.getActive().component);  
-
     let result = await this.usuarioSrvc.autenticate(this.form.email, this.form.senha);
     console.log('Teste',result);
     if(result.success){

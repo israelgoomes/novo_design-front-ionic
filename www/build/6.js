@@ -38,7 +38,7 @@ var DetalheProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 311:
+/***/ 312:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -71,7 +71,7 @@ var projetoModel = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DetalheProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(311);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_models_projetoModel__ = __webpack_require__(312);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__ = __webpack_require__(208);
@@ -151,7 +151,7 @@ var DetalheProjetoPage = /** @class */ (function () {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 3]);
-                        return [4 /*yield*/, this.clienteSrvc.getByIdClient(this.projeto.cliente)];
+                        return [4 /*yield*/, this.clienteSrvc.getByIdClient(this.projeto.cliente._id)];
                     case 1:
                         result = _a.sent();
                         if (result.success) {
@@ -216,8 +216,8 @@ var DetalheProjetoPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: "page-detalhe-projeto",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/'<!--\n\n  Generated template for the DetalheProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Detalhes do projeto</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <span class="lixo" (click)="deletar()"\n\n        ><ion-icon name="ios-trash"></ion-icon\n\n      ></span>\n\n\n\n      <p>Projeto: {{ projeto.tituloProjeto }}</p>\n\n      <br />\n\n      <p>Descrição: {{ projeto.descricaoProjeto }}</p>\n\n      <br />\n\n      <p>Valor: {{ projeto.preco }}</p>\n\n      <br />\n\n      <p>Cliente: {{ cliente.nome }}</p> \n\n      <br />\n\n      <p>Email: {{ cliente.email }}</p>\n\n      <br />\n\n      <p>Telefone: {{ cliente.tel }}</p>\n\n      <br />\n\n      <p>Endereço: {{ cliente.endereco }}</p>\n\n      <br />\n\n      <p>Cidade: {{ cliente.cidade }}</p>\n\n      <br />\n\n      <p>Bairro: {{ cliente.bairro }}</p>\n\n      <br />\n\n      <p>Cep: {{ cliente.cep }}</p>\n\n      <br/>\n\n      <p>\n\n        <ion-item *ngFor="let fotos of foto">\n\n          <img [src]="fotos" />\n\n        </ion-item>\n\n      </p>\n\n      <br />\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="gerarContrato()">\n\n        <label>Gerar contrato</label>\n\n        <ion-note item-end> <ion-icon id="icon-color" name="document"></ion-icon> </ion-note>\n\n        <br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="addOrEdit(cliente)">\n\n        <label>Editar</label>\n\n        <ion-note item-end> <ion-icon id="icon-color" name="hammer"></ion-icon> </ion-note>\n\n        <br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\detalhe-projeto\detalhe-projeto.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_3__providers_projetos_projetos__["a" /* ProjetosProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
             __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__["a" /* ClientesProvider */]])

@@ -80,17 +80,11 @@
     </ion-card-content>
   </ion-card>
 
-
-<!-- <ion-item text-center>
-    <button ion-button clear (click)="getPictureOptions()">
-      Selecionar Foto
-    </button>
-  </ion-item> -->
-
+  <div *ngFor="let fotos of foto">
   <ion-item *ngIf="projeto.foto" >
-    <img [src]="fotos" *ngFor="let fotos of foto" />
+    <img [src]="fotos"  />
   </ion-item>
-
+</div>
 
   <ion-grid>
     <ion-row>

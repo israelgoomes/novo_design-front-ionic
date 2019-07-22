@@ -28407,7 +28407,7 @@ page-adm-projeto p {
   padding-right: 10px;
 }
 
-page-adm-projeto ion-icon {
+page-adm-projeto ion-icon#icon-color {
   font-size: 35px;
   color: #4f413b;
 }

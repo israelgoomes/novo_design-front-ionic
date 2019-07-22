@@ -1,15 +1,15 @@
 webpackJsonp([2],{
 
-/***/ 307:
+/***/ 306:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProjetosPageModule", function() { return ProjetosPageModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pipes_pipes_module__ = __webpack_require__(440);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pipes_pipes_module__ = __webpack_require__(313);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__projetos__ = __webpack_require__(459);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__projetos__ = __webpack_require__(458);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -42,13 +42,13 @@ var ProjetosPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 313:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(441);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(314);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -74,7 +74,7 @@ var PipesModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 441:
+/***/ 314:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -124,7 +124,7 @@ var SearchPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 459:
+/***/ 458:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -133,6 +133,7 @@ var SearchPipe = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_clientes_clientes__ = __webpack_require__(208);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -181,6 +182,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
+
 /**
  * Generated class for the ProjetosPage page.
  *
@@ -188,16 +190,31 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
  * Ionic pages and navigation.
  */
 var ProjetosPage = /** @class */ (function () {
-    function ProjetosPage(navCtrl, navParams, projetoSrvc) {
+    function ProjetosPage(navCtrl, navParams, projetoSrvc, clienteSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.projetoSrvc = projetoSrvc;
+        this.clienteSrvc = clienteSrvc;
         this.listaProjetos = new Array();
+        this.cliente = new Array();
+        this.clienteId = [];
         this._loadProjetos();
+        console.log('Lista de projetos', this.listaProjetos);
     }
-    ProjetosPage.prototype.ionViewDidLoad = function () {
-        console.log(' lista', this.listaProjetos);
+    ProjetosPage.prototype.ngOnInit = function () {
+        this._loadProjetos();
+        console.log('Lista de projetos', this.listaProjetos);
     };
+    /*
+      async loadCliente(): Promise<void> {
+        try {
+          let result = await this.clienteSrvc.getByIdClient(this.clienteId.toString());
+          if (result.success) {
+            this.cliente = <Array<clienteModel>>result.data;
+            console.log("CLiente responsável", this.cliente);
+          }
+        } catch (error) {}
+      }*/
     ProjetosPage.prototype._loadProjetos = function () {
         return __awaiter(this, void 0, void 0, function () {
             var user, result, error_1;
@@ -214,7 +231,7 @@ var ProjetosPage = /** @class */ (function () {
                         result = _a.sent();
                         if (result.success) {
                             this.listaProjetos = result.data;
-                            console.log("Projetos pertencentes ao usuario logado", this.listaProjetos);
+                            console.log('projetos: ', this.listaProjetos);
                         }
                         return [3 /*break*/, 4];
                     case 3:
@@ -225,15 +242,6 @@ var ProjetosPage = /** @class */ (function () {
             });
         });
     };
-    /*
-    
-      async _loadProjetos(): Promise<void>{
-          let result = await this.projetoSrvc.get();
-          if(result.success){
-            this.listaProjetos = <Array<projetoModel>>result.data;
-            console.log(this.listaProjetos)
-          }
-      }*/
     ProjetosPage.prototype.deletar = function () {
         return __awaiter(this, void 0, void 0, function () {
             var result;
@@ -257,11 +265,12 @@ var ProjetosPage = /** @class */ (function () {
     };
     ProjetosPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-projetos',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/'<!--\n\n  Generated template for the ProjetosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-buttons position>\n\n            <button ion-button icon-only menuToggle>\n\n              <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Serviços\n\n  \n\n            </button>\n\n            </ion-buttons>\n\n  \n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-10>\n\n            <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n            </ion-col>\n\n        <ion-col col-2>\n\n            <ion-fab>\n\n                <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            \n\n            </ion-col>\n\n        \n\n        </ion-row>\n\n        </ion-grid>\n\n\n\n  <ion-card *ngFor="let projeto of listaProjetos | search: args " (click)="abrirDetalheProjeto(projeto)" tappable>\n\n    <ion-card-content >\n\n      Projeto: {{projeto.tituloProjeto}} <br/>\n\n      <!-- Cliente: {{projeto.cliente.nome}}<br/> -->\n\n      Preço: {{projeto.preco}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/,
+            selector: 'page-projetos',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/'<!--\n\n  Generated template for the ProjetosPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n    <ion-navbar color="primary">\n\n        <ion-buttons position>\n\n            <button ion-button icon-only menuToggle>\n\n              <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Serviços\n\n  \n\n            </button>\n\n            </ion-buttons>\n\n  \n\n    </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n\n\n    <ion-grid>\n\n        <ion-row>\n\n          <ion-col col-10>\n\n            <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n            </ion-col>\n\n        <ion-col col-2>\n\n            <ion-fab>\n\n                <button ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n                </button>\n\n              </ion-fab>\n\n            \n\n            </ion-col>\n\n        \n\n        </ion-row>\n\n        </ion-grid>\n\n\n\n  <ion-card *ngFor="let projeto of listaProjetos | search: args " (click)="abrirDetalheProjeto(projeto)" tappable>\n\n    <ion-card-content >\n\n      Projeto: {{projeto.tituloProjeto}} <br/>\n\n      Cliente: {{projeto.cliente.nome}}<br/> \n\n      Preço: {{projeto.preco}}\n\n    </ion-card-content>\n\n  </ion-card>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\projetos.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["l" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+            __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
+            __WEBPACK_IMPORTED_MODULE_4__providers_clientes_clientes__["a" /* ClientesProvider */]])
     ], ProjetosPage);
     return ProjetosPage;
 }());

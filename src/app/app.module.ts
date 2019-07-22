@@ -23,7 +23,7 @@ import { EmailComposer} from '@ionic-native/email-composer';
 import {BrMaskerModule} from 'brmasker-ionic-3';
 //import { PipesModule } from '../pipes/pipes.module';
 import { LoginPage } from '../pages/login/login';
-
+import { AppVersion } from '@ionic-native/app-version';
 @NgModule({
   declarations: [
     //BrMaskerIonic3,
@@ -60,6 +60,7 @@ import { LoginPage } from '../pages/login/login';
     Network,
     File,
     FileOpener,
+    AppVersion
     //BrMaskerIonicServices3
     
  

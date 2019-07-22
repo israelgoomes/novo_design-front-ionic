@@ -37,7 +37,7 @@
   <ion-card *ngFor="let projeto of listaProjetos | search: args " (click)="abrirDetalheProjeto(projeto)" tappable>
     <ion-card-content >
       Projeto: {{projeto.tituloProjeto}} <br/>
-      <!-- Cliente: {{projeto.cliente.nome}}<br/> -->
+      Cliente: {{projeto.cliente.nome}}<br/> 
       Preço: {{projeto.preco}}
     </ion-card-content>
   </ion-card>

@@ -1,16 +1,10 @@
 import { AlertProvider } from './../../../providers/alert/alert';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { ClientesProvider } from '../../../providers/clientes/clientes';
 import { clienteModel } from '../../../app/models/clienteModel';
 import { configHelper } from '../../../app/helpers/configHelper';
 
-/**
- * Generated class for the CadastroClientePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -24,7 +18,8 @@ export class CadastroClientePage {
     public navCtrl: NavController, 
     public navParams: NavParams,
     private clienteSrvc: ClientesProvider,
-    private alertSrvc: AlertProvider
+    private alertSrvc: AlertProvider,
+    private events: Events
     ) {
       let _client = this.navParams.get('_cliente');
       if(_client){
@@ -42,17 +37,12 @@ export class CadastroClientePage {
     this.cliente.usuario = user._id
       if(!this.cliente._id){
     let cadastroResult = await this.clienteSrvc.post(this.cliente);
+    this.events.publish(configHelper.Events.atualizaEmailByCliente);
     sucesso = cadastroResult.success;
     console.log('Sem id')
 
       }
-      /* 
-      else {
-        console.log('com id')
-          //passando o id e o modelo.
-          let updateResult= await this.clienteSrvc.put(this.cliente._id, this.cliente)
-          sucesso = updateResult.success;
-      }*/
+  
     if(sucesso){
       this.alertSrvc.toast('Cliente salva com sucesso', 'bottom');
       this.navCtrl.setRoot('ClientesPage')
@@ -62,7 +52,6 @@ export class CadastroClientePage {
 
 back(){
   this.navCtrl.pop();
-  //ou this.viewCtrl.dismiss();  para isso é necessário inportar o viewcontroller
 }
 
 

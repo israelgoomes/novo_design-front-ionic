@@ -59,11 +59,17 @@ openClientOption(){
     modal.present();
 
     modal.onDidDismiss(data => {
-      console.log('Retorno do Modal',data.cliente);
-      this.cliente = data.cliente;
-      this.projeto.cliente = data.cliente._id;
-      //this.projeto = data.cliente;
-      console.log('Verificando o valor de projeto', this.projeto.cliente)
+      try {
+        console.log('Retorno do Modal',data.cliente);
+        this.cliente = data.cliente;
+        this.projeto.cliente = data.cliente._id;
+        //this.projeto = data.cliente;
+        console.log('Verificando o valor de projeto', this.projeto.cliente)
+      } catch (error) {
+        this.alertSrvc.toast('Nenhum cliente escolhido.', 'top')
+      }
+    
+      
     })
 }
 
@@ -80,19 +86,6 @@ async loadCliente(): Promise<void> {
   } catch (error) {}
 }
 
-/*
-async loadCliente(): Promise<void>{
-  try {
-    let result = await this.clientesSrvc.get();
-    if(result.success){
-      this.clientes = <Array<clienteModel>>result.data;
-    }  
-    console.log('Clientes', this.clientes)
-  } catch (error) {
-    console.log("Erro na tela projetos", error);
-  }
-  
-}*/
 
 async salvar(): Promise<void> {
   this.projeto.foto = this.foto;

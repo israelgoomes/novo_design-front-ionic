@@ -17,6 +17,7 @@ export class AdmProjetoPage implements OnInit{
 projeto: projetoModel;
 cliente: clienteModel;
 theme: string;
+foto = [];
   constructor(
     public navCtrl: NavController,
      public navParams: NavParams,
@@ -28,12 +29,14 @@ theme: string;
       private clienteSrvc: ClientesProvider,
       private events: Events,
      ) {
-    this.projeto = this.navParams.get('_projeto')
-    this.cliente = this.navParams.get('_cliente')
+
   }
 
 
 ngOnInit(): void {
+  this.projeto = <projetoModel>this.navParams.get("_projeto");
+  this.cliente = this.navParams.get('_cliente')
+  this.foto = this.projeto.foto;
   this.eventChangeColor();
   this.theme = localStorage.getItem(configHelper.storageKeys.color);
   if(this.theme == "#527F76"){
@@ -76,6 +79,54 @@ this.navCtrl.setRoot('ProjetosPage')
 }
 this.events.publish(configHelper.Events.atualizaClienteByProjetos);
   }
+/*
+ async alterarFoto(item: ImageData): Promise<void>{
+   for(let i = 0; i < this.projeto.foto.length; i++){
+     if(this.projeto.foto[i] == item){
+          console.log('Filtrando a foto especifica',this.projeto.foto) ;
+     
+   }
+   }
+ } */
+
+
+
+getPictureByItem(item: ImageData): void {
+  let actionSheet = this.actionSheetCtrl.create({
+    title: 'Adicionar foto',
+    buttons: [
+      { text: 'Tirar foto', handler: () => {
+        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
+        this.cameraSrvc.takePicture((photo) =>{
+          this.foto.push(photo);
+          this.projeto.foto = this.foto;
+
+        })
+
+      }, 
+      icon: this.platform.is('ios') ? null : 'camera' },
+//------------------------ Opção pegar da galeria ------------
+      { text: 'Pegar galeria', handler: () =>{
+        
+        this.cameraSrvc.getPictureFromGalery(photo =>{
+            item = photo;
+            this.projeto.foto.push(item);
+
+        } )
+
+      }, icon: this.platform.is('ios') ? null : 'images'},
+      //o role 'destructive' deixa o botao vermelho
+      {text: 'Cancelar', role: 'destructive', 
+      icon: this.platform.is('ios') ? null : 'close'
+    ,handler: () => {
+        //cancela a ação
+      }, }
+    ]
+  });
+  actionSheet.present();
+}
+
+
 
 
   getPictureOptions(): void {
@@ -85,17 +136,22 @@ this.events.publish(configHelper.Events.atualizaClienteByProjetos);
       buttons: [
         { text: 'Tirar foto', handler: () => {
           //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
-          this.cameraSrvc.takePicture(photo =>{
-            this.projeto.foto = photo;
+          this.cameraSrvc.takePicture((photo) =>{
+            this.foto.push(photo);
+            this.projeto.foto = this.foto;
+  
           })
   
         }, 
         icon: this.platform.is('ios') ? null : 'camera' },
   //------------------------ Opção pegar da galeria ------------
         { text: 'Pegar galeria', handler: () =>{
+          
           this.cameraSrvc.getPictureFromGalery(photo =>{
-            this.projeto.foto = photo;
-          })
+            this.foto.push(photo);
+            this.projeto.foto = this.foto;
+  
+          } )
   
         }, icon: this.platform.is('ios') ? null : 'images'},
         //o role 'destructive' deixa o botao vermelho
@@ -107,7 +163,6 @@ this.events.publish(configHelper.Events.atualizaClienteByProjetos);
       ]
     });
     actionSheet.present();
-  
   }
   cancelar(){
     this.navCtrl.pop();

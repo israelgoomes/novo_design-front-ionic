@@ -37,5 +37,38 @@ page-adm-projeto {
         padding-left: 0px !important;
         padding-right: 0px !important;
     }
-    
+    .picture{
+        margin-top: 20px;
+        background-color: #aaa;
+        border-radius: 10px;
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        position: relative;
+        padding-left: 0px;
+        float: left;
+        margin-right: 8px;
+        margin-bottom: 10px;
+
+    }
+/*
+    .picture:hover{
+        margin-top: 20px;
+        background-color: #aaa;
+        border-radius: 10px;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        position: relative;
+        padding-left: 0px;
+        float: left;
+        margin-right: 8px;
+        margin-bottom: 10px;
+
+    }*/
+    .picture img {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
 }

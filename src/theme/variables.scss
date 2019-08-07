@@ -38,11 +38,23 @@ $colors: (
   purple:  purple,
   blue:     Navy,
   black:      black,
-  dark:       #222,
-  background: #efefef
+  dark:       black,
+  background: #efefef,
+  secondary: purple,
+  danger: #327eff,
+  light: Navy 
 );
 
+.toolbar-content-md{
+  padding-top: 20px;
+}
+.back-button.show-back-button{
+  padding-top: 10px !important;
+}
 
+bar-buttons bar-buttons-md{
+  padding-top: 20px !important;
+}
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

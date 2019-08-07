@@ -1,5 +1,5 @@
 {
-  "name": "novaDesign",
+  "name": "CmApp",
   "version": "1.0.1",
   "author": "Ionic Framework",
   "homepage": "http://ionicframework.com/",
@@ -36,6 +36,7 @@
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
     "cors": "^2.8.5",
+    "ion2-calendar": "^2.2.0",
     "ionic-angular": "3.9.5",
     "ionicons": "3.0.0",
     "materialize-css": "^1.0.0",

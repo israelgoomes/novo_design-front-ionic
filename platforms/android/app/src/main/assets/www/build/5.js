@@ -1,15 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 297:
+/***/ 446:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalConfigPageModule", function() { return ModalConfigPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(442);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_config__ = __webpack_require__(469);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,123 +18,60 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { SearchPipe } from '../../pipes/search/search';
-
-var ClientesPageModule = /** @class */ (function () {
-    function ClientesPageModule() {
+var ModalConfigPageModule = /** @class */ (function () {
+    function ModalConfigPageModule() {
     }
-    ClientesPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+    ModalConfigPageModule = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__modal_config__["a" /* ModalConfigPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
-                //IonicModule.forRoot(MyApp),
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_config__["a" /* ModalConfigPage */]),
             ],
-            entryComponents: [],
         })
-    ], ClientesPageModule);
-    return ClientesPageModule;
+    ], ModalConfigPageModule);
+    return ModalConfigPageModule;
 }());
 
-//# sourceMappingURL=clientes.module.js.map
+//# sourceMappingURL=modal-config.module.js.map
 
 /***/ }),
 
-/***/ 442:
+/***/ 458:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(443);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var PipesModule = /** @class */ (function () {
-    function PipesModule() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return usuarioModel; });
+var usuarioModel = /** @class */ (function () {
+    function usuarioModel() {
     }
-    PipesModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
-            imports: [],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
-        })
-    ], PipesModule);
-    return PipesModule;
+    return usuarioModel;
 }());
 
-//# sourceMappingURL=pipes.module.js.map
+/*    nome: {type: String, required: true, trim: true, index: true},
+    email: {type: String, require: true},
+    senha: {type: String, required: true},
+    foto: {type: String},
+    ativo: {type: Boolean},
+    dataCriacao: {type: Date, default: new Date()}*/ 
+//# sourceMappingURL=usuarioModel.js.map
 
 /***/ }),
 
-/***/ 443:
+/***/ 469:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalConfigPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var SearchPipe = /** @class */ (function () {
-    function SearchPipe() {
-    }
-    SearchPipe.prototype.transform = function (items, terms) {
-        if (!items)
-            return [];
-        if (!terms)
-            return items;
-        //console.log('Termos', terms)
-        try {
-            terms = terms.toString().toLowerCase();
-            console.log(terms);
-            return items.filter(function (it) {
-                if (it.nome != undefined) {
-                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
-                }
-                else {
-                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
-                }
-            });
-        }
-        catch (error) {
-            console.log('Erro no pipe search', error);
-        }
-    };
-    SearchPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["T" /* Pipe */])({
-            name: 'search',
-        })
-    ], SearchPipe);
-    return SearchPipe;
-}());
-
-//# sourceMappingURL=search.js.map
-
-/***/ }),
-
-/***/ 450:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_usuarioModel__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__ = __webpack_require__(109);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -186,119 +122,117 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var ClientesPage = /** @class */ (function () {
-    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc, events, appVersion) {
+
+/**
+ * Generated class for the ModalConfigPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalConfigPage = /** @class */ (function () {
+    function ModalConfigPage(navCtrl, navParams, usuarioSrvc, viewCtrl, events, alertSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
-        this.clienteSrvc = clienteSrvc;
+        this.usuarioSrvc = usuarioSrvc;
+        this.viewCtrl = viewCtrl;
         this.events = events;
-        this.appVersion = appVersion;
-        this.class = 'primary';
-        this.listaClientes = new Array();
-        this.usuario = new Array();
-        console.log("Versão do aplicativo", this.appVersion.getVersionNumber());
-        console.log("Versão do aplicativo", this.appVersion.getAppName());
-        this.load();
-        this.loadEvent();
+        this.alertSrvc = alertSrvc;
+        this.usuario = new __WEBPACK_IMPORTED_MODULE_4__app_models_usuarioModel__["a" /* usuarioModel */](); //Array<usuarioModel> = new Array<usuarioModel>();
+        this.tema = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
     }
-    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
-        var modal = this.modalCtrl.create("DetalheClientePage", {
-            cliente: cliente
-        });
-        modal.present();
+    ModalConfigPage.prototype.ngOnInit = function () {
+        this.usuarioLogado();
+        if (!this.tema) {
+            this.tema = '#527F76';
+        }
+        else if (this.tema == 'blue') {
+            this.tema = 'Navy';
+        }
     };
-    ClientesPage.prototype.load = function () {
+    ModalConfigPage.prototype.usuarioLogado = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var user, result, error_1;
+            var user, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-                        console.log("Usuário logado", user);
-                        _a.label = 1;
+                        return [4 /*yield*/, this.usuarioSrvc.getByIdUser(user._id)];
                     case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        return [4 /*yield*/, this.clienteSrvc.clientebyIdUser(user._id)];
-                    case 2:
                         result = _a.sent();
                         if (result.success) {
-                            this.listaClientes = result.data;
-                            console.log("Cliente pertencentes ao usuario logado", this.listaClientes);
+                            this.usuario = result.data;
+                            console.log('App .component', this.usuario);
+                            this.usuario.dataCriacao = __WEBPACK_IMPORTED_MODULE_5_moment__(this.usuario.dataCriacao).format("DD/MM/YYYY");
                         }
-                        return [3 /*break*/, 4];
-                    case 3:
-                        error_1 = _a.sent();
-                        return [3 /*break*/, 4];
-                    case 4: return [2 /*return*/];
+                        return [2 /*return*/];
                 }
             });
         });
     };
-    ClientesPage.prototype.ngOnInit = function () {
-        this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizacaoUserMenu, {});
-        var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
-        if (this.theme == "#527F76") {
-            this.theme = 'primary';
-        }
-        else if (!this.theme) {
-            this.theme = 'primary';
-        }
-        this.eventChangeColor();
-    };
-    ClientesPage.prototype.abrirCadastro = function (model) {
-        this.navCtrl.push("CadastroClientePage", { cliente: model });
-    };
-    ClientesPage.prototype.abrirDetalheCliente = function (model) {
-        this.navCtrl.push("DetalheClientePage", { cliente: model });
-    };
-    ClientesPage.prototype.loadEvent = function () {
-        var _this = this;
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaClienteByProjetos, function () {
-            _this.load();
+    ModalConfigPage.prototype.delete = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var user;
+            return __generator(this, function (_a) {
+                user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
+                this.alertSrvc.confirm('Excluir ?', ' Ao confirmar todos seus dados serão perdidos.', function () { return __awaiter(_this, void 0, void 0, function () {
+                    var result;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, this.usuarioSrvc.delete(user._id)];
+                            case 1:
+                                result = _a.sent();
+                                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+                                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
+                                if (result.success) {
+                                    this.alertSrvc.toast('Conta excluida com sucesso.', 'bottom');
+                                    this.navCtrl.setRoot('LoginPage');
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
+            });
         });
     };
-    ClientesPage.prototype.eventChangeColor = function () {
-        var _this = this;
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, function () {
-            _this.menuController();
-            console.log('Menu adicionado', _this.class);
-        });
-    };
-    ClientesPage.prototype.menuController = function () {
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
-        if (this.theme == "#527F76") {
-            this.theme = 'primary';
+    ModalConfigPage.prototype.theme = function (item) {
+        console.log(item);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color, item);
+        this.tema = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+        console.log(this.tema);
+        this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, {});
+        if (!this.tema) {
+            this.tema = '#527F76';
         }
+        else if (this.tema == 'blue') {
+            this.tema = 'Navy';
+        }
+        this.viewCtrl.dismiss();
     };
-    ClientesPage.prototype.abrirPdf = function () {
-        this.navCtrl.setRoot("ContratoPage");
-    };
-    ClientesPage.prototype.logout = function () {
+    ModalConfigPage.prototype.logout = function () {
         localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
         localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
-        this.navCtrl.setRoot("LoginPage");
+        this.navCtrl.setRoot('LoginPage');
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["c" /* Content */])
-    ], ClientesPage.prototype, "content", void 0);
-    ClientesPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: "page-clientes",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n\n  Generated template for the ClientesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n      <ion-buttons position>\n\n          <button ion-button icon-only menuToggle>\n\n            <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Clientes\n\n\n\n          </button>\n\n          </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n<ion-grid>\n\n<ion-row>\n\n<ion-col col-10>\n\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n</ion-col>\n\n\n\n<ion-col col-2>\n\n    <ion-fab>\n\n        <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n    \n\n    </ion-col>\n\n\n\n</ion-row>\n\n</ion-grid>\n\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n\n  <ion-card-content >\n\n    Nome: {{cliente.nome}} <br/>\n\n    Email: {{cliente.email}}<br/>\n\n    Telefone: {{cliente.tel}}\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/
+    ModalConfigPage.prototype.back = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalConfigPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-modal-config',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-config\modal-config.html"*/'<ion-content padding>\n\n<div id="header" [ngStyle]="{\'background-color\': tema}">\n\n  \n\n<ion-label id="title">Configurações</ion-label>\n\n\n\n\n\n<div id="left">\n\n  \n\n  <ion-item class="circle">\n\n    <img [src]="usuario.foto" width="70" height="70"/>\n\n  </ion-item>\n\n</div>\n\n<div id="right">\n\n  <ion-item  class="dataUser">  \n\n    {{usuario.nome}}<br/>\n\n    {{usuario.email}}\n\n  </ion-item>\n\n</div>\n\n</div>\n\n\n\n<ion-card>\n\n  <ion-card-header center>\n\nTema\n\n  </ion-card-header>\n\n  <ion-card-content>\n\n\n\n    <div class="div1"> \n\n      <div class="theme1" (click)="theme(\'purple\')">\n\n      </div>\n\n        <ion-input style="padding-left: 14px;" type="text" value="Purple" readonly ></ion-input>\n\n    </div>\n\n    \n\n    <div class="div2"> \n\n        <div class="theme2" (click)="theme(\'#527F76\')">\n\n        </div>\n\n        <ion-input style="padding-left: 11px;" type="text" value="Original" readonly ></ion-input>\n\n      </div>\n\n    \n\n      <div class="div3"> \n\n          <div class="theme3" (click)="theme(\'blue\')">\n\n          </div>\n\n          <ion-input style="padding-left: 20px;" type="text" value="Blue" readonly ></ion-input>\n\n        </div>\n\n    \n\n        <div class="div4"> \n\n            <div class="theme4" (click)="theme(\'black\')">\n\n            </div>\n\n            <ion-input style="padding-left: 19px;" type="text" value="Dark" readonly ></ion-input>\n\n          </div>\n\n          \n\n\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n<ion-card>\n\n  <ion-card-content>\n\n Membro desde: {{usuario.dataCriacao}}    \n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n<ion-card (click)="delete()">\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;">\n\n      <ion-item>\n\n<label>Excluir conta</label>        <ion-note item-end>\n\n    <ion-icon [ngStyle]="{\'color\': tema}" id="trash" name="trash"></ion-icon> </ion-note>\n\n        <br/>\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n      <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;" >\n\n        <ion-item (click)="logout()">\n\n  <label>Sair da conta</label>        <ion-note item-end>\n\n      <ion-icon id="off" name="power"></ion-icon> </ion-note>\n\n          <br/>\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n    <ion-fab>\n\n        <button (click)="back()" [ngStyle]="{\'background-color\': tema}" ion-fab>    <ion-icon name="arrow-round-back"></ion-icon>\n\n\n\n        </button>\n\n      </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-config\modal-config.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */]])
-    ], ClientesPage);
-    return ClientesPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */]])
+    ], ModalConfigPage);
+    return ModalConfigPage;
 }());
 
-//# sourceMappingURL=clientes.js.map
+//# sourceMappingURL=modal-config.js.map
 
 /***/ })
 

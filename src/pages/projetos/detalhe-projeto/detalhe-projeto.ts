@@ -6,6 +6,7 @@ import { AlertProvider } from "../../../providers/alert/alert";
 import { clienteModel } from "../../../app/models/clienteModel";
 import { ClientesProvider } from "../../../providers/clientes/clientes";
 import { configHelper } from "../../../app/helpers/configHelper";
+import { convertUrlToDehydratedSegments } from 'ionic-angular/umd/navigation/url-serializer';
 
 
 @IonicPage()
@@ -18,6 +19,8 @@ export class DetalheProjetoPage implements OnInit{
   foto = [];
   cliente: Array<clienteModel> = new Array<clienteModel>();
   theme: string;
+  split = [];
+  teste = [];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
@@ -35,6 +38,8 @@ export class DetalheProjetoPage implements OnInit{
     this.load();
   }
 ngOnInit(): void {
+  this.projeto = <projetoModel>this.navParams.get("_projeto");
+  this.foto = this.projeto.foto;
   this.eventChangeColor();
   this.theme = localStorage.getItem(configHelper.storageKeys.color);
   if(this.theme == "#527F76"){
@@ -42,6 +47,16 @@ ngOnInit(): void {
   }else if(!this.theme){
     this.theme = 'primary'
   }
+this.split = [];
+let c = this.foto.length;
+console.log('fotos antes', this.foto)
+
+for(let i= 1; i < c + 1; i++){
+  this.split.push(`div${[i]}`)
+  console.log('fotos ',this.foto)
+}
+console.log('testando array',this.foto.length)
+
 }
 
 
@@ -100,11 +115,5 @@ ngOnInit(): void {
     }
   }
 
-  /*
-  ionViewDidLoad() {
-    this.foto = this.projeto.foto;
-    this.projeto = <projetoModel>this.navParams.get("_projeto");
-
-    console.log("Projetos", this.projeto);
-  }*/
+  
 }

@@ -4,14 +4,12 @@
 
             <section [class]="class">
 
-                <button (click)="logout()" id="logout" [ngStyle]="{'color': theme}">
-                    <ion-icon name="power"> Sair da Conta</ion-icon>
-                </button>
+               
                 
 
-                <div style="padding-top: 50px; text-align: center;">
+                <div id="picture-position">
             <ion-item class="circle">
-                <img [src]="usuario.foto" />
+                <img [src]="usuario.foto" width="200" height="200"/>
             </ion-item>
         </div> 
 
@@ -36,9 +34,17 @@
             <ion-item (click)="openConfigOptions()">
                    Configurações <ion-note item-end>  <ion-icon id="menu-icon" name="settings"></ion-icon></ion-note>
                 </ion-item>      
+
+
+                <div id="btn-logout">
+                <button (click)="logout()" id="logout" [ngStyle]="{'color': theme}">
+                    <ion-icon name="power"> Sair da Conta</ion-icon>
+                </button>
+            </div>
+
           <ion-footer id="menu-footer" [ngStyle]="{'background-color': theme}">
               Developed By Israel Gomes  <br/>
-              Version 1.0.0
+              Version 1.0.0<br/>
           </ion-footer>
         </ion-content>
       </ion-menu>

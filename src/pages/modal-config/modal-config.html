@@ -1,13 +1,13 @@
 <ion-content padding>
 <div id="header" [ngStyle]="{'background-color': tema}">
   
-<ion-label id="title">Congifurações</ion-label>
+<ion-label id="title">Configurações</ion-label>
 
 
 <div id="left">
   
   <ion-item class="circle">
-    <img [src]="usuario.foto" />
+    <img [src]="usuario.foto" width="70" height="70"/>
   </ion-item>
 </div>
 <div id="right">
@@ -20,14 +20,14 @@
 
 <ion-card>
   <ion-card-header center>
-    Mudar Tema
+Tema
   </ion-card-header>
   <ion-card-content>
 
     <div class="div1"> 
       <div class="theme1" (click)="theme('purple')">
       </div>
-        <ion-input style="padding-left: 14px;" type="text" value="purple" readonly ></ion-input>
+        <ion-input style="padding-left: 14px;" type="text" value="Purple" readonly ></ion-input>
     </div>
     
     <div class="div2"> 
@@ -39,13 +39,13 @@
       <div class="div3"> 
           <div class="theme3" (click)="theme('blue')">
           </div>
-          <ion-input style="padding-left: 20px;" type="text" value="blue" readonly ></ion-input>
+          <ion-input style="padding-left: 20px;" type="text" value="Blue" readonly ></ion-input>
         </div>
     
         <div class="div4"> 
             <div class="theme4" (click)="theme('black')">
             </div>
-            <ion-input style="padding-left: 19px;" type="text" value="black" readonly ></ion-input>
+            <ion-input style="padding-left: 19px;" type="text" value="Dark" readonly ></ion-input>
           </div>
           
 

@@ -26,10 +26,10 @@
     <ion-input [(ngModel)]="contrato.vlTotal"></ion-input>
   </ion-item>
 
-    <ion-item>
-        <ion-label floating>Prazo de entrega</ion-label>
-        <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>
-  </ion-item>
+  <ion-item (click)="openCalendar()">
+    <ion-label  floating>Prazo de entrega</ion-label>
+    <ion-input [(ngModel)]="contrato.prEntrega" readonly></ion-input>
+</ion-item>
 
 <ion-item>
     <ion-label floating>Contratante</ion-label>
@@ -87,9 +87,9 @@
       <ion-input [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>
     </ion-item>
   
-      <ion-item>
-          <ion-label floating>Prazo de entrega</ion-label>
-          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY"  [(ngModel)]="contrato.prEntrega"></ion-datetime>
+      <ion-item (click)="openCalendar()">
+          <ion-label  floating>Prazo de entrega</ion-label>
+          <ion-input [(ngModel)]="contrato.prEntrega" readonly></ion-input>
     </ion-item>
   
   <ion-item>

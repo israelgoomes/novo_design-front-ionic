@@ -37,12 +37,12 @@
       <br />
       <p>Cep: {{ cliente.cep }}</p>
       <br/>
-      <p>
-        <ion-item *ngFor="let fotos of foto">
-          <img [src]="fotos" />
-        </ion-item>
-      </p>
+     
       <br />
+      <hr>
+      <div class="picture" *ngFor="let fotos of foto">  
+        <img [src]="fotos" />
+      </div>
     </ion-card-content>
   </ion-card>
 

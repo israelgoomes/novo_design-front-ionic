@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 294:
+/***/ 436:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUserPageModule", function() { return CadastroUserPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(447);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(459);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,12 +22,12 @@ var CadastroUserPageModule = /** @class */ (function () {
     function CadastroUserPageModule() {
     }
     CadastroUserPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */]),
             ],
         })
     ], CadastroUserPageModule);
@@ -38,7 +38,7 @@ var CadastroUserPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 446:
+/***/ 458:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59,17 +59,17 @@ var usuarioModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 447:
+/***/ 459:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUserPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(53);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(446);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(346);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -194,15 +194,15 @@ var CadastroUserPage = /** @class */ (function () {
         this.navCtrl.setRoot("LoginPage");
     };
     CadastroUserPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: "page-cadastro-user",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n\n  <div class="logo">\n\n    <div>\n\n      <ion-item (click)="getPictureOptions()" *ngIf="usuario.foto" class="circle">\n\n        <img [src]="usuario.foto" />\n\n      </ion-item>\n\n\n\n      <ion-item (click)="getPictureOptions()"  *ngIf="!usuario.foto" class="circle">\n\n        <img src="../../assets/imgs/user.jpg" />\n\n      </ion-item>\n\n    </div>\n\n\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      <ion-icon name="camera" item-left></ion-icon>\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Email</ion-label>\n\n      <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Senha</ion-label>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Confirme a senha</ion-label>\n\n      <ion-input\n\n        [(ngModel)]="usuario.senhaConfirmacao"\n\n        type="password"\n\n      ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-grid>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cadastrar()">\n\n          Cadastrar\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cancelar()">\n\n          Cancelar\n\n        </button>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
             __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Platform"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ActionSheetController"],
             __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
     ], CadastroUserPage);
     return CadastroUserPage;

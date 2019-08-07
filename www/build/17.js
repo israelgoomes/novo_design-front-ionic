@@ -1,14 +1,14 @@
 webpackJsonp([17],{
 
-/***/ 295:
+/***/ 437:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmClientePageModule", function() { return AdmClientePageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_cliente__ = __webpack_require__(448);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_cliente__ = __webpack_require__(460);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,12 +22,12 @@ var AdmClientePageModule = /** @class */ (function () {
     function AdmClientePageModule() {
     }
     AdmClientePageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__adm_cliente__["a" /* AdmClientePage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_cliente__["a" /* AdmClientePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_cliente__["a" /* AdmClientePage */]),
             ],
         })
     ], AdmClientePageModule);
@@ -38,16 +38,16 @@ var AdmClientePageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 448:
+/***/ 460:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmClientePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_helpers_configHelper__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_helpers_configHelper__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -162,14 +162,14 @@ var AdmClientePage = /** @class */ (function () {
         this.navCtrl.pop();
     };
     AdmClientePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-adm-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\adm-cliente\adm-cliente.html"*/'<!--\n\n  Generated template for the AdmClientePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n    <ion-title>Editar Cliente</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n<ion-grid>\n\n  \n\n</ion-grid>\n\n\n\n<ion-content padding>\n\n\n\n<ion-card>\n\n  <ion-card-content>\n\n    <ion-grid>\n\n        <ion-row>\n\n      <ion-col>\n\n           <ion-row>\n\n        <ion-item>\n\n          <ion-label floating>Nome</ion-label>\n\n          <ion-input [(ngModel)]="cliente.nome"  type="text"></ion-input>\n\n        </ion-item>\n\n      </ion-row>\n\n      \n\n      <ion-row>\n\n          <ion-item>\n\n            <ion-label floating>Telefone</ion-label>\n\n            <ion-input type="text" [(ngModel)]="cliente.tel"></ion-input>\n\n          </ion-item>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n            <ion-item>\n\n              <ion-label floating>Email</ion-label>\n\n              <ion-input type="text" [(ngModel)]="cliente.email"></ion-input>\n\n            </ion-item>\n\n          </ion-row>\n\n          \n\n          <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input type="text" [(ngModel)]="cliente.cep"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n            \n\n            <ion-row>\n\n                <ion-item>\n\n                  <ion-label floating>Rua</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="cliente.endereco"></ion-input>\n\n                </ion-item>\n\n              </ion-row>\n\n\n\n              <ion-row>\n\n                  <ion-item>\n\n                    <ion-label floating>Bairro</ion-label>\n\n                    <ion-input type="text" [(ngModel)]="cliente.bairro"></ion-input>\n\n                  </ion-item>\n\n                </ion-row>\n\n              \n\n                <ion-row>\n\n                    <ion-item>\n\n                      <ion-label floating>Cidade</ion-label>\n\n                      <ion-input type="text" [(ngModel)]="cliente.cidade"></ion-input>\n\n                    </ion-item>\n\n                  </ion-row>\n\n      \n\n                  <ion-row>\n\n                      <ion-item>\n\n                        <ion-label floating>Estado</ion-label>\n\n                        <ion-input type="text" [(ngModel)]="cliente.estado"></ion-input>\n\n                      </ion-item>\n\n                    </ion-row>\n\n      \n\n\n\n      </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n<ion-card>\n\n  <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n    </ion-card-content>\n\n    <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>\n\n  \n\n     <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>\n\n    \n\n</ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\adm-cliente\adm-cliente.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
             __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"]])
     ], AdmClientePage);
     return AdmClientePage;
 }());

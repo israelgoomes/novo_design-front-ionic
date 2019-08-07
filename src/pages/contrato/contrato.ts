@@ -13,7 +13,8 @@ import { clienteModel } from "../../app/models/clienteModel";
 import { projetoModel } from '../../app/models/projetoModel';
 import * as moment from 'moment';
 import { configHelper } from '../../app/helpers/configHelper';
-import { Events } from 'ionic-angular';
+import { Events, ModalController } from 'ionic-angular';
+import { CalendarModal, CalendarModalOptions, CalendarResult } from 'ion2-calendar';
 
 
 @IonicPage()
@@ -40,8 +41,15 @@ export class ContratoPage implements OnInit{
     private platform: Platform,
     private file: File,
     private toastCtrl: ToastController,
-    private events: Events
+    private events: Events,
+    private modalCtrl: ModalController
   ) {
+
+    moment.locale('pt-BR', {
+      months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+    });
+
     let client = this.navParams.get("_cliente");
     let clienteProjeto = this.navParams.get('_clienteProjeto')
     if (client) {
@@ -60,7 +68,9 @@ export class ContratoPage implements OnInit{
   }
 
   ngOnInit(): void {
-    this.contrato.prEntrega = moment(this.contrato.prEntrega).format("Day Month Year");
+
+  this.contrato.prEntrega = moment(new Date()).format("DD/MM/YYYY");
+    
     console.log('cliente', this.cliente)
 
     this.theme = localStorage.getItem(configHelper.storageKeys.color);
@@ -69,6 +79,13 @@ export class ContratoPage implements OnInit{
       this.theme = 'primary'
     }else if(!this.theme){
       this.theme = 'primary'
+    } else if(this.theme == 'black'){
+      this.theme = 'dark';
+      console.log('Mudando nome do tema para black')
+    } else if(this.theme == 'purple'){
+      this.theme = 'secondary';
+    }else if(this.theme == 'blue'){
+      this.theme = 'light'
     }
     this.eventChangeColor();
 
@@ -94,7 +111,7 @@ export class ContratoPage implements OnInit{
         descritivo: this.projeto.descricaoProjeto,
         vlTotal: this.projeto.preco,
         projeto: this.projeto.tituloProjeto,
-        tel: this.cliente.tel
+        tel: this.cliente.tel,
       }
 
       ]
@@ -112,6 +129,9 @@ export class ContratoPage implements OnInit{
     this.theme = localStorage.getItem(configHelper.storageKeys.color);
     if(this.theme == "#527F76"){
       this.theme = 'primary'
+    }else if(this.theme == 'black'){
+      this.theme = 'dark';
+      console.log('Mudando nome do tema para black')
     }
   }
 
@@ -132,13 +152,31 @@ export class ContratoPage implements OnInit{
   ionViewDidLoad() {
 
   }
-
-  teste() {
-    console.log(this.contrato.name);
+  openCalendar() {
+    const options: CalendarModalOptions = {
+        pickMode: 'single',
+        title: 'Prazo de Entrega',
+        weekdays: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+        monthFormat: 'MMMM YYYY',
+        canBackwardsSelected: true,
+        closeIcon: true,
+        doneIcon: true,
+        color: this.theme,
+    };
+    let myCalendar = this.modalCtrl.create(CalendarModal, {
+        options: options
+    });
+    myCalendar.onDidDismiss((date: CalendarResult, type: string) => {
+     if(date!=null){
+      this.contrato.prEntrega = moment(date.string).format("DD/MM/YYYY")
+      //this.dateView = moment(date.string).format("DD/MM/YYYY")
+     }
+    })
+    myCalendar.present();
   }
 
   createPdf() {
-    this.contrato.prEntrega = moment(this.contrato.prEntrega).format("DD/MM/YYYY");
+    
   if(this.projeto.tituloProjeto == undefined){
 this.values["0"].descritivo = this.contrato.descritivo
 this.values["0"].vlTotal = this.contrato.vlTotal

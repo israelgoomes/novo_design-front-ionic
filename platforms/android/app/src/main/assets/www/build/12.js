@@ -1,14 +1,14 @@
 webpackJsonp([12],{
 
-/***/ 305:
+/***/ 447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdmProjetoPageModule", function() { return AdmProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_projeto__ = __webpack_require__(458);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__adm_projeto__ = __webpack_require__(470);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -22,12 +22,12 @@ var AdmProjetoPageModule = /** @class */ (function () {
     function AdmProjetoPageModule() {
     }
     AdmProjetoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__adm_projeto__["a" /* AdmProjetoPage */]),
             ],
         })
     ], AdmProjetoPageModule);
@@ -38,18 +38,18 @@ var AdmProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 458:
+/***/ 470:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdmProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -112,10 +112,12 @@ var AdmProjetoPage = /** @class */ (function () {
         this.platform = platform;
         this.clienteSrvc = clienteSrvc;
         this.events = events;
-        this.projeto = this.navParams.get('_projeto');
-        this.cliente = this.navParams.get('_cliente');
+        this.foto = [];
     }
     AdmProjetoPage.prototype.ngOnInit = function () {
+        this.projeto = this.navParams.get("_projeto");
+        this.cliente = this.navParams.get('_cliente');
+        this.foto = this.projeto.foto;
         this.eventChangeColor();
         this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
         if (this.theme == "#527F76") {
@@ -168,6 +170,45 @@ var AdmProjetoPage = /** @class */ (function () {
             });
         });
     };
+    /*
+     async alterarFoto(item: ImageData): Promise<void>{
+       for(let i = 0; i < this.projeto.foto.length; i++){
+         if(this.projeto.foto[i] == item){
+              console.log('Filtrando a foto especifica',this.projeto.foto) ;
+         
+       }
+       }
+     } */
+    AdmProjetoPage.prototype.getPictureByItem = function (item) {
+        var _this = this;
+        var actionSheet = this.actionSheetCtrl.create({
+            title: 'Adicionar foto',
+            buttons: [
+                { text: 'Tirar foto', handler: function () {
+                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
+                        _this.cameraSrvc.takePicture(function (photo) {
+                            _this.foto.push(photo);
+                            _this.projeto.foto = _this.foto;
+                        });
+                    },
+                    icon: this.platform.is('ios') ? null : 'camera' },
+                //------------------------ Opção pegar da galeria ------------
+                { text: 'Pegar galeria', handler: function () {
+                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
+                            item = photo;
+                            _this.projeto.foto.push(item);
+                        });
+                    }, icon: this.platform.is('ios') ? null : 'images' },
+                //o role 'destructive' deixa o botao vermelho
+                { text: 'Cancelar', role: 'destructive',
+                    icon: this.platform.is('ios') ? null : 'close',
+                    handler: function () {
+                        //cancela a ação
+                    }, }
+            ]
+        });
+        actionSheet.present();
+    };
     AdmProjetoPage.prototype.getPictureOptions = function () {
         var _this = this;
         //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
@@ -177,14 +218,16 @@ var AdmProjetoPage = /** @class */ (function () {
                 { text: 'Tirar foto', handler: function () {
                         //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o projeto.foto
                         _this.cameraSrvc.takePicture(function (photo) {
-                            _this.projeto.foto = photo;
+                            _this.foto.push(photo);
+                            _this.projeto.foto = _this.foto;
                         });
                     },
                     icon: this.platform.is('ios') ? null : 'camera' },
                 //------------------------ Opção pegar da galeria ------------
                 { text: 'Pegar galeria', handler: function () {
                         _this.cameraSrvc.getPictureFromGalery(function (photo) {
-                            _this.projeto.foto = photo;
+                            _this.foto.push(photo);
+                            _this.projeto.foto = _this.foto;
                         });
                     }, icon: this.platform.is('ios') ? null : 'images' },
                 //o role 'destructive' deixa o botao vermelho
@@ -201,18 +244,18 @@ var AdmProjetoPage = /** @class */ (function () {
         this.navCtrl.pop();
     };
     AdmProjetoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'page-adm-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/'<!--\n\n  Generated template for the AdmProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n    <ion-title>Editar Projeto</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Projeto</ion-label>\n\n                <ion-input\n\n                  [(ngModel)]="projeto.tituloProjeto"\n\n                  \n\n                  type="text"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Descrição</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="projeto.descricaoProjeto"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Valor</ion-label>\n\n                <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cliente</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.nome"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Email</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.email"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Telefone</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.tel"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Endereço</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.endereco"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cidade</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cidade"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Bairro</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.bairro"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cep"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-item *ngIf="projeto.foto">\n\n              <img [src]="projeto.foto" />\n\n            </ion-item>\n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n \n\n        <ion-card>\n\n            <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n              <ion-item (click)="getPictureOptions()">\n\n        <label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n            <ion-icon id="icon-color" name="camera" ></ion-icon> </ion-note\n\n                ><br />\n\n              </ion-item>\n\n            </ion-card-content>\n\n          </ion-card>    \n\n\n\n          <ion-card>\n\n            <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>\n\n            \n\n            <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>\n\n          </ion-card>\n\n    \n\n   \n\n\n\n  <!-- <ion-grid>\n\n    <ion-row>\n\n      <button ion-button (click)="alterar()">Salvar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content> -->\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/,
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-adm-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/'<!--\n\n  Generated template for the AdmProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n    <ion-title>Editar Projeto</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-grid>\n\n        <ion-row>\n\n          <ion-col>\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Projeto</ion-label>\n\n                <ion-input\n\n                  [(ngModel)]="projeto.tituloProjeto"\n\n                  \n\n                  type="text"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Descrição</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="projeto.descricaoProjeto"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Valor</ion-label>\n\n                <ion-input type="text" [(ngModel)]="projeto.preco"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cliente</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.nome"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Email</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.email"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Telefone</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.tel"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Endereço</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.endereco"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cidade</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cidade"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Bairro</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.bairro"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n            <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input\n\n                  type="text"\n\n                  [(ngModel)]="cliente.cep"\n\n                ></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n\n\n           \n\n            \n\n          </ion-col>\n\n        </ion-row>\n\n      </ion-grid>\n\n\n\n\n\n      <div (click)="alterarFoto(fotos)" class="picture" *ngFor="let fotos of foto">  \n\n          <img [src]="fotos" />\n\n        </div>\n\n\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n \n\n        <ion-card>\n\n            <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n              <ion-item (click)="getPictureOptions()">\n\n        <label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n            <ion-icon id="icon-color" name="camera" ></ion-icon> </ion-note\n\n                ><br />\n\n              </ion-item>\n\n            </ion-card-content>\n\n          </ion-card>    \n\n\n\n          <ion-card>\n\n            <ion-icon (click)="cancelar()" name="close-circle"></ion-icon>\n\n            \n\n            <p> <ion-icon (click)="alterar()" name="checkmark-circle"></ion-icon> </p>\n\n          </ion-card>\n\n    \n\n   \n\n\n\n  <!-- <ion-grid>\n\n    <ion-row>\n\n      <button ion-button (click)="alterar()">Salvar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content> -->\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\adm-projeto\adm-projeto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
             __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
             __WEBPACK_IMPORTED_MODULE_4__providers_camera_camera__["a" /* CameraProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ActionSheetController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Platform"],
             __WEBPACK_IMPORTED_MODULE_5__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"]])
     ], AdmProjetoPage);
     return AdmProjetoPage;
 }());

@@ -24,6 +24,8 @@ import {BrMaskerModule} from 'brmasker-ionic-3';
 //import { PipesModule } from '../pipes/pipes.module';
 import { LoginPage } from '../pages/login/login';
 import { AppVersion } from '@ionic-native/app-version';
+import { CalendarModule } from "ion2-calendar";
+
 @NgModule({
   declarations: [
     //BrMaskerIonic3,
@@ -36,6 +38,7 @@ import { AppVersion } from '@ionic-native/app-version';
     BrowserModule,
     HttpClientModule,
     BrMaskerModule,
+    CalendarModule,
     //PipesModule,
     IonicModule.forRoot(MyApp)
   ],

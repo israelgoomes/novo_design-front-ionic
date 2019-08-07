@@ -1,15 +1,15 @@
 webpackJsonp([8],{
 
-/***/ 306:
+/***/ 448:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroProjetoPageModule", function() { return CadastroProjetoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__ = __webpack_require__(459);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(347);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -24,13 +24,13 @@ var CadastroProjetoPageModule = /** @class */ (function () {
     function CadastroProjetoPageModule() {
     }
     CadastroProjetoPageModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["J" /* NgModule */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__["a" /* CadastroProjetoPage */],
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__["a" /* CadastroProjetoPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_projeto__["a" /* CadastroProjetoPage */]),
             ],
         })
     ], CadastroProjetoPageModule);
@@ -41,7 +41,7 @@ var CadastroProjetoPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 440:
+/***/ 454:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67,19 +67,19 @@ var projetoModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 459:
+/***/ 471:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroProjetoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(26);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(209);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(440);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(210);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_helpers_configHelper__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__ = __webpack_require__(345);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__ = __webpack_require__(109);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(454);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(346);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__ = __webpack_require__(344);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_helpers_configHelper__ = __webpack_require__(44);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -287,19 +287,19 @@ var CadastroProjetoPage = /** @class */ (function () {
         actionSheet.present();
     };
     CadastroProjetoPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-cadastro-projeto',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/'<!--\n\n  Generated template for the CadastroProjetoPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n    <ion-title>Novo Serviço</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-card>\n\n    <ion-card-content>\n\n      <ion-item>\n\n        <ion-label floating>Projeto</ion-label>\n\n        <ion-input\n\n          [(ngModel)]="projeto.tituloProjeto"\n\n          required\n\n          type="text"\n\n        ></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Descrição</ion-label>\n\n        <ion-textarea\n\n          type="text"\n\n          [(ngModel)]="projeto.descricaoProjeto"\n\n        ></ion-textarea>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label floating>Valor</ion-label>\n\n        <ion-input type="text" [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>\n\n      </ion-item>\n\n     \n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n\n\n  <ion-card *ngIf="!cliente.nome">\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="openClientOption()">\n\n<label>Escolher cliente</label>        <ion-note item-end>\n\n          <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card *ngIf="cliente.nome">\n\n      <ion-card-content style="padding-top: 3px; padding-bottom: 3px;">\n\n        <ion-item (click)="openClientOption()">\n\n  <label>Alterar cliente</label>        <ion-note item-end>\n\n            <ion-icon id="icon-color" name="arrow-dropright-circle"></ion-icon> </ion-note\n\n          ><br />\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n  \n\n\n\n\n\n\n\n<ion-card  *ngIf="cliente.nome">\n\n  <ion-card-content>\n\n      <ion-item> Cliente: {{ cliente.nome }} </ion-item>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n\n\n\n\n<ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px;">\n\n      <ion-item (click)="getPictureOptions()">\n\n<label>Selecionar Foto(s)</label>        <ion-note item-end>\n\n    <ion-icon id="icon-color" name="camera" ></ion-icon> </ion-note\n\n        ><br />\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <div *ngFor="let fotos of foto">\n\n  <ion-item *ngIf="projeto.foto" >\n\n    <img [src]="fotos"  />\n\n  </ion-item>\n\n</div>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n      <button [color]="theme" ion-button outline block (click)="salvar()">Cadastrar</button>\n\n    </ion-row>\n\n  </ion-grid>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\projetos\cadastro-projeto\cadastro-projeto.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["m" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["n" /* NavParams */],
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
             __WEBPACK_IMPORTED_MODULE_2__providers_projetos_projetos__["a" /* ProjetosProvider */],
             __WEBPACK_IMPORTED_MODULE_3__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["o" /* Platform */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* ActionSheetController */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Platform"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ActionSheetController"],
             __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */],
             __WEBPACK_IMPORTED_MODULE_6__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["k" /* ModalController */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* Events */]])
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"]])
     ], CadastroProjetoPage);
     return CadastroProjetoPage;
 }());

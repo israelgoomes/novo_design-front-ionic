@@ -17,10 +17,12 @@
        under the License.
  */
 
-package com.marcenarianovadesign;
+package com.cmapp;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+import android.os.Build;
+import android.view.View;
 
 public class MainActivity extends CordovaActivity
 {
@@ -34,7 +36,12 @@ public class MainActivity extends CordovaActivity
         if (extras != null && extras.getBoolean("cdvStartInBackground", false)) {
             moveTaskToBack(true);
         }
-
+        //--------------------------------------------------------
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+	getWindow().getDecorView().setSystemUiVisibility(
+	   View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+	   View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+}
         // Set by <content src="index.html" /> in config.xml
         loadUrl(launchUrl);
     }

@@ -16,23 +16,30 @@ export class MyApp implements OnInit{
   theme: string;
 class: string;
 color: string;
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, 
+  constructor(private platform: Platform, private statusBar: StatusBar, private splashScreen: SplashScreen, 
     private usuarioSrvc: UsuarioProvider,
     private events: Events,
     private menuCtrl: MenuController,
     private modalCtrl: ModalController
     ) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      statusBar.styleDefault();
-      //let splash = modalCtrl.create(SplashPage);
-     // splash.present();
-      splashScreen.hide();
-
-      
-    });  
+  this.initializeApp();
   }
+
+initializeApp(){
+  this.platform.ready().then(() => {
+    // Okay, so the platform is ready and our plugins are available.
+    // Here you can do any higher level native things you might need.
+    //statusBar.styleDefault();
+    if (this.platform.is('android')) {
+      this.statusBar.backgroundColorByHexString("#33000000");
+    }
+    //let splash = modalCtrl.create(SplashPage);
+   // splash.present();
+    this.splashScreen.hide();
+
+    
+  });  
+}
 
   async usuarioLogado(): Promise<void>{
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { UsuarioProvider } from '../../providers/usuario/usuario';
+import { configHelper } from '../../app/helpers/configHelper';
 
 @IonicPage()
 @Component({
@@ -28,6 +29,7 @@ export class LoginPage {
 
 
   async login(): Promise<void> {
+    this.events.publish(configHelper.Events.atualizacaoUserMenu)
     this.navCtrl.setRoot(this.navCtrl.getActive().component);  
     let result = await this.usuarioSrvc.autenticate(this.form.email, this.form.senha);
     console.log('Teste',result);

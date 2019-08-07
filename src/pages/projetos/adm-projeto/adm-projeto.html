@@ -114,13 +114,17 @@
               </ion-item>
             </ion-row>
 
-            <ion-item *ngIf="projeto.foto">
-              <img [src]="projeto.foto" />
-            </ion-item>
+           
             
           </ion-col>
         </ion-row>
       </ion-grid>
+
+
+      <div (click)="alterarFoto(fotos)" class="picture" *ngFor="let fotos of foto">  
+          <img [src]="fotos" />
+        </div>
+
     </ion-card-content>
   </ion-card>
 

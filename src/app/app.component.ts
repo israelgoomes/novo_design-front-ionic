@@ -1,5 +1,5 @@
 import { ModalController } from 'ionic-angular';
-import { Component, OnInit, ViewChild, KeyValueDiffers } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Platform, MenuController, Events, Nav  } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';

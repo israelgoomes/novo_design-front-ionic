@@ -3,15 +3,8 @@ import { IonicPage, NavController, NavParams, Events } from 'ionic-angular';
 import { projetoModel } from '../../app/models/projetoModel';
 import { ProjetosProvider } from '../../providers/projetos/projetos';
 import { configHelper } from '../../app/helpers/configHelper';
-import { ClientesProvider } from '../../providers/clientes/clientes';
-import { clienteModel } from '../../app/models/clienteModel';
-
-/**
- * Generated class for the ProjetosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//import { ClientesProvider } from '../../providers/clientes/clientes';
+//import { clienteModel } from '../../app/models/clienteModel';
 
 @IonicPage()
 @Component({
@@ -20,8 +13,8 @@ import { clienteModel } from '../../app/models/clienteModel';
 })
 export class ProjetosPage implements OnInit{
 listaProjetos: Array<projetoModel> = new Array<projetoModel>();
-cliente: Array<clienteModel> = new Array<clienteModel>();
-clienteId = [];
+//cliente: Array<clienteModel> = new Array<clienteModel>();
+//clienteId = [];
 theme: string;
   constructor(
     public navCtrl: NavController, 

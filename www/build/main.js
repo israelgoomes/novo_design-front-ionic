@@ -675,6 +675,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 //import { BrMaskerIonic3 } from 'brmasker-ionic-3';
 //import { BrMaskerIonicServices3 } from 'brmasker-ionic-3';
 
+//import { PipesModule } from '../pipes/pipes.module';
 
 
 var AppModule = /** @class */ (function () {

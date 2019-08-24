@@ -22,7 +22,6 @@ import { EmailComposer} from '@ionic-native/email-composer';
 //import { BrMaskerIonicServices3 } from 'brmasker-ionic-3';
 import {BrMaskerModule} from 'brmasker-ionic-3';
 //import { PipesModule } from '../pipes/pipes.module';
-import { LoginPage } from '../pages/login/login';
 import { AppVersion } from '@ionic-native/app-version';
 import { CalendarModule } from "ion2-calendar";
 

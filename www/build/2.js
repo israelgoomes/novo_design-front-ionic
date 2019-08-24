@@ -148,10 +148,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var ModalClientesPage = /** @class */ (function () {
-    function ModalClientesPage(navCtrl, navParams, modalCtrl, viewCtrl) {
+    function ModalClientesPage(navCtrl, navParams, viewCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
         this.viewCtrl = viewCtrl;
         this.cliente = [];
         this.cliente = this.navParams.get('_cliente');
@@ -172,7 +171,7 @@ var ModalClientesPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'page-modal-clientes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/'<ion-header>\n\n  <ion-navbar color="primary">\n\n    <ion-title>Clientes</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  <ion-col col-10>\n\n    <ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n    </ion-col>\n\n \n\n<ion-card *ngFor="let lista of cliente | search: args" (click)="saveClient(lista)"> \n\n  <ion-card-header>\n\n    \n\n  </ion-card-header>\n\n  \n\n  <ion-card-content>\n\n    <p>{{lista.nome}}</p>\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-clientes\modal-clientes.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"]])
     ], ModalClientesPage);
     return ModalClientesPage;
 }());

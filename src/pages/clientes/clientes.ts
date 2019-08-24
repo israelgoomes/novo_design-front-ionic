@@ -12,7 +12,6 @@ import { clienteModel } from "../../app/models/clienteModel";
 import { configHelper } from "../../app/helpers/configHelper";
 import { usuarioModel } from "../../app/models/usuarioModel";
 import { AppVersion } from "@ionic-native/app-version";
-import { THIS_EXPR } from "@angular/compiler/src/output/output_ast";
 
 @IonicPage()
 @Component({
@@ -23,6 +22,7 @@ export class ClientesPage implements OnInit {
   @ViewChild(Content) content: Content;
 theme: string;
 class = 'primary';
+input: any ={}
   listaClientes: Array<clienteModel> = new Array<clienteModel>();
   usuario: Array<usuarioModel> = new Array<usuarioModel>();
   constructor(
@@ -103,7 +103,9 @@ class = 'primary';
       this.theme = 'primary'
     }
   }
-
+onChange(event){
+  console.log("Exibidno evento", event)
+}
 
   abrirPdf() {
     this.navCtrl.setRoot("ContratoPage");

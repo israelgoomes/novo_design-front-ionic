@@ -181,12 +181,8 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-/**
- * Generated class for the ProjetosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+//import { ClientesProvider } from '../../providers/clientes/clientes';
+//import { clienteModel } from '../../app/models/clienteModel';
 var ProjetosPage = /** @class */ (function () {
     function ProjetosPage(navCtrl, navParams, projetoSrvc, events) {
         this.navCtrl = navCtrl;
@@ -194,8 +190,6 @@ var ProjetosPage = /** @class */ (function () {
         this.projetoSrvc = projetoSrvc;
         this.events = events;
         this.listaProjetos = new Array();
-        this.cliente = new Array();
-        this.clienteId = [];
         this._loadProjetos();
         console.log('Lista de projetos', this.listaProjetos);
     }

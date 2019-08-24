@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
 import { clienteModel } from '../../app/models/clienteModel';
-import { ThrowStmt } from '@angular/compiler';
 
 /**
  * Generated class for the ModalClientesPage page.
@@ -18,7 +17,7 @@ import { ThrowStmt } from '@angular/compiler';
 export class ModalClientesPage {
 @Input() cliente = []
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private modalCtrl: ModalController, private viewCtrl: ViewController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private viewCtrl: ViewController) {
     this.cliente = this.navParams.get('_cliente')
   }
 

@@ -38,11 +38,7 @@ export class DetalheClientePage implements OnInit {
   ionViewWillEnter() {
     this.cliente = <clienteModel>this.navParams.get("cliente");
     console.log("Cliente que está vindo", this.cliente);
-    /* trazendo pelo localStorage
-     this.clienteSelecionado = <projetoModel>JSON.parse(localStorage.getItem(configHelper.storageKeys.selectClient));
-    */
     console.log("lista de projetos para o cliente", this.clienteSelecionado);
-    //this.load();
     console.log("Proejtos", this.projeto);
   }
 

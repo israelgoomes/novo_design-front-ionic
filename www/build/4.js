@@ -170,11 +170,7 @@ var DetalheClientePage = /** @class */ (function () {
     DetalheClientePage.prototype.ionViewWillEnter = function () {
         this.cliente = this.navParams.get("cliente");
         console.log("Cliente que está vindo", this.cliente);
-        /* trazendo pelo localStorage
-         this.clienteSelecionado = <projetoModel>JSON.parse(localStorage.getItem(configHelper.storageKeys.selectClient));
-        */
         console.log("lista de projetos para o cliente", this.clienteSelecionado);
-        //this.load();
         console.log("Proejtos", this.projeto);
     };
     DetalheClientePage.prototype.ngOnInit = function () {

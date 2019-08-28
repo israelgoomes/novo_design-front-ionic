@@ -99,7 +99,7 @@ export class DetalheClientePage implements OnInit {
   }
 
   addOrEdit(): void {
-    this.navCtrl.push("AdmClientePage", { _cliente: this.cliente });
+    this.navCtrl.push("AdmClientePage", { _cliente: this.cliente }); 
     console.log("Enviando o cliente", this.cliente);
   }
   cadastrarProjeto() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
+import { Component, OnInit, ViewChild, TestabilityRegistry } from "@angular/core";
 import {
   IonicPage,
   NavController,
@@ -12,6 +12,8 @@ import { clienteModel } from "../../app/models/clienteModel";
 import { configHelper } from "../../app/helpers/configHelper";
 import { usuarioModel } from "../../app/models/usuarioModel";
 import { AppVersion } from "@ionic-native/app-version";
+import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
+
 
 @IonicPage()
 @Component({
@@ -23,6 +25,10 @@ export class ClientesPage implements OnInit {
 theme: string;
 class = 'primary';
 input: any ={}
+formGroup: FormGroup;
+nmFornecedor: AbstractControl;
+input1: any = {}
+disableButton: boolean = false;
   listaClientes: Array<clienteModel> = new Array<clienteModel>();
   usuario: Array<usuarioModel> = new Array<usuarioModel>();
   constructor(
@@ -31,8 +37,16 @@ input: any ={}
     public modalCtrl: ModalController,
     public clienteSrvc: ClientesProvider,
     private events: Events,
-    private appVersion: AppVersion
+    private appVersion: AppVersion,
+    private formBuilder: FormBuilder
   ) {
+//-----------------------------------Form Builder -------------------------------
+this.formGroup = formBuilder.group({
+  nmFornecedor: ['', Validators.minLength(5)]
+})
+this.nmFornecedor = this.formGroup.controls['nmFornecedor']
+
+
     console.log("Versão do aplicativo", this.appVersion.getVersionNumber());
     console.log("Versão do aplicativo", this.appVersion.getAppName());
 
@@ -40,6 +54,19 @@ input: any ={}
     this.loadEvent();
   }
 
+teste(){
+  console.log('Teste de form Group: ', this.input1.buscar)
+}
+
+enableButton() {
+  if(this.input1.buscar && this.input1.buscar.length >= 5){
+    this.disableButton = true;
+  }else{
+    this.disableButton = false;
+
+  }
+}
+//------------------------------- FIM ---------------------------------------------
   abrirDetalheClientePage(cliente: clienteModel) {
     const modal = this.modalCtrl.create("DetalheClientePage", {
       cliente: cliente
@@ -64,6 +91,7 @@ input: any ={}
   }
 
   ngOnInit(): void {
+    console.log('Formulario: ',this.formGroup.valid)
     this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
     this.theme = localStorage.getItem(configHelper.storageKeys.color);
@@ -115,4 +143,6 @@ onChange(event){
     localStorage.setItem(configHelper.storageKeys.user, null);
     this.navCtrl.setRoot("LoginPage");
   }
+
+
 }

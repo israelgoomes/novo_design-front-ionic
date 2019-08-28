@@ -42,10 +42,23 @@
 </ion-card>
 
 
+<form [formGroup]="formGroup">
+  <ion-item>
+    <ion-label floating>Nome fornecedor</ion-label>
+    <ion-input type="text" formControlName="nmFornecedor"  ></ion-input>
+  </ion-item> 
+
+<button ion-button (click)="teste()" [disabled]="!formGroup.valid">Resultado</button>
+
+</form>
+
+
 <ion-item>
-  <ion-label floating>Teste</ion-label>
-  <ion-input type="text" [(ngModel)]="input.teste" ionChange="onChange($event.input.teste)"></ion-input>
-</ion-item>
+    <ion-label floating>Buscar</ion-label>
+    <ion-input [(ngModel)]="input1.buscar" (ionChange)="enableButton()" type="text"></ion-input>
+  </ion-item>
+  
+  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>
 
 </ion-content>
 

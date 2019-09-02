@@ -20,6 +20,8 @@ projeto: projetoModel;
 clientes: Array<clienteModel> = new Array<clienteModel>();
 cliente = []
 theme: string;
+disableButton: boolean = false;
+
   constructor(
     private navCtrl: NavController, 
     private navParams: NavParams,
@@ -59,7 +61,14 @@ ngOnInit():void {
             }
 }
 
+enableButton() {
+  if(this.projeto.tituloProjeto && this.projeto.descricaoProjeto && this.projeto.preco){
+    this.disableButton = true;
+  }else{
+    this.disableButton = false;
 
+  }
+}
 eventChangeColor(){
   this.events.subscribe(configHelper.Events.changeColor, ()=>{
     this.menuController();

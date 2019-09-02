@@ -59,7 +59,7 @@ teste(){
 }
 
 enableButton() {
-  if(this.input1.buscar && this.input1.buscar.length >= 5){
+  if(this.input1.buscar && this.input1.nome){
     this.disableButton = true;
   }else{
     this.disableButton = false;

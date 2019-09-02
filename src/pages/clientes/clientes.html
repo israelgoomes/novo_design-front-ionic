@@ -57,6 +57,11 @@
     <ion-label floating>Buscar</ion-label>
     <ion-input [(ngModel)]="input1.buscar" (ionChange)="enableButton()" type="text"></ion-input>
   </ion-item>
+
+  <ion-item>
+      <ion-label floating>Nome</ion-label>
+      <ion-input [(ngModel)]="input1.nome" (ionChange)="enableButton()" type="text"></ion-input>
+    </ion-item>
   
   <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>
 

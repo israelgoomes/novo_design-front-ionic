@@ -1,0 +1,88 @@
+<!--
+  Generated template for the TestesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>testes</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<div class="align">
+<ion-card>
+  <ion-card-header>
+    
+  </ion-card-header>
+  
+  <ion-card-content>
+      <button ion-button (click)="adicionaLinha()">ADICIONAR</button>
+
+  </ion-card-content>
+</ion-card>
+
+
+
+<ion-card>
+  <ion-card-content>
+    
+  
+  <table style="width:100%">
+    <tr >
+      <th>Elementos</th>
+      <th>Valor Mínimo</th>
+      <th>Valor Máximo</th>
+    </tr>
+    <tr *ngFor="let aco of listaAcos">
+      <td style="width: 30%;">
+
+<ion-item no-lines>
+  <ion-icon (click)="retiraLinha()" name="trash"></ion-icon>
+  <ion-select [(ngModel)]="aco.id" multiple="false" >
+
+    <ion-option *ngFor="let item of listaElementos" [value]="item.id" >
+        <ion-chip>
+            <ion-label>{{item.elemento}}</ion-label>
+          </ion-chip>
+      </ion-option>
+    
+  </ion-select>
+</ion-item>
+      </td>
+      <td>
+        <ion-item no-lines>
+          <ion-label></ion-label>
+          <ion-input [(ngModel)]="aco.vlMin" type="" ></ion-input>
+        </ion-item>
+
+
+      </td>
+      <td>
+
+        <ion-item no-lines>
+          <ion-label></ion-label>
+          <ion-input [(ngModel)]="aco.vlMax" type="" ></ion-input>
+        </ion-item>
+
+      </td>
+    </tr>
+  </table>
+</ion-card-content>
+</ion-card>
+
+  <ion-card>
+  
+    <ion-card-content>
+      
+      <button ion-button outline (click)="retiraLinha()"><ion-icon name="trash"></ion-icon></button>
+        <button ion-button outline (click)="teste()">Salvar</button>
+    </ion-card-content>
+  </ion-card>
+</div>
+
+    <!-- <ion-chip>
+        <ion-label>Teste</ion-label>
+      </ion-chip> -->
+</ion-content>

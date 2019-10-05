@@ -1,0 +1,25 @@
+page-testes {
+
+    table {
+        border-collapse: collapse;
+      }
+      
+      table, th, td {
+        border-bottom: 1px solid #d3d3d3;
+        border-left: 1px solid #d3d3d3;
+
+      }
+
+      tr{
+    border-top: none !important;       
+      }
+
+      ion-card{
+          width: 1024px !important;
+      }
+
+      .align{
+          text-align: center;
+          margin-left: 22%;
+      }
+}

@@ -1,15 +1,15 @@
 webpackJsonp([3],{
 
-/***/ 439:
+/***/ 447:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClientesPageModule", function() { return ClientesPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContratoPageModule", function() { return ContratoPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(456);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__contrato__ = __webpack_require__(471);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(348);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,109 +19,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-//import { SearchPipe } from '../../pipes/search/search';
 
-var ClientesPageModule = /** @class */ (function () {
-    function ClientesPageModule() {
+var ContratoPageModule = /** @class */ (function () {
+    function ContratoPageModule() {
     }
-    ClientesPageModule = __decorate([
+    ContratoPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */],
+                __WEBPACK_IMPORTED_MODULE_2__contrato__["a" /* ContratoPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__["a" /* PipesModule */],
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__clientes__["a" /* ClientesPage */]),
+                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__contrato__["a" /* ContratoPage */]),
             ],
-            entryComponents: [],
         })
-    ], ClientesPageModule);
-    return ClientesPageModule;
+    ], ContratoPageModule);
+    return ContratoPageModule;
 }());
 
-//# sourceMappingURL=clientes.module.js.map
+//# sourceMappingURL=contrato.module.js.map
 
 /***/ }),
 
-/***/ 456:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PipesModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__search_search__ = __webpack_require__(457);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-
-var PipesModule = /** @class */ (function () {
-    function PipesModule() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return projetoModel; });
+var projetoModel = /** @class */ (function () {
+    function projetoModel() {
     }
-    PipesModule = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
-            declarations: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]],
-            imports: [],
-            exports: [__WEBPACK_IMPORTED_MODULE_1__search_search__["a" /* SearchPipe */]]
-        })
-    ], PipesModule);
-    return PipesModule;
+    return projetoModel;
 }());
 
-//# sourceMappingURL=pipes.module.js.map
-
-/***/ }),
-
-/***/ 457:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPipe; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-var SearchPipe = /** @class */ (function () {
-    function SearchPipe() {
-    }
-    SearchPipe.prototype.transform = function (items, terms) {
-        if (!items)
-            return [];
-        if (!terms)
-            return items;
-        //console.log('Termos', terms)
-        try {
-            terms = terms.toString().toLowerCase();
-            console.log(terms);
-            return items.filter(function (it) {
-                if (it.nome != undefined) {
-                    return JSON.stringify(it.nome).toLowerCase().includes(terms);
-                }
-                else {
-                    return JSON.stringify(it.tituloProjeto).toLowerCase().includes(terms);
-                }
-            });
-        }
-        catch (error) {
-            console.log('Erro no pipe search', error);
-        }
-    };
-    SearchPipe = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Pipe"])({
-            name: 'search',
-        })
-    ], SearchPipe);
-    return SearchPipe;
-}());
-
-//# sourceMappingURL=search.js.map
+/* nomeCliente: {trim: true, required: true, type: String, index: true},
+    telefone: {trim:true, requried: true, type: String},
+    email: {type: String},
+    rua: {type: String, required: true},
+    bairro: {type: String, required: true},
+    cidade: {type: String, required: true, index: true},
+    tituloProjeto: {trim: true, required: true, index: true, type: String },
+    descricaoProjeto: {type: String, required: true},
+    cep: {type: String, required: true},
+    preco: {type: Number},
+    foto: {type: String}, */ 
+//# sourceMappingURL=projetoModel.js.map
 
 /***/ }),
 
@@ -129,13 +71,33 @@ var SearchPipe = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClientesPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clienteModel; });
+var clienteModel = /** @class */ (function () {
+    function clienteModel() {
+    }
+    return clienteModel;
+}());
+
+//# sourceMappingURL=clienteModel.js.map
+
+/***/ }),
+
+/***/ 471:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ContratoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__ = __webpack_require__(344);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__ = __webpack_require__(348);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_file__ = __webpack_require__(112);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_clienteModel__ = __webpack_require__(462);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__ = __webpack_require__(461);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar__ = __webpack_require__(350);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_ion2_calendar___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_contrato_contrato__ = __webpack_require__(351);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -145,41 +107,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 
 
 
@@ -187,140 +114,165 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var ClientesPage = /** @class */ (function () {
-    function ClientesPage(navCtrl, navParams, modalCtrl, clienteSrvc, events, appVersion, formBuilder) {
+
+
+
+var ContratoPage = /** @class */ (function () {
+    function ContratoPage(navCtrl, navParams, platform, file, toastCtrl, events, modalCtrl, contratoSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.modalCtrl = modalCtrl;
-        this.clienteSrvc = clienteSrvc;
+        this.platform = platform;
+        this.file = file;
+        this.toastCtrl = toastCtrl;
         this.events = events;
-        this.appVersion = appVersion;
-        this.formBuilder = formBuilder;
-        this.class = 'primary';
-        this.input = {};
-        this.input1 = {};
-        this.disableButton = false;
-        this.listaClientes = new Array();
-        this.usuario = new Array();
-        //-----------------------------------Form Builder -------------------------------
-        this.formGroup = formBuilder.group({
-            nmFornecedor: ['', __WEBPACK_IMPORTED_MODULE_5__angular_forms__["Validators"].minLength(5)]
+        this.modalCtrl = modalCtrl;
+        this.contratoSrvc = contratoSrvc;
+        this.contrato = {
+            name: "",
+            descritivo: "",
+            vlTotal: "",
+            prEntrega: "",
+            cpf: ''
+        };
+        this.pdfObj = null;
+        this.values = {};
+        __WEBPACK_IMPORTED_MODULE_5_moment__["locale"]('pt-BR', {
+            months: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+            monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
         });
-        this.nmFornecedor = this.formGroup.controls['nmFornecedor'];
-        console.log("Versão do aplicativo", this.appVersion.getVersionNumber());
-        console.log("Versão do aplicativo", this.appVersion.getAppName());
-        this.load();
-        this.loadEvent();
-    }
-    ClientesPage.prototype.teste = function () {
-        console.log('Teste de form Group: ', this.input1.buscar);
-    };
-    ClientesPage.prototype.enableButton = function () {
-        if (this.input1.buscar && this.input1.nome) {
-            this.disableButton = true;
+        var client = this.navParams.get("_cliente");
+        var clienteProjeto = this.navParams.get('_clienteProjeto');
+        if (client) {
+            this.cliente = client;
+        }
+        else if (clienteProjeto) {
+            this.cliente = clienteProjeto;
         }
         else {
-            this.disableButton = false;
+            this.cliente = new __WEBPACK_IMPORTED_MODULE_3__app_models_clienteModel__["a" /* clienteModel */]();
         }
-    };
-    //------------------------------- FIM ---------------------------------------------
-    ClientesPage.prototype.abrirDetalheClientePage = function (cliente) {
-        var modal = this.modalCtrl.create("DetalheClientePage", {
-            cliente: cliente
-        });
-        modal.present();
-    };
-    ClientesPage.prototype.load = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var user, result, error_1;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-                        console.log("Usuário logado", user);
-                        _a.label = 1;
-                    case 1:
-                        _a.trys.push([1, 3, , 4]);
-                        return [4 /*yield*/, this.clienteSrvc.clientebyIdUser(user._id)];
-                    case 2:
-                        result = _a.sent();
-                        if (result.success) {
-                            this.listaClientes = result.data;
-                            console.log("Cliente pertencentes ao usuario logado", this.listaClientes);
-                        }
-                        return [3 /*break*/, 4];
-                    case 3:
-                        error_1 = _a.sent();
-                        return [3 /*break*/, 4];
-                    case 4: return [2 /*return*/];
-                }
-            });
-        });
-    };
-    ClientesPage.prototype.ngOnInit = function () {
-        console.log('Formulario: ', this.formGroup.valid);
-        this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizacaoUserMenu, {});
-        var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+        var projeto = this.navParams.get('_projeto');
+        if (projeto) {
+            this.projeto = projeto;
+        }
+        else {
+            this.projeto = new __WEBPACK_IMPORTED_MODULE_4__app_models_projetoModel__["a" /* projetoModel */]();
+        }
+    }
+    ContratoPage.prototype.ngOnInit = function () {
+        this.contrato.prEntrega = __WEBPACK_IMPORTED_MODULE_5_moment__(new Date()).format("DD/MM/YYYY");
+        console.log('cliente', this.cliente);
+        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
         if (this.theme == "#527F76") {
             this.theme = 'primary';
         }
         else if (!this.theme) {
             this.theme = 'primary';
         }
+        else if (this.theme == 'black') {
+            this.theme = 'dark';
+            console.log('Mudando nome do tema para black');
+        }
+        else if (this.theme == 'purple') {
+            this.theme = 'secondary';
+        }
+        else if (this.theme == 'blue') {
+            this.theme = 'light';
+        }
         this.eventChangeColor();
+        if (this.projeto.tituloProjeto == undefined) {
+            this.values = [
+                { nome: this.cliente.nome,
+                    cep: this.cliente.cep,
+                    endereco: this.cliente.endereco,
+                    bairro: this.cliente.bairro,
+                    cidade: this.cliente.cidade,
+                    tel: this.cliente.tel,
+                    descritivo: this.contrato.descritivo,
+                    vlTotal: this.contrato.vlTotal
+                }
+            ];
+        }
+        else {
+            this.values = [{
+                    nome: this.cliente.nome,
+                    cep: this.cliente.cep,
+                    endereco: this.cliente.endereco,
+                    bairro: this.cliente.bairro,
+                    cidade: this.cliente.cidade,
+                    descritivo: this.projeto.descricaoProjeto,
+                    vlTotal: this.projeto.preco,
+                    projeto: this.projeto.tituloProjeto,
+                    tel: this.cliente.tel,
+                }
+            ];
+        }
+        console.log("Valores do novo array", this.values);
     };
-    ClientesPage.prototype.abrirCadastro = function (model) {
-        this.navCtrl.push("CadastroClientePage", { cliente: model });
-    };
-    ClientesPage.prototype.abrirDetalheCliente = function (model) {
-        this.navCtrl.push("DetalheClientePage", { cliente: model });
-    };
-    ClientesPage.prototype.loadEvent = function () {
+    ContratoPage.prototype.eventChangeColor = function () {
         var _this = this;
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaClienteByProjetos, function () {
-            _this.load();
-        });
-    };
-    ClientesPage.prototype.eventChangeColor = function () {
-        var _this = this;
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, function () {
+        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, function () {
             _this.menuController();
-            console.log('Menu adicionado', _this.class);
         });
     };
-    ClientesPage.prototype.menuController = function () {
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+    ContratoPage.prototype.menuController = function () {
+        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_6__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
         if (this.theme == "#527F76") {
             this.theme = 'primary';
         }
+        else if (this.theme == 'black') {
+            this.theme = 'dark';
+            console.log('Mudando nome do tema para black');
+        }
     };
-    ClientesPage.prototype.onChange = function (event) {
-        console.log("Exibidno evento", event);
+    ContratoPage.prototype.ionViewDidLoad = function () {
     };
-    ClientesPage.prototype.abrirPdf = function () {
-        this.navCtrl.setRoot("ContratoPage");
+    ContratoPage.prototype.openCalendar = function () {
+        var _this = this;
+        var options = {
+            pickMode: 'single',
+            title: 'Prazo de Entrega',
+            weekdays: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
+            monthFormat: 'MMMM YYYY',
+            canBackwardsSelected: true,
+            closeIcon: true,
+            doneIcon: true,
+            color: this.theme,
+        };
+        var myCalendar = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_7_ion2_calendar__["CalendarModal"], {
+            options: options
+        });
+        myCalendar.onDidDismiss(function (date, type) {
+            if (date != null) {
+                _this.contrato.prEntrega = __WEBPACK_IMPORTED_MODULE_5_moment__(date.string).format("DD/MM/YYYY");
+            }
+        });
+        myCalendar.present();
     };
-    ClientesPage.prototype.logout = function () {
-        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
-        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
-        this.navCtrl.setRoot("LoginPage");
+    ContratoPage.prototype.createPdf = function () {
+        if (this.projeto.tituloProjeto == undefined) {
+            this.values["0"].descritivo = this.contrato.descritivo;
+            this.values["0"].vlTotal = this.contrato.vlTotal;
+        }
+        this.contratoSrvc.createPdf(this.values["0"], this.contrato);
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]) === "function" && _a || Object)
-    ], ClientesPage.prototype, "content", void 0);
-    ClientesPage = __decorate([
+    ContratoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-clientes",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n\n  Generated template for the ClientesPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n      <ion-buttons position>\n\n          <button ion-button icon-only menuToggle>\n\n            <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Clientes\n\n\n\n          </button>\n\n          </ion-buttons>\n\n\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n<ion-grid>\n\n<ion-row>\n\n<ion-col col-10>\n\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n\n</ion-col>\n\n\n\n<ion-col col-2>\n\n    <ion-fab>\n\n        <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n\n        </button>\n\n      </ion-fab>\n\n    \n\n    </ion-col>\n\n\n\n</ion-row>\n\n</ion-grid>\n\n<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n\n  <ion-card-content >\n\n    Nome: {{cliente.nome}} <br/>\n\n    Email: {{cliente.email}}<br/>\n\n    Telefone: {{cliente.tel}}\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n\n\n<form [formGroup]="formGroup">\n\n  <ion-item>\n\n    <ion-label floating>Nome fornecedor</ion-label>\n\n    <ion-input type="text" formControlName="nmFornecedor"  ></ion-input>\n\n  </ion-item> \n\n\n\n<button ion-button (click)="teste()" [disabled]="!formGroup.valid">Resultado</button>\n\n\n\n</form>\n\n\n\n\n\n<ion-item>\n\n    <ion-label floating>Buscar</ion-label>\n\n    <ion-input [(ngModel)]="input1.buscar" (ionChange)="enableButton()" type="text"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n      <ion-label floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="input1.nome" (ionChange)="enableButton()" type="text"></ion-input>\n\n    </ion-item>\n\n  \n\n  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>\n\n\n\n</ion-content>\n\n\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/
+            selector: "page-contrato",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/'  \n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n    <ion-title>Contrato</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n    <ion-grid *ngIf="projeto.tituloProjeto == undefined">\n\n\n\n      <ion-card>\n\n        <ion-card-content>    \n\n              <ion-item>\n\n    <ion-label floating>Nome contrato</ion-label>\n\n    <ion-input [(ngModel)]="contrato.name"></ion-input>\n\n</ion-item>\n\n\n\n<ion-item>\n\n    <ion-label floating>Descritivo</ion-label>\n\n    <ion-input [(ngModel)]="contrato.descritivo"></ion-input>\n\n  </ion-item>\n\n\n\n  \n\n<ion-item>\n\n    <ion-label floating>Valor Total</ion-label>\n\n    <ion-input [(ngModel)]="contrato.vlTotal"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item (click)="openCalendar()">\n\n    <ion-label  floating>Prazo de entrega</ion-label>\n\n    <ion-input [(ngModel)]="contrato.prEntrega" readonly></ion-input>\n\n</ion-item>\n\n\n\n<ion-item>\n\n    <ion-label floating>Contratante</ion-label>\n\n    <ion-input [(ngModel)]="cliente.nome"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n      <ion-label floating>Cpf</ion-label>\n\n      <ion-input [(ngModel)]="contrato.cpf"></ion-input>\n\n  </ion-item>\n\n<ion-item>\n\n    <ion-label floating>Endereço</ion-label>\n\n    <ion-input [(ngModel)]="cliente.endereco"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Cep</ion-label>\n\n    <ion-input [(ngModel)]="cliente.cep"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Bairro</ion-label>\n\n    <ion-input [(ngModel)]="cliente.bairro"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Cidade</ion-label>\n\n    <ion-input [(ngModel)]="cliente.cidade"></ion-input>\n\n</ion-item>\n\n<ion-item>\n\n    <ion-label floating>Telefone</ion-label>\n\n    <ion-input [(ngModel)]="cliente.tel"></ion-input>\n\n</ion-item>\n\n\n\n</ion-card-content>\n\n</ion-card>\n\n\n\n</ion-grid>\n\n\n\n\n\n<ion-grid *ngIf="projeto.tituloProjeto != undefined">\n\n<ion-card>\n\n    <ion-card-content>\n\n    \n\n      <ion-item>\n\n      <ion-label floating>Nome contrato</ion-label>\n\n      <ion-input [(ngModel)]="contrato.name"></ion-input>\n\n  </ion-item>\n\n  \n\n  <ion-item>\n\n      <ion-label floating>Descritivo</ion-label>\n\n      <ion-input [(ngModel)]="projeto.descricaoProjeto"></ion-input>\n\n    </ion-item>\n\n  \n\n    \n\n  <ion-item>\n\n      <ion-label floating>Valor Total</ion-label>\n\n      <ion-input [(ngModel)]="projeto.preco" [brmasker]="{money: true}"></ion-input>\n\n    </ion-item>\n\n  \n\n      <ion-item (click)="openCalendar()">\n\n          <ion-label  floating>Prazo de entrega</ion-label>\n\n          <ion-input [(ngModel)]="contrato.prEntrega" readonly></ion-input>\n\n    </ion-item>\n\n  \n\n  <ion-item>\n\n      <ion-label floating>Contratante</ion-label>\n\n      <ion-input [(ngModel)]="cliente.nome"></ion-input>\n\n    </ion-item>\n\n  \n\n    <ion-item>\n\n        <ion-label floating>Cpf</ion-label>\n\n        <ion-input [(ngModel)]="contrato.cpf" [brmasker]="{mask:\'000.000.000-00\'}"></ion-input>\n\n    </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Endereço</ion-label>\n\n      <ion-input [(ngModel)]="cliente.endereco"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Cep</ion-label>\n\n      <ion-input [(ngModel)]="cliente.cep" [brmasker]="{mask:\'00000-120\'}"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Bairro</ion-label>\n\n      <ion-input [(ngModel)]="cliente.bairro"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Cidade</ion-label>\n\n      <ion-input [(ngModel)]="cliente.cidade"></ion-input>\n\n  </ion-item>\n\n  <ion-item>\n\n      <ion-label floating>Telefone</ion-label>\n\n      <ion-input [(ngModel)]="cliente.tel" [brmasker]="{mask:\'(00) 00000-0000\'}"></ion-input>\n\n  </ion-item>\n\n</ion-card-content>\n\n</ion-card>\n\n\n\n  </ion-grid>\n\n\n\n<ion-card>\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">\n\n      <ion-item (click)="createPdf()">\n\n<label>Gerar Contrato</label>        <ion-note item-end>\n\n    <ion-icon id="icon-color" ios="ios-document" md="md-document"></ion-icon> </ion-note>\n\n        <br/>\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\contrato\contrato.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"]) === "function" && _h || Object])
-    ], ClientesPage);
-    return ClientesPage;
-    var _a, _b, _c, _d, _e, _f, _g, _h;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Platform"],
+            __WEBPACK_IMPORTED_MODULE_2__ionic_native_file__["a" /* File */],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ToastController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"],
+            __WEBPACK_IMPORTED_MODULE_8__providers_contrato_contrato__["a" /* ContratoProvider */]])
+    ], ContratoPage);
+    return ContratoPage;
 }());
 
-//# sourceMappingURL=clientes.js.map
+//# sourceMappingURL=contrato.js.map
 
 /***/ })
 

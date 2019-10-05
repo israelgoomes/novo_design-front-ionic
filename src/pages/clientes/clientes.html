@@ -28,7 +28,7 @@
         <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>
         </button>
       </ion-fab>
-    
+
     </ion-col>
 
 </ion-row>
@@ -41,12 +41,12 @@
   </ion-card-content>
 </ion-card>
 
-
+<!--
 <form [formGroup]="formGroup">
   <ion-item>
     <ion-label floating>Nome fornecedor</ion-label>
     <ion-input type="text" formControlName="nmFornecedor"  ></ion-input>
-  </ion-item> 
+  </ion-item>
 
 <button ion-button (click)="teste()" [disabled]="!formGroup.valid">Resultado</button>
 
@@ -62,8 +62,10 @@
       <ion-label floating>Nome</ion-label>
       <ion-input [(ngModel)]="input1.nome" (ionChange)="enableButton()" type="text"></ion-input>
     </ion-item>
-  
-  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>
 
+  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>-->
+
+
+  <button ion-button (click)="teste2()">Teste</button>
 </ion-content>
 

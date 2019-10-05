@@ -15,7 +15,7 @@ import { configHelper } from '../../../app/helpers/configHelper';
   templateUrl: 'cadastro-projeto.html',
 })
 export class CadastroProjetoPage implements OnInit{
-  foto = []
+foto = []
 projeto: projetoModel;
 clientes: Array<clienteModel> = new Array<clienteModel>();
 cliente = []

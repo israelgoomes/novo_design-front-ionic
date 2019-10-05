@@ -144,5 +144,7 @@ onChange(event){
     this.navCtrl.setRoot("LoginPage");
   }
 
-
+teste2(){
+this.navCtrl.setRoot('TestesPage')
+}
 }

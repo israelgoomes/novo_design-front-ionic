@@ -39689,3 +39689,25 @@ page-tabs .has-icon .tab-button-icon, page-tabs .has-title .tab-button-text {
 page-tabs .tabs-ios .tab-button-text {
   color: #4f413b !important;
 }
+
+page-testes table {
+  border-collapse: collapse;
+}
+
+page-testes table, page-testes th, page-testes td {
+  border-bottom: 1px solid #d3d3d3;
+  border-left: 1px solid #d3d3d3;
+}
+
+page-testes tr {
+  border-top: none !important;
+}
+
+page-testes ion-card {
+  width: 1024px !important;
+}
+
+page-testes .align {
+  text-align: center;
+  margin-left: 22%;
+}

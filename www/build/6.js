@@ -1,14 +1,14 @@
 webpackJsonp([6],{
 
-/***/ 442:
+/***/ 453:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroUserPageModule", function() { return CadastroUserPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ModalConfigPageModule", function() { return ModalConfigPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_user__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__modal_config__ = __webpack_require__(479);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,27 +18,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var CadastroUserPageModule = /** @class */ (function () {
-    function CadastroUserPageModule() {
+var ModalConfigPageModule = /** @class */ (function () {
+    function ModalConfigPageModule() {
     }
-    CadastroUserPageModule = __decorate([
+    ModalConfigPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */],
+                __WEBPACK_IMPORTED_MODULE_2__modal_config__["a" /* ModalConfigPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_user__["a" /* CadastroUserPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__modal_config__["a" /* ModalConfigPage */]),
             ],
         })
-    ], CadastroUserPageModule);
-    return CadastroUserPageModule;
+    ], ModalConfigPageModule);
+    return ModalConfigPageModule;
 }());
 
-//# sourceMappingURL=cadastro-user.module.js.map
+//# sourceMappingURL=modal-config.module.js.map
 
 /***/ }),
 
-/***/ 465:
+/***/ 467:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -59,17 +59,19 @@ var usuarioModel = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 466:
+/***/ 479:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroUserPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ModalConfigPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__ = __webpack_require__(57);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__ = __webpack_require__(465);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__ = __webpack_require__(347);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_usuarioModel__ = __webpack_require__(467);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -120,95 +122,117 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 
 
 
-var CadastroUserPage = /** @class */ (function () {
-    function CadastroUserPage(navCtrl, navParams, usuarioSrvc, alertSrvc, platform, actionSheetCtrl, cameraSrvc) {
+
+/**
+ * Generated class for the ModalConfigPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ModalConfigPage = /** @class */ (function () {
+    function ModalConfigPage(navCtrl, navParams, usuarioSrvc, viewCtrl, events, alertSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.usuarioSrvc = usuarioSrvc;
+        this.viewCtrl = viewCtrl;
+        this.events = events;
         this.alertSrvc = alertSrvc;
-        this.platform = platform;
-        this.actionSheetCtrl = actionSheetCtrl;
-        this.cameraSrvc = cameraSrvc;
-        this.usuario = new __WEBPACK_IMPORTED_MODULE_3__app_models_usuarioModel__["a" /* usuarioModel */]();
+        this.usuario = new __WEBPACK_IMPORTED_MODULE_4__app_models_usuarioModel__["a" /* usuarioModel */](); //Array<usuarioModel> = new Array<usuarioModel>();
+        this.tema = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
     }
-    CadastroUserPage.prototype.ionViewDidLoad = function () {
-        console.log("ionViewDidLoad CadastroUserPage");
+    ModalConfigPage.prototype.ngOnInit = function () {
+        this.usuarioLogado();
+        if (!this.tema) {
+            this.tema = '#527F76';
+        }
+        else if (this.tema == 'blue') {
+            this.tema = 'Navy';
+        }
     };
-    CadastroUserPage.prototype.cadastrar = function () {
+    ModalConfigPage.prototype.usuarioLogado = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var cadastroResult;
+            var user, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, this.usuarioSrvc.register(this.usuario)];
+                    case 0:
+                        user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
+                        return [4 /*yield*/, this.usuarioSrvc.getByIdUser(user._id)];
                     case 1:
-                        cadastroResult = _a.sent();
-                        if (cadastroResult.success) {
-                            this.alertSrvc.toast("Cadastro realizado com sucesso", "bottom");
-                            this.navCtrl.setRoot("LoginPage");
+                        result = _a.sent();
+                        if (result.success) {
+                            this.usuario = result.data;
+                            console.log('App .component', this.usuario);
+                            this.usuario.dataCriacao = __WEBPACK_IMPORTED_MODULE_5_moment__(this.usuario.dataCriacao).format("DD/MM/YYYY");
                         }
                         return [2 /*return*/];
                 }
             });
         });
     };
-    CadastroUserPage.prototype.getPictureOptions = function () {
-        var _this = this;
-        //actionSheet serve para aparecer as opções, se a foto será escolhida na galeria ou tirada na hora.
-        var actionSheet = this.actionSheetCtrl.create({
-            title: "Adicionar foto",
-            buttons: [
-                {
-                    text: "Tirar foto",
-                    handler: function () {
-                        //escolhendo a opção de tirar foto no cameraprovider que foi criado, e assumindo o valor da photo para o categoria.foto
-                        _this.cameraSrvc.takePicture(function (photo) {
-                            _this.usuario.foto = photo;
-                        });
-                    },
-                    icon: this.platform.is("ios") ? null : "camera"
-                },
-                //------------------------ Opção pegar da galeria ------------
-                {
-                    text: "Pegar galeria",
-                    handler: function () {
-                        _this.cameraSrvc.getPictureFromGalery(function (photo) {
-                            _this.usuario.foto = photo;
-                        });
-                    },
-                    icon: this.platform.is("ios") ? null : "images"
-                },
-                //o role 'destructive' deixa o botao vermelho
-                {
-                    text: "Cancelar",
-                    role: "destructive",
-                    icon: this.platform.is("ios") ? null : "close",
-                    handler: function () {
-                        //cancela a ação
-                    }
-                }
-            ]
+    ModalConfigPage.prototype.delete = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            var user;
+            return __generator(this, function (_a) {
+                user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
+                this.alertSrvc.confirm('Excluir ?', ' Ao confirmar todos seus dados serão perdidos.', function () { return __awaiter(_this, void 0, void 0, function () {
+                    var result;
+                    return __generator(this, function (_a) {
+                        switch (_a.label) {
+                            case 0: return [4 /*yield*/, this.usuarioSrvc.delete(user._id)];
+                            case 1:
+                                result = _a.sent();
+                                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+                                localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
+                                if (result.success) {
+                                    this.alertSrvc.toast('Conta excluida com sucesso.', 'bottom');
+                                    this.navCtrl.setRoot('LoginPage');
+                                }
+                                return [2 /*return*/];
+                        }
+                    });
+                }); });
+                return [2 /*return*/];
+            });
         });
-        actionSheet.present();
     };
-    CadastroUserPage.prototype.cancelar = function () {
-        this.navCtrl.setRoot("LoginPage");
+    ModalConfigPage.prototype.theme = function (item) {
+        console.log(item);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color, item);
+        this.tema = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
+        console.log(this.tema);
+        this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, {});
+        if (!this.tema) {
+            this.tema = '#527F76';
+        }
+        else if (this.tema == 'blue') {
+            this.tema = 'Navy';
+        }
+        this.viewCtrl.dismiss();
     };
-    CadastroUserPage = __decorate([
+    ModalConfigPage.prototype.logout = function () {
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.token, null);
+        localStorage.setItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user, null);
+        this.navCtrl.setRoot('LoginPage');
+    };
+    ModalConfigPage.prototype.back = function () {
+        this.viewCtrl.dismiss();
+    };
+    ModalConfigPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-cadastro-user",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/'<ion-content padding>\n\n  <div class="logo">\n\n    <div>\n\n      <ion-item (click)="getPictureOptions()" *ngIf="usuario.foto" class="circle">\n\n        <img [src]="usuario.foto" />\n\n      </ion-item>\n\n\n\n      <ion-item (click)="getPictureOptions()"  *ngIf="!usuario.foto" class="circle">\n\n        <img src="../../assets/imgs/user.jpg" />\n\n      </ion-item>\n\n    </div>\n\n\n\n    <button ion-button clear (click)="getPictureOptions()">\n\n      <ion-icon name="camera" item-left></ion-icon>\n\n    </button>\n\n  </div>\n\n\n\n  <ion-list no-lines class="list-transparent">\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Nome</ion-label>\n\n      <ion-input [(ngModel)]="usuario.nome" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Email</ion-label>\n\n      <ion-input [(ngModel)]="usuario.email" type="text"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Senha</ion-label>\n\n      <ion-input [(ngModel)]="usuario.senha" type="password"></ion-input>\n\n    </ion-item>\n\n    <ion-item>\n\n      <ion-label style="color: white;" floating>Confirme a senha</ion-label>\n\n      <ion-input\n\n        [(ngModel)]="usuario.senhaConfirmacao"\n\n        type="password"\n\n      ></ion-input>\n\n    </ion-item>\n\n\n\n    <ion-grid>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cadastrar()">\n\n          Cadastrar\n\n        </button>\n\n      </ion-row>\n\n      <ion-row>\n\n        <button ion-button block outline color="dark" (click)="cancelar()">\n\n          Cancelar\n\n        </button>\n\n      </ion-row>\n\n    </ion-grid>\n\n  </ion-list>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\cadastro-user\cadastro-user.html"*/
+            selector: 'page-modal-config',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-config\modal-config.html"*/'<ion-content padding>\n\n<div id="header" [ngStyle]="{\'background-color\': tema}">\n\n  \n\n<ion-label id="title">Configurações</ion-label>\n\n\n\n\n\n<div id="left">\n\n  \n\n  <ion-item class="circle">\n\n    <img [src]="usuario.foto" width="70" height="70"/>\n\n  </ion-item>\n\n</div>\n\n<div id="right">\n\n  <ion-item  class="dataUser">  \n\n    {{usuario.nome}}<br/>\n\n    {{usuario.email}}\n\n  </ion-item>\n\n</div>\n\n</div>\n\n\n\n<ion-card>\n\n  <ion-card-header center>\n\nTema\n\n  </ion-card-header>\n\n  <ion-card-content>\n\n\n\n    <div class="div1"> \n\n      <div class="theme1" (click)="theme(\'purple\')">\n\n      </div>\n\n        <ion-input style="padding-left: 14px;" type="text" value="Purple" readonly ></ion-input>\n\n    </div>\n\n    \n\n    <div class="div2"> \n\n        <div class="theme2" (click)="theme(\'#527F76\')">\n\n        </div>\n\n        <ion-input style="padding-left: 11px;" type="text" value="Original" readonly ></ion-input>\n\n      </div>\n\n    \n\n      <div class="div3"> \n\n          <div class="theme3" (click)="theme(\'blue\')">\n\n          </div>\n\n          <ion-input style="padding-left: 20px;" type="text" value="Blue" readonly ></ion-input>\n\n        </div>\n\n    \n\n        <div class="div4"> \n\n            <div class="theme4" (click)="theme(\'black\')">\n\n            </div>\n\n            <ion-input style="padding-left: 19px;" type="text" value="Dark" readonly ></ion-input>\n\n          </div>\n\n          \n\n\n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n<ion-card>\n\n  <ion-card-content>\n\n Membro desde: {{usuario.dataCriacao}}    \n\n  </ion-card-content>\n\n</ion-card>\n\n\n\n<ion-card (click)="delete()">\n\n    <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;">\n\n      <ion-item>\n\n<label>Excluir conta</label>        <ion-note item-end>\n\n    <ion-icon [ngStyle]="{\'color\': tema}" id="trash" name="trash"></ion-icon> </ion-note>\n\n        <br/>\n\n      </ion-item>\n\n    </ion-card-content>\n\n  </ion-card>\n\n\n\n  <ion-card>\n\n      <ion-card-content style="padding-top: 0px; padding-bottom: 0px; padding-left: 0px;" >\n\n        <ion-item (click)="logout()">\n\n  <label>Sair da conta</label>        <ion-note item-end>\n\n      <ion-icon id="off" name="power"></ion-icon> </ion-note>\n\n          <br/>\n\n        </ion-item>\n\n      </ion-card-content>\n\n    </ion-card>\n\n\n\n    <ion-fab>\n\n        <button (click)="back()" [ngStyle]="{\'background-color\': tema}" ion-fab>    <ion-icon name="arrow-round-back"></ion-icon>\n\n\n\n        </button>\n\n      </ion-fab>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\modal-config\modal-config.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
             __WEBPACK_IMPORTED_MODULE_2__providers_usuario_usuario__["a" /* UsuarioProvider */],
-            __WEBPACK_IMPORTED_MODULE_4__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Platform"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ActionSheetController"],
-            __WEBPACK_IMPORTED_MODULE_5__providers_camera_camera__["a" /* CameraProvider */]])
-    ], CadastroUserPage);
-    return CadastroUserPage;
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ViewController"],
+            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
+            __WEBPACK_IMPORTED_MODULE_6__providers_alert_alert__["a" /* AlertProvider */]])
+    ], ModalConfigPage);
+    return ModalConfigPage;
 }());
 
-//# sourceMappingURL=cadastro-user.js.map
+//# sourceMappingURL=modal-config.js.map
 
 /***/ })
 

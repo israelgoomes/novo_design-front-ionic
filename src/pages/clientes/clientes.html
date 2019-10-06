@@ -33,14 +33,10 @@
 
 </ion-row>
 </ion-grid>
-<ion-card *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>
-  <ion-card-content >
-    Nome: {{cliente.nome}} <br/>
-    Email: {{cliente.email}}<br/>
-    Telefone: {{cliente.tel}}
-  </ion-card-content>
-</ion-card>
 
+<div *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>
+<page-teset-input [cliente]="cliente"></page-teset-input>
+</div>
 <!--
 <form [formGroup]="formGroup">
   <ion-item>

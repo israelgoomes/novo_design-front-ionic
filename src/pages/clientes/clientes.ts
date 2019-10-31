@@ -13,6 +13,7 @@ import { configHelper } from "../../app/helpers/configHelper";
 import { usuarioModel } from "../../app/models/usuarioModel";
 import { AppVersion } from "@ionic-native/app-version";
 import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/forms';
+import { Componentes } from './ComponenteTo';
 
 
 @IonicPage()
@@ -22,6 +23,10 @@ import { FormBuilder, FormGroup, Validators, AbstractControl} from '@angular/for
 })
 export class ClientesPage implements OnInit {
   @ViewChild(Content) content: Content;
+
+lista: Array<any>= [];
+lista2: Array<Componentes>= [];
+
 theme: string;
 class = 'primary';
 input: any ={}
@@ -91,6 +96,7 @@ enableButton() {
   }
 
   ngOnInit(): void {
+    this.populaLista();
     console.log('Formulario: ',this.formGroup.valid)
     this.events.publish(configHelper.Events.atualizacaoUserMenu, {});
     let user = JSON.parse(localStorage.getItem(configHelper.storageKeys.user));
@@ -145,6 +151,97 @@ onChange(event){
   }
 
 teste2(){
-this.navCtrl.setRoot('TestesPage')
+  let lista3: Array<Componentes> = [];
+ // 
+    console.log('Entrou no 1 foreach')
+    this.lista.forEach((i)=>{
+     // this.lista2.push(i);
+     // this.lista2.forEach((v)=>{
+      //console.log('Entrou no 2 foreach')
+    //console.log('vl maximo' , i.vlMaximo)
+
+   
+    //v.vlObjetivadoMaximo = i.vlMaximo;
+    //v.vlObjetivadoMinimo = i.vlMinimo;
+    //v.id = i.id;
+    //v.dsComponente = i.dsComponente;
+    //
+    lista3.push(i);
+   
+//})
+
+  })
+
+console.log(this.lista)
+console.log(this.lista2)
+console.log('Lista 3', lista3)
+
+}
+
+
+populaLista(){
+  this.lista.push(
+    {id: 2, dsComponente: 'Hidrogenio', vlMinimo: 0.265, vlMaximo: 0.852},
+    {id: 3, dsComponente: 'Fósforo', vlMinimo: 0.032, vlMaximo: 0.123},
+    {id: 4, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 5, dsComponente: 'Maganês', vlMinimo: 0.210, vlMaximo: 0.321},
+    {id: 6, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 7, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 8, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 9, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 10, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 2, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 12, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 13, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 14, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+    {id: 15, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789},
+
+   // {id: 5, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789}
+
+    
+    );
+}
+
+testeItensRepetidos(){
+  
+  var occurrences = {}
+  let teste: boolean = false;
+  teste=false
+  var filteredFamily = this.lista.filter(function(x) {
+    if (occurrences[x.id]) {
+      teste = true; 
+      console.log('itens repetidos', x.id)
+      return;
+    }
+    occurrences[x.id] = true;
+    //teste = false; 
+      console.log('itens não repeditos', x.id)
+
+  })
+  console.log(teste)
+  console.log('Filtrando teste',filteredFamily)
+  
+  
+  
+  
+  //this.lista = [...new Set(this.lista0.map(a => a.name))];
+
+  console.log(this.lista)
+  for ( var i = 0; i < this.lista.length; i++ ) {
+    if ( this.lista.indexOf( this.lista[ i ].id ) === this.lista[i].id ) {
+      console.log(this.lista[i].id)
+    }
+}
+
+
+  this.lista = this.lista.filter(item => !this.lista.filter(item2 => item.id === item2.id))
+  console.log('Lista depois do some', this.lista)
+
+var uniqueProducts = this.lista.filter( ( elem, i, array )=> {
+ return array.indexOf( elem.id ) === i;
+
+ } );
+console.log(uniqueProducts)
+
 }
 }

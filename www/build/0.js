@@ -10,7 +10,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__clientes__ = __webpack_require__(471);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__pipes_pipes_module__ = __webpack_require__(464);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__teset_input_teset_input__ = __webpack_require__(466);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__teset_input_teset_input__ = __webpack_require__(467);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -143,7 +143,7 @@ var SearchPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 466:
+/***/ 467:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -266,6 +266,8 @@ var ClientesPage = /** @class */ (function () {
         this.events = events;
         this.appVersion = appVersion;
         this.formBuilder = formBuilder;
+        this.lista = [];
+        this.lista2 = [];
         this.class = 'primary';
         this.input = {};
         this.input1 = {};
@@ -328,6 +330,7 @@ var ClientesPage = /** @class */ (function () {
         });
     };
     ClientesPage.prototype.ngOnInit = function () {
+        this.populaLista();
         console.log('Formulario: ', this.formGroup.valid);
         this.events.publish(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].Events.atualizacaoUserMenu, {});
         var user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_3__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
@@ -377,25 +380,72 @@ var ClientesPage = /** @class */ (function () {
         this.navCtrl.setRoot("LoginPage");
     };
     ClientesPage.prototype.teste2 = function () {
-        this.navCtrl.setRoot('TestesPage');
+        var lista3 = [];
+        // 
+        console.log('Entrou no 1 foreach');
+        this.lista.forEach(function (i) {
+            // this.lista2.push(i);
+            // this.lista2.forEach((v)=>{
+            //console.log('Entrou no 2 foreach')
+            //console.log('vl maximo' , i.vlMaximo)
+            //v.vlObjetivadoMaximo = i.vlMaximo;
+            //v.vlObjetivadoMinimo = i.vlMinimo;
+            //v.id = i.id;
+            //v.dsComponente = i.dsComponente;
+            //
+            lista3.push(i);
+            //})
+        });
+        console.log(this.lista);
+        console.log(this.lista2);
+        console.log('Lista 3', lista3);
+    };
+    ClientesPage.prototype.populaLista = function () {
+        this.lista.push({ id: 2, dsComponente: 'Hidrogenio', vlMinimo: 0.265, vlMaximo: 0.852 }, { id: 3, dsComponente: 'Fósforo', vlMinimo: 0.032, vlMaximo: 0.123 }, { id: 4, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 5, dsComponente: 'Maganês', vlMinimo: 0.210, vlMaximo: 0.321 }, { id: 6, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 7, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 8, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 9, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 10, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 2, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 12, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 13, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 14, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 }, { id: 15, dsComponente: 'Hélio', vlMinimo: 0.002, vlMaximo: 0.789 });
+    };
+    ClientesPage.prototype.testeItensRepetidos = function () {
+        var _this = this;
+        var occurrences = {};
+        var teste = false;
+        teste = false;
+        var filteredFamily = this.lista.filter(function (x) {
+            if (occurrences[x.id]) {
+                teste = true;
+                console.log('itens repetidos', x.id);
+                return;
+            }
+            occurrences[x.id] = true;
+            //teste = false; 
+            console.log('itens não repeditos', x.id);
+        });
+        console.log(teste);
+        console.log('Filtrando teste', filteredFamily);
+        //this.lista = [...new Set(this.lista0.map(a => a.name))];
+        console.log(this.lista);
+        for (var i = 0; i < this.lista.length; i++) {
+            if (this.lista.indexOf(this.lista[i].id) === this.lista[i].id) {
+                console.log(this.lista[i].id);
+            }
+        }
+        this.lista = this.lista.filter(function (item) { return !_this.lista.filter(function (item2) { return item.id === item2.id; }); });
+        console.log('Lista depois do some', this.lista);
+        var uniqueProducts = this.lista.filter(function (elem, i, array) {
+            return array.indexOf(elem.id) === i;
+        });
+        console.log(uniqueProducts);
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"])
+        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Content"]) === "function" && _a || Object)
     ], ClientesPage.prototype, "content", void 0);
     ClientesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: "page-clientes",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar [color]="theme">\n      <ion-buttons position>\n          <button ion-button icon-only menuToggle>\n            <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Clientes\n\n          </button>\n          </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n\n    </ion-col>\n\n</ion-row>\n</ion-grid>\n\n<div *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n<page-teset-input [cliente]="cliente"></page-teset-input>\n</div>\n<!--\n<form [formGroup]="formGroup">\n  <ion-item>\n    <ion-label floating>Nome fornecedor</ion-label>\n    <ion-input type="text" formControlName="nmFornecedor"  ></ion-input>\n  </ion-item>\n\n<button ion-button (click)="teste()" [disabled]="!formGroup.valid">Resultado</button>\n\n</form>\n\n\n<ion-item>\n    <ion-label floating>Buscar</ion-label>\n    <ion-input [(ngModel)]="input1.buscar" (ionChange)="enableButton()" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [(ngModel)]="input1.nome" (ionChange)="enableButton()" type="text"></ion-input>\n    </ion-item>\n\n  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>-->\n\n\n  <button ion-button (click)="teste2()">Teste</button>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/
+            selector: "page-clientes",template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/'<!--\n  Generated template for the ClientesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar [color]="theme">\n      <ion-buttons position>\n          <button ion-button icon-only menuToggle>\n            <ion-icon name="menu"></ion-icon>&nbsp;&nbsp;&nbsp; Clientes\n\n          </button>\n          </ion-buttons>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<ion-grid>\n<ion-row>\n<ion-col col-10>\n<ion-searchbar [(ngModel)]="args"></ion-searchbar>\n</ion-col>\n\n<ion-col col-2>\n    <ion-fab>\n        <button [color]="theme" ion-fab (click)="abrirCadastro()">  <ion-icon name="add"></ion-icon>\n        </button>\n      </ion-fab>\n\n    </ion-col>\n\n</ion-row>\n</ion-grid>\n\n<div *ngFor="let cliente of listaClientes | search : args " (click)="abrirDetalheCliente(cliente)" tappable>\n<page-teset-input [cliente]="cliente"></page-teset-input>\n</div>\n<!--\n<form [formGroup]="formGroup">\n  <ion-item>\n    <ion-label floating>Nome fornecedor</ion-label>\n    <ion-input type="text" formControlName="nmFornecedor"  ></ion-input>\n  </ion-item>\n\n<button ion-button (click)="teste()" [disabled]="!formGroup.valid">Resultado</button>\n\n</form>\n\n\n<ion-item>\n    <ion-label floating>Buscar</ion-label>\n    <ion-input [(ngModel)]="input1.buscar" (ionChange)="enableButton()" type="text"></ion-input>\n  </ion-item>\n\n  <ion-item>\n      <ion-label floating>Nome</ion-label>\n      <ion-input [(ngModel)]="input1.nome" (ionChange)="enableButton()" type="text"></ion-input>\n    </ion-item>\n\n  <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>-->\n\n\n<ion-card>\n  <ion-card-content>\n    <ion-item *ngFor="let item of lista">\n      <ion-label ></ion-label>\n      <ion-input type="" [(ngModel)]="item.vlMinimo" [value]="item.vlMinimo"></ion-input>\n    </ion-item>\n\n\n    <ion-item>\n      <ion-label ></ion-label>\n      <ion-input type="" ></ion-input>\n    </ion-item>\n  </ion-card-content>\n</ion-card>\n\n  <button ion-button (click)="testeItensRepetidos()">Teste</button>\n</ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\clientes.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"],
-            __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"],
-            __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */],
-            __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"]])
+        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["ModalController"]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_clientes_clientes__["a" /* ClientesProvider */]) === "function" && _e || Object, typeof (_f = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["Events"]) === "function" && _f || Object, typeof (_g = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_app_version__["a" /* AppVersion */]) === "function" && _g || Object, typeof (_h = typeof __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__angular_forms__["FormBuilder"]) === "function" && _h || Object])
     ], ClientesPage);
     return ClientesPage;
+    var _a, _b, _c, _d, _e, _f, _g, _h;
 }());
 
 //# sourceMappingURL=clientes.js.map

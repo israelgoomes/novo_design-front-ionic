@@ -1,15 +1,14 @@
 webpackJsonp([11],{
 
-/***/ 443:
+/***/ 461:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CadastroClientePageModule", function() { return CadastroClientePageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TestesPageModule", function() { return TestesPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__ = __webpack_require__(469);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__ = __webpack_require__(348);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__testes__ = __webpack_require__(486);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -19,54 +18,34 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-var CadastroClientePageModule = /** @class */ (function () {
-    function CadastroClientePageModule() {
+var TestesPageModule = /** @class */ (function () {
+    function TestesPageModule() {
     }
-    CadastroClientePageModule = __decorate([
+    TestesPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__["a" /* CadastroClientePage */],
+                __WEBPACK_IMPORTED_MODULE_2__testes__["a" /* TestesPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_3_brmasker_ionic_3__["a" /* BrMaskerModule */],
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__cadastro_cliente__["a" /* CadastroClientePage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["IonicPageModule"].forChild(__WEBPACK_IMPORTED_MODULE_2__testes__["a" /* TestesPage */]),
             ],
         })
-    ], CadastroClientePageModule);
-    return CadastroClientePageModule;
+    ], TestesPageModule);
+    return TestesPageModule;
 }());
 
-//# sourceMappingURL=cadastro-cliente.module.js.map
+//# sourceMappingURL=testes.module.js.map
 
 /***/ }),
 
-/***/ 462:
+/***/ 486:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return clienteModel; });
-var clienteModel = /** @class */ (function () {
-    function clienteModel() {
-    }
-    return clienteModel;
-}());
-
-//# sourceMappingURL=clienteModel.js.map
-
-/***/ }),
-
-/***/ 469:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroClientePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__ = __webpack_require__(111);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__ = __webpack_require__(345);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__ = __webpack_require__(462);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__ = __webpack_require__(44);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TestesPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_alert_alert__ = __webpack_require__(111);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -76,129 +55,79 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [0, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 
 
 
-
-
-
-var CadastroClientePage = /** @class */ (function () {
-    function CadastroClientePage(navCtrl, navParams, clienteSrvc, alertSrvc, events) {
+/**
+ * Generated class for the TestesPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var TestesPage = /** @class */ (function () {
+    function TestesPage(navCtrl, navParams, alertCtrl, alertSrvc) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.clienteSrvc = clienteSrvc;
+        this.alertCtrl = alertCtrl;
         this.alertSrvc = alertSrvc;
-        this.events = events;
-        var _client = this.navParams.get('_cliente');
-        if (_client) {
-            this.cliente = _client;
+        this.listaAcos = [];
+        this.listaElementos = [
+            { id: 1, elemento: 'Prata' },
+            { id: 2, elemento: 'Alumínio' },
+            { id: 3, elemento: 'Amerício' },
+            { id: 4, elemento: 'Argônio' },
+            { id: 5, elemento: 'Arsénio' },
+            { id: 6, elemento: 'Ástato' },
+            { id: 7, elemento: 'Ouro' },
+            { id: 8, elemento: 'Boro' },
+            { id: 10, elemento: 'Bário' },
+            { id: 11, elemento: 'Berílio' },
+            { id: 12, elemento: 'Bóhrio' },
+            { id: 13, elemento: 'Bismuto' },
+            { id: 14, elemento: 'Berquéli' }
+        ];
+        //this.listaAcos.push({elemento: 'Fósforo', vlMin: 0.05, vlMax: 0.85}, {elemento: 'Sódio', vlMin: 0.050, vlMax: 0.25})
+    }
+    TestesPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad TestesPage');
+    };
+    TestesPage.prototype.adicionaLinha = function () {
+        console.log(this.listaAcos);
+        var ultimo = this.listaAcos[this.listaAcos.length - 1];
+        console.log('ultimo valor', ultimo);
+        if (ultimo != undefined) {
+            console.log('Entrou no if');
+            console.log('Valor min', ultimo.vlMin);
+            console.log('Valor min', ultimo.vlMax);
+            if (ultimo.vlMin > ultimo.vlMax) {
+                this.alertSrvc.alert('Erro', 'O valor mínimo não pode ser maior que o máximo.');
+            }
+            else {
+                this.listaAcos.push({ id: null, vlMin: null, vlMax: null });
+            }
         }
         else {
-            this.cliente = new __WEBPACK_IMPORTED_MODULE_4__app_models_clienteModel__["a" /* clienteModel */]();
-        }
-    }
-    CadastroClientePage.prototype.ngOnInit = function () {
-        this.eventChangeColor();
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
-        if (this.theme == "#527F76") {
-            this.theme = 'primary';
-        }
-        else if (!this.theme) {
-            this.theme = 'primary';
+            this.listaAcos.push({ id: null, vlMin: null, vlMax: null });
         }
     };
-    CadastroClientePage.prototype.salvar = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            var sucesso, user, cadastroResult;
-            return __generator(this, function (_a) {
-                switch (_a.label) {
-                    case 0:
-                        sucesso = false;
-                        user = JSON.parse(localStorage.getItem(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].storageKeys.user));
-                        console.log('Usuário logado', user);
-                        this.cliente.usuario = user._id;
-                        if (!!this.cliente._id) return [3 /*break*/, 2];
-                        return [4 /*yield*/, this.clienteSrvc.post(this.cliente)];
-                    case 1:
-                        cadastroResult = _a.sent();
-                        this.events.publish(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].Events.atualizaEmailByCliente);
-                        sucesso = cadastroResult.success;
-                        console.log('Sem id');
-                        _a.label = 2;
-                    case 2:
-                        if (sucesso) {
-                            this.alertSrvc.toast('Cliente salva com sucesso', 'bottom');
-                            this.navCtrl.setRoot('ClientesPage');
-                        }
-                        return [2 /*return*/];
-                }
-            });
-        });
+    TestesPage.prototype.retiraLinha = function () {
+        this.listaAcos.pop();
     };
-    CadastroClientePage.prototype.eventChangeColor = function () {
-        var _this = this;
-        this.events.subscribe(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].Events.changeColor, function () {
-            _this.menuController();
-        });
+    TestesPage.prototype.teste = function () {
+        console.log(this.listaAcos);
+        var ultimo = this.listaAcos[this.listaAcos.length - 1];
+        console.log('ultimo indice', ultimo);
     };
-    CadastroClientePage.prototype.menuController = function () {
-        this.theme = localStorage.getItem(__WEBPACK_IMPORTED_MODULE_5__app_helpers_configHelper__["a" /* configHelper */].storageKeys.color);
-        if (this.theme == "#527F76") {
-            this.theme = 'primary';
-        }
-    };
-    CadastroClientePage.prototype.back = function () {
-        this.navCtrl.pop();
-    };
-    CadastroClientePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Component"])({
-            selector: 'page-cadastro-cliente',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/'<!--\n\n  Generated template for the CadastroClientePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n  <ion-navbar [color]="theme">\n\n     \n\n    <ion-title >&nbsp;&nbsp;&nbsp; Novo Cliente</ion-title>\n\n  </ion-navbar>\n\n</ion-header>\n\n\n\n<ion-content padding>\n\n  \n\n    \n\n<ion-card>\n\n  <ion-card-content>\n\n    \n\n      <ion-col>\n\n      \n\n      <ion-row>\n\n        <ion-item>\n\n          <ion-label floating>Nome</ion-label>\n\n          <ion-input [(ngModel)]="cliente.nome"  type="text"></ion-input>\n\n        </ion-item>\n\n      </ion-row>\n\n      \n\n      <ion-row>\n\n          <ion-item>\n\n            <ion-label floating>Telefone</ion-label>\n\n            <ion-input type="text" [(ngModel)]="cliente.tel" [brmasker]="{mask:\'(00) 00000-0000\'}"></ion-input>\n\n          </ion-item>\n\n        </ion-row>\n\n\n\n        <ion-row>\n\n            <ion-item>\n\n              <ion-label floating>Email</ion-label>\n\n              <ion-input type="text" [(ngModel)]="cliente.email"></ion-input>\n\n            </ion-item>\n\n          </ion-row>\n\n          \n\n          <ion-row>\n\n              <ion-item>\n\n                <ion-label floating>Cep</ion-label>\n\n                <ion-input type="text" [(ngModel)]="cliente.cep" [brmasker]="{mask:\'00000-120\'}"></ion-input>\n\n              </ion-item>\n\n            </ion-row>\n\n            \n\n            <ion-row>\n\n                <ion-item>\n\n                  <ion-label floating>Rua</ion-label>\n\n                  <ion-input type="text" [(ngModel)]="cliente.endereco"></ion-input>\n\n                </ion-item>\n\n              </ion-row>\n\n\n\n              <ion-row>\n\n                  <ion-item>\n\n                    <ion-label floating>Bairro</ion-label>\n\n                    <ion-input type="text" [(ngModel)]="cliente.bairro"></ion-input>\n\n                  </ion-item>\n\n                </ion-row>\n\n              \n\n                <ion-row>\n\n                    <ion-item>\n\n                      <ion-label floating>Cidade</ion-label>\n\n                      <ion-input type="text" [(ngModel)]="cliente.cidade"></ion-input>\n\n                    </ion-item>\n\n                  </ion-row>\n\n      \n\n                  <ion-row>\n\n                      <ion-item>\n\n                        <ion-label floating>Estado</ion-label>\n\n                        <ion-input type="text" [(ngModel)]="cliente.estado"></ion-input>\n\n                      </ion-item>\n\n                    </ion-row>\n\n      \n\n      </ion-col>\n\n    </ion-card-content>\n\n  </ion-card>\n\n    \n\n\n\n\n\n    <!-- <ion-card>\n\n      <ion-card-content style="padding-top: 0px; padding-bottom: 0px;"> \n\n        \n\n        <button ion-button outline block (click)="salvar()">  <ion-icon ios="ios-contacts" md="md-contacts"></ion-icon>&nbsp; Cadastrar\n\n          </button>\n\n        </ion-card-content>\n\n      </ion-card> -->\n\n\n\n      <ion-card>\n\n          <ion-card-content style="padding-top: 0px; padding-bottom: 0px; ">\n\n            <ion-item (click)="salvar()">\n\n      <label>Cadastrar cliente</label>        <ion-note item-end>\n\n          <ion-icon id="icon-color" ios="ios-contacts" md="md-contacts"></ion-icon> </ion-note>\n\n              <br/>\n\n            </ion-item>\n\n          </ion-card-content>\n\n        </ion-card>\n\n        \n\n    </ion-content>\n\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\clientes\cadastro-cliente\cadastro-cliente.html"*/,
+    TestesPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'page-testes',template:/*ion-inline-start:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\testes\testes.html"*/'<!--\n  Generated template for the TestesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>testes</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n<div class="align">\n<ion-card>\n  <ion-card-header>\n    \n  </ion-card-header>\n  \n  <ion-card-content>\n      <button ion-button (click)="adicionaLinha()">ADICIONAR</button>\n\n  </ion-card-content>\n</ion-card>\n\n\n\n<ion-card>\n  <ion-card-content>\n    \n  \n  <table style="width:100%">\n    <tr >\n      <th>Elementos</th>\n      <th>Valor Mínimo</th>\n      <th>Valor Máximo</th>\n    </tr>\n    <tr *ngFor="let aco of listaAcos">\n      <td style="width: 30%;">\n\n<ion-item no-lines>\n  <ion-icon (click)="retiraLinha()" name="trash"></ion-icon>\n  <ion-select [(ngModel)]="aco.id" multiple="false" >\n\n    <ion-option *ngFor="let item of listaElementos" [value]="item.id" >\n        <ion-chip>\n            <ion-label>{{item.elemento}}</ion-label>\n          </ion-chip>\n      </ion-option>\n    \n  </ion-select>\n</ion-item>\n      </td>\n      <td>\n        <ion-item no-lines>\n          <ion-label></ion-label>\n          <ion-input [(ngModel)]="aco.vlMin" type="" ></ion-input>\n        </ion-item>\n\n\n      </td>\n      <td>\n\n        <ion-item no-lines>\n          <ion-label></ion-label>\n          <ion-input [(ngModel)]="aco.vlMax" type="" ></ion-input>\n        </ion-item>\n\n      </td>\n    </tr>\n  </table>\n</ion-card-content>\n</ion-card>\n\n  <ion-card>\n  \n    <ion-card-content>\n      \n      <button ion-button outline (click)="retiraLinha()"><ion-icon name="trash"></ion-icon></button>\n        <button ion-button outline (click)="teste()">Salvar</button>\n    </ion-card-content>\n  </ion-card>\n</div>\n\n    <!-- <ion-chip>\n        <ion-label>Teste</ion-label>\n      </ion-chip> -->\n</ion-content>\n'/*ion-inline-end:"C:\Users\lsrael\Desktop\NovaDesign_app\novo_design-front-ionic\src\pages\testes\testes.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavController"],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["NavParams"],
-            __WEBPACK_IMPORTED_MODULE_3__providers_clientes_clientes__["a" /* ClientesProvider */],
-            __WEBPACK_IMPORTED_MODULE_0__providers_alert_alert__["a" /* AlertProvider */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["Events"]])
-    ], CadastroClientePage);
-    return CadastroClientePage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavController"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["NavParams"], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["AlertController"], __WEBPACK_IMPORTED_MODULE_2__providers_alert_alert__["a" /* AlertProvider */]])
+    ], TestesPage);
+    return TestesPage;
 }());
 
-//# sourceMappingURL=cadastro-cliente.js.map
+//# sourceMappingURL=testes.js.map
 
 /***/ })
 

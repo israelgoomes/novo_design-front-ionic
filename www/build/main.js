@@ -96,15 +96,15 @@ webpackEmptyAsyncContext.id = 125;
 var map = {
 	"../pages/cadastro-user/cadastro-user.module": [
 		442,
-		7
+		6
 	],
 	"../pages/clientes/adm-cliente/adm-cliente.module": [
-		444,
+		443,
 		19
 	],
 	"../pages/clientes/cadastro-cliente/cadastro-cliente.module": [
-		443,
-		11
+		444,
+		10
 	],
 	"../pages/clientes/clientes.module": [
 		445,
@@ -112,11 +112,11 @@ var map = {
 	],
 	"../pages/clientes/detalhe-cliente/detalhe-cliente.module": [
 		446,
-		5
+		4
 	],
 	"../pages/contrato/contrato.module": [
 		447,
-		4
+		3
 	],
 	"../pages/email-generate/email-generate.module": [
 		448,
@@ -135,12 +135,12 @@ var map = {
 		15
 	],
 	"../pages/modal-clientes/modal-clientes.module": [
-		452,
+		453,
 		2
 	],
 	"../pages/modal-config/modal-config.module": [
-		453,
-		6
+		452,
+		5
 	],
 	"../pages/projetos/adm-projeto/adm-projeto.module": [
 		454,
@@ -148,18 +148,18 @@ var map = {
 	],
 	"../pages/projetos/cadastro-projeto/cadastro-projeto.module": [
 		455,
-		9
-	],
-	"../pages/projetos/detalhe-projeto/detalhe-projeto.module": [
-		458,
 		8
 	],
-	"../pages/projetos/projetos.module": [
+	"../pages/projetos/detalhe-projeto/detalhe-projeto.module": [
 		456,
+		7
+	],
+	"../pages/projetos/projetos.module": [
+		457,
 		1
 	],
 	"../pages/splash/splash.module": [
-		457,
+		458,
 		13
 	],
 	"../pages/tabs/tabs.module": [
@@ -167,12 +167,12 @@ var map = {
 		12
 	],
 	"../pages/teset-input/teset-input.module": [
-		461,
-		10
+		460,
+		9
 	],
 	"../pages/testes/testes.module": [
-		460,
-		3
+		461,
+		11
 	]
 };
 function webpackAsyncContext(req) {
@@ -991,8 +991,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["IonicModule"].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], {}, {
                     links: [
                         { loadChildren: '../pages/cadastro-user/cadastro-user.module#CadastroUserPageModule', name: 'CadastroUserPage', segment: 'cadastro-user', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/clientes/cadastro-cliente/cadastro-cliente.module#CadastroClientePageModule', name: 'CadastroClientePage', segment: 'cadastro-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/adm-cliente/adm-cliente.module#AdmClientePageModule', name: 'AdmClientePage', segment: 'adm-cliente', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/clientes/cadastro-cliente/cadastro-cliente.module#CadastroClientePageModule', name: 'CadastroClientePage', segment: 'cadastro-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/clientes.module#ClientesPageModule', name: 'ClientesPage', segment: 'clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/clientes/detalhe-cliente/detalhe-cliente.module#DetalheClientePageModule', name: 'DetalheClientePage', segment: 'detalhe-cliente', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/contrato/contrato.module#ContratoPageModule', name: 'ContratoPage', segment: 'contrato', priority: 'low', defaultHistory: [] },
@@ -1000,16 +1000,16 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/fotos/fotos.module#FotosPageModule', name: 'FotosPage', segment: 'fotos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/menu/menu.module#MenuPageModule', name: 'MenuPage', segment: 'menu', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/modal-clientes/modal-clientes.module#ModalClientesPageModule', name: 'ModalClientesPage', segment: 'modal-clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/modal-config/modal-config.module#ModalConfigPageModule', name: 'ModalConfigPage', segment: 'modal-config', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/modal-clientes/modal-clientes.module#ModalClientesPageModule', name: 'ModalClientesPage', segment: 'modal-clientes', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/adm-projeto/adm-projeto.module#AdmProjetoPageModule', name: 'AdmProjetoPage', segment: 'adm-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/cadastro-projeto/cadastro-projeto.module#CadastroProjetoPageModule', name: 'CadastroProjetoPage', segment: 'cadastro-projeto', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/projetos/detalhe-projeto/detalhe-projeto.module#DetalheProjetoPageModule', name: 'DetalheProjetoPage', segment: 'detalhe-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/projetos/projetos.module#ProjetosPageModule', name: 'ProjetosPage', segment: 'projetos', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/splash/splash.module#SplashPageModule', name: 'SplashPage', segment: 'splash', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/projetos/detalhe-projeto/detalhe-projeto.module#DetalheProjetoPageModule', name: 'DetalheProjetoPage', segment: 'detalhe-projeto', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/tabs/tabs.module#TabsPageModule', name: 'TabsPage', segment: 'tabs', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/testes/testes.module#TestesPageModule', name: 'TestesPage', segment: 'testes', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/teset-input/teset-input.module#TesetInputPageModule', name: 'TesetInputPage', segment: 'teset-input', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/teset-input/teset-input.module#TesetInputPageModule', name: 'TesetInputPage', segment: 'teset-input', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/testes/testes.module#TestesPageModule', name: 'TestesPage', segment: 'testes', priority: 'low', defaultHistory: [] }
                     ]
                 })
             ],

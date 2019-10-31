@@ -62,6 +62,21 @@
   <button ion-button color="primary" [disabled]="disableButton == false" (click)="teste()">Buscar</button>-->
 
 
-  <button ion-button (click)="teste2()">Teste</button>
+<ion-card>
+  <ion-card-content>
+    <ion-item *ngFor="let item of lista">
+      <ion-label ></ion-label>
+      <ion-input type="" [(ngModel)]="item.vlMinimo" [value]="item.vlMinimo"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label ></ion-label>
+      <ion-input type="" ></ion-input>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+  <button ion-button (click)="testeItensRepetidos()">Teste</button>
 </ion-content>
 
